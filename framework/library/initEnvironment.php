@@ -1,4 +1,7 @@
 <?
+
+//test change for git
+
 $ds=DIRECTORY_SEPARATOR;
 require_once("..{$ds}framework{$ds}configs{$ds}appConfig.php");
 
