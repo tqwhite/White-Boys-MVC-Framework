@@ -1,0 +1,6 @@
+K 13
+svn:externals
+V 60
+sfYaml http://svn.symfony-project.com/branches/1.2/lib/yaml
+
+END

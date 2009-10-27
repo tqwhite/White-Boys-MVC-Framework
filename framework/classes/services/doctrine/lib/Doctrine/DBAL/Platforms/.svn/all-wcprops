@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/!svn/ver/6541/trunk/lib/Doctrine/DBAL/Platforms
+END
+MySqlPlatform.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/6441/trunk/lib/Doctrine/DBAL/Platforms/MySqlPlatform.php
+END
+OraclePlatform.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/!svn/ver/6441/trunk/lib/Doctrine/DBAL/Platforms/OraclePlatform.php
+END
+MsSqlPlatform.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/6414/trunk/lib/Doctrine/DBAL/Platforms/MsSqlPlatform.php
+END
+SqlitePlatform.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/!svn/ver/6414/trunk/lib/Doctrine/DBAL/Platforms/SqlitePlatform.php
+END
+AbstractPlatform.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/6541/trunk/lib/Doctrine/DBAL/Platforms/AbstractPlatform.php
+END
+PostgreSqlPlatform.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/!svn/ver/6414/trunk/lib/Doctrine/DBAL/Platforms/PostgreSqlPlatform.php
+END

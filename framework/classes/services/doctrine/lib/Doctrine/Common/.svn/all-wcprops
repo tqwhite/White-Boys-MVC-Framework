@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/!svn/ver/6566/trunk/lib/Doctrine/Common
+END
+EventManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/!svn/ver/6219/trunk/lib/Doctrine/Common/EventManager.php
+END
+GlobalClassLoader.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/!svn/ver/6519/trunk/lib/Doctrine/Common/GlobalClassLoader.php
+END
+EventArgs.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/!svn/ver/6219/trunk/lib/Doctrine/Common/EventArgs.php
+END
+Lexer.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/!svn/ver/6222/trunk/lib/Doctrine/Common/Lexer.php
+END
+IsolatedClassLoader.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/!svn/ver/6519/trunk/lib/Doctrine/Common/IsolatedClassLoader.php
+END
+PropertyChangedListener.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/!svn/ver/6219/trunk/lib/Doctrine/Common/PropertyChangedListener.php
+END
+EventSubscriber.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/!svn/ver/6219/trunk/lib/Doctrine/Common/EventSubscriber.php
+END
+DoctrineException.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/!svn/ver/6554/trunk/lib/Doctrine/Common/DoctrineException.php
+END
+NotifyPropertyChanged.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/6219/trunk/lib/Doctrine/Common/NotifyPropertyChanged.php
+END

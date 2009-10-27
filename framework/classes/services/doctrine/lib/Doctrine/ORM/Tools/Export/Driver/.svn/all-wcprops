@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/!svn/ver/6571/trunk/lib/Doctrine/ORM/Tools/Export/Driver
+END
+XmlExporter.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/!svn/ver/6442/trunk/lib/Doctrine/ORM/Tools/Export/Driver/XmlExporter.php
+END
+YamlExporter.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/!svn/ver/6442/trunk/lib/Doctrine/ORM/Tools/Export/Driver/YamlExporter.php
+END
+AbstractExporter.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/!svn/ver/6455/trunk/lib/Doctrine/ORM/Tools/Export/Driver/AbstractExporter.php
+END
+PhpExporter.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/!svn/ver/6455/trunk/lib/Doctrine/ORM/Tools/Export/Driver/PhpExporter.php
+END
+AnnotationExporter.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/!svn/ver/6571/trunk/lib/Doctrine/ORM/Tools/Export/Driver/AnnotationExporter.php
+END
+annotation_body.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/!svn/ver/6441/trunk/lib/Doctrine/ORM/Tools/Export/Driver/annotation_body.tpl.php
+END
+annotation.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/!svn/ver/6441/trunk/lib/Doctrine/ORM/Tools/Export/Driver/annotation.tpl.php
+END

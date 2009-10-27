@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/!svn/ver/6534/trunk/lib/Doctrine/ORM/Tools/Cli/Printers
+END
+NormalPrinter.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/!svn/ver/6450/trunk/lib/Doctrine/ORM/Tools/Cli/Printers/NormalPrinter.php
+END
+AnsiColorPrinter.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/!svn/ver/6450/trunk/lib/Doctrine/ORM/Tools/Cli/Printers/AnsiColorPrinter.php
+END
+AbstractPrinter.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/!svn/ver/6534/trunk/lib/Doctrine/ORM/Tools/Cli/Printers/AbstractPrinter.php
+END

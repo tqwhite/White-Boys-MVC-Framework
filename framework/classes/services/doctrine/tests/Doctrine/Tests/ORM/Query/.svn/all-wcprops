@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/!svn/ver/6553/trunk/tests/Doctrine/Tests/ORM/Query
+END
+AllTests.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/!svn/ver/6030/trunk/tests/Doctrine/Tests/ORM/Query/AllTests.php
+END
+SelectSqlGenerationTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/!svn/ver/6553/trunk/tests/Doctrine/Tests/ORM/Query/SelectSqlGenerationTest.php
+END
+DeleteSqlGenerationTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/!svn/ver/6018/trunk/tests/Doctrine/Tests/ORM/Query/DeleteSqlGenerationTest.php
+END
+ExprTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/!svn/ver/6330/trunk/tests/Doctrine/Tests/ORM/Query/ExprTest.php
+END
+UpdateSqlGenerationTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/!svn/ver/6019/trunk/tests/Doctrine/Tests/ORM/Query/UpdateSqlGenerationTest.php
+END
+LexerTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/!svn/ver/6208/trunk/tests/Doctrine/Tests/ORM/Query/LexerTest.php
+END
+LanguageRecognitionTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/!svn/ver/6523/trunk/tests/Doctrine/Tests/ORM/Query/LanguageRecognitionTest.php
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/!svn/ver/6519/trunk/tests/Doctrine/Tests/ORM/Mapping
+END
+AllTests.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/6227/trunk/tests/Doctrine/Tests/ORM/Mapping/AllTests.php
+END
+ClassMetadataFactoryTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/!svn/ver/6519/trunk/tests/Doctrine/Tests/ORM/Mapping/ClassMetadataFactoryTest.php
+END
+ClassMetadataTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/!svn/ver/6242/trunk/tests/Doctrine/Tests/ORM/Mapping/ClassMetadataTest.php
+END
+BasicInheritanceMappingTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/!svn/ver/6186/trunk/tests/Doctrine/Tests/ORM/Mapping/BasicInheritanceMappingTest.php
+END
+MappingDriverTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/!svn/ver/6274/trunk/tests/Doctrine/Tests/ORM/Mapping/MappingDriverTest.php
+END
+ClassMetadataLoadEventTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/!svn/ver/6086/trunk/tests/Doctrine/Tests/ORM/Mapping/ClassMetadataLoadEventTest.php
+END

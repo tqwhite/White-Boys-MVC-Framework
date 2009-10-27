@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/!svn/ver/6305/trunk/tests/Doctrine/Tests/Models/Generic
+END
+DateTimeModel.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/!svn/ver/5897/trunk/tests/Doctrine/Tests/Models/Generic/DateTimeModel.php
+END
+DecimalModel.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/!svn/ver/6303/trunk/tests/Doctrine/Tests/Models/Generic/DecimalModel.php
+END
+BooleanModel.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/!svn/ver/6305/trunk/tests/Doctrine/Tests/Models/Generic/BooleanModel.php
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/!svn/ver/6565/trunk/lib/Doctrine/DBAL
+END
+Driver.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/!svn/ver/5909/trunk/lib/Doctrine/DBAL/Driver.php
+END
+ConnectionException.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/!svn/ver/5802/trunk/lib/Doctrine/DBAL/ConnectionException.php
+END
+Connection.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/!svn/ver/6565/trunk/lib/Doctrine/DBAL/Connection.php
+END
+Events.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/!svn/ver/6084/trunk/lib/Doctrine/DBAL/Events.php
+END
+DriverManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/!svn/ver/6500/trunk/lib/Doctrine/DBAL/DriverManager.php
+END
+Configuration.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/!svn/ver/6226/trunk/lib/Doctrine/DBAL/Configuration.php
+END

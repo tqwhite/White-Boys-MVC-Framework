@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/!svn/ver/6519/trunk/tests/Doctrine/Tests/Mocks
+END
+ConnectionMock.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/5880/trunk/tests/Doctrine/Tests/Mocks/ConnectionMock.php
+END
+HydratorMockStatement.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/!svn/ver/5802/trunk/tests/Doctrine/Tests/Mocks/HydratorMockStatement.php
+END
+MockTreeWalker.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/6134/trunk/tests/Doctrine/Tests/Mocks/MockTreeWalker.php
+END
+ClassMetadataMock.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/5802/trunk/tests/Doctrine/Tests/Mocks/ClassMetadataMock.php
+END
+EntityManagerMock.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/6519/trunk/tests/Doctrine/Tests/Mocks/EntityManagerMock.php
+END
+UnitOfWorkMock.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/5802/trunk/tests/Doctrine/Tests/Mocks/UnitOfWorkMock.php
+END
+SequenceMock.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/!svn/ver/5802/trunk/tests/Doctrine/Tests/Mocks/SequenceMock.php
+END
+DatabasePlatformMock.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/6414/trunk/tests/Doctrine/Tests/Mocks/DatabasePlatformMock.php
+END
+DriverConnectionMock.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/5802/trunk/tests/Doctrine/Tests/Mocks/DriverConnectionMock.php
+END
+DriverMock.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/!svn/ver/5802/trunk/tests/Doctrine/Tests/Mocks/DriverMock.php
+END
+SchemaManagerMock.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/5802/trunk/tests/Doctrine/Tests/Mocks/SchemaManagerMock.php
+END
+MetadataDriverMock.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/6086/trunk/tests/Doctrine/Tests/Mocks/MetadataDriverMock.php
+END
+EntityPersisterMock.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/!svn/ver/5802/trunk/tests/Doctrine/Tests/Mocks/EntityPersisterMock.php
+END
+IdentityIdGeneratorMock.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/!svn/ver/5802/trunk/tests/Doctrine/Tests/Mocks/IdentityIdGeneratorMock.php
+END

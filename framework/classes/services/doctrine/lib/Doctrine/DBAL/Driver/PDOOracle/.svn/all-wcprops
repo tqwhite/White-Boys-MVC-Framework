@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/!svn/ver/5802/trunk/lib/Doctrine/DBAL/Driver/PDOOracle
+END
+Driver.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/5802/trunk/lib/Doctrine/DBAL/Driver/PDOOracle/Driver.php
+END
