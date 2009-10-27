@@ -2,7 +2,7 @@
 
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', dirname(dirname(__FILE__)));
-define('CLASSROOT', ROOT.'/mvc/');
+define('CLASSROOT', ROOT.'/classes/');
 
 /** Configuration Variables **/
 
