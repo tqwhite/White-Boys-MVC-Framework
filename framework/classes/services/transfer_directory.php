@@ -10,19 +10,21 @@ class transferDirectory{
 	
 	private $baseDirPath;
 	private $controlFileName;
+	private $controlFilePath;
 	private $referenceFileArray;
 	private $globArray;
 	
-	public $exclusionStringArray=array(
-		''=>'nocopy',
-		''=>'/system/'
-		);
+	
+	private $mandatoryExcludes=array('nocopy','/system/' );
+	public $exclusionStringArray=array();
 	
 	public $unchangedArray=array();
 	public $needsUploadArray=array();
 	public $newFileArray=array();
 	public $deletedFilesArray=array();
 	public $allFilesArray=array();
+	public $excludedFilesArray=array();
+	public $uploadedFileCount=0;
 	
 	public	$processStatusArray=array();
 	
@@ -40,70 +42,45 @@ class transferDirectory{
 	public $linkTemplate='(<A href=<!url!> target=_new>here</A>)';
 
 	
-public function showArrayProperty($property){
-	if (is_array($property)){
-		foreach ($property as $label=>$data){
-		if (!empty($this->arrayItemWrapperTemplate)){
-			$outString.=str_replace("<!message!>", $data, $this->arrayItemWrapperTemplate);
-		}
-		else{
-		
-			$outString.=$data;
-		}
-		}
-	}
-return($outString);
-}
-	
-public function showHelp(){
-
-$outString="
-
-File analysis excludes files that:<P>
-1) have names starting with period<BR>
-2) have the string 'nocopy' anywhere in their file path (eg, ~/foo/nocopy/bar, or nocopy.php<BR>
-
-
-";
-
-$this->helpArray[]=$outString;
-
-}
-
 public function __construct($baseDirPath){
 	
 	
 		$this->baseDirPath=$baseDirPath; 
 		$this->controlFileName='.ftpControl';
+		$this->controlFilePath=$this->baseDirPath.DIRECTORY_SEPARATOR.$this->controlFileName;
 		
+		
+		$this->exclusionStringArray=$this->mandatoryExcludes;
+		$this->addExclusionString($this->controlFileName);
+	
+	
 
-@		$tmp=$this->getThisObject($this->baseDirPath.$this->controlFileName);
+@		$tmp=$this->getThisObject($this->controlFilePath);
 
-	if (is_object($tmp)){
-		$tmpArray=(array) $tmp; //thanks Tyler
-		foreach ($tmpArray as $label=>$data){
-			$labelSplit = explode("\0", $label);
-			if (is_array($labelSplit)){
-			$labelName=array_pop($labelSplit);;
-			$this->$labelName=$data;
+		if (is_object($tmp)){
+			$tmpArray=(array) $tmp; //thanks Tyler
+			foreach ($tmpArray as $label=>$data){
+				$labelSplit = explode("\0", $label);
+				if (is_array($labelSplit)){
+				$labelName=array_pop($labelSplit);;
+				$this->$labelName=$data;
+				}
+	
+			unset($tmp);
 			}
-
-		unset($tmp);
+			
+			$this->processStatusArray=array();
+			$this->processStatusArray[]="found control file: {$this->controlFilePath}";
+			$this->processStatusArray[]="restored class from {$this->controlFileName}";
+	
 		}
-		
-	$tmp=__FUNCTION__.": restored class from file<BR>";
-	$this->processStatusArray[]=$tmp;
-
-	}
 	
-	
-
-	$this->processStatusArray=array();
-	
+	$this->uploadedFileCount=0;
 	$this->helpArray=array();
 	$this->uploadReportArray=array();
 	$this->deleteReportArray=array();
 	$this->errorReportArray=array();
+	$this->excludedFilesArray=array();
 
 	$this->pathTranslationArray=array();
 	$this->urlTranslationArray=array();
@@ -117,25 +94,72 @@ public function __construct($baseDirPath){
 		
 	//moved to client page: $this->analyzeFiles();
 }
+
+
+public function showArrayProperty($property){
+	$outString='';
+	if (is_array($property)){
+		foreach ($property as $label=>$data){
+			if (!empty($this->arrayItemWrapperTemplate)){
+				$outString.=str_replace("<!message!>", $data, $this->arrayItemWrapperTemplate);
+			}
+			else{
+			
+				$outString.=$data;
+			}
+		}
+	if (empty($outString)){
+	
+				$outString.=str_replace("<!message!>", '--none--', $this->arrayItemWrapperTemplate);
+	}
+	}
+return($outString);
+}
+
+public function getControlFilePath(){
+	return $this->controlFilePath;
+	}
+	
+public function showHelp(){
+	$stringList='';
+	foreach ($this->exclusionStringArray as $data){
+		$stringList.="$data<BR>";
+	}
+
+	$outString="
+	
+	File analysis excludes and does not upload:
+	1) the transferDirectory control file ({$this->controlFileName}<BR>
+	2) files that have any of the following strings anywhere in their file path (eg, ~/foo/XXX/bar, or XXX.php<p/>
+	$stringList
+	";
+	
+	$this->helpArray[]=$outString;
+
+}
+
 private function getThisObject($filePath){
 	$resultString = file_get_contents($filePath);
 	return(unserialize($resultString));
 }
+
+
 public function saveThisObject(){
 
-			if ($this->dryRunFlag==false or $this->initDatabase==true){
-			
-	if (!is_dir($this->baseDirPath)){
-		mkdir($this->baseDirPath, 0755, true);
-	}
-	$filePath=$this->baseDirPath.$this->controlFileName;
-	$contentString=serialize($this);
-	$result=file_put_contents($filePath, $contentString);
-	
-	}
-			else{
-			$this->processStatusArray[]="dry run flag set, database not saved";
+		if ($this->dryRunFlag==false or $this->initDatabase==true){
+		
+			if (!is_dir($this->baseDirPath)){
+				mkdir($this->baseDirPath, 0755, true);
 			}
+
+			$filePath=$this->controlFilePath;
+			$contentString=serialize($this);
+			$result=file_put_contents($filePath, $contentString);
+	
+		}
+		else{
+			$this->processStatusArray[]="dry run flag set, control file ({$this->controlFileName}) not saved";
+		}
 	
 	return(true);
 }	
@@ -148,26 +172,27 @@ private function getAllFilesInDir($dirPath){
 	        else
 	            $fileListArray = array_merge($fileListArray, $this->getAllFilesInDir($item));
 }
-	
+
 	    return $fileListArray;
 	}
+	
 private function hashFile($filePath){
 	$fileString=file_get_contents($filePath);
 	return(md5($fileString));
 }
 
-private function checkExclusion($filePath){
-
-foreach ($this->exclusionStringArray as $label=>$data){
-	if (contains($data, strtolower($filePath))){
-		return(true);
-	}
-}
-return(false);
+private function fileIsExcluded($filePath){
+	foreach ($this->exclusionStringArray as $label=>$data){
+			if (contains($data, strtolower($filePath))){
+				$this->excludedFilesArray[]=$filePath;
+				return(true); //true means exclude, don't send, even if changed
+			}
+		}
+	
+	return(false); //false means it is NOT excluded and should be sent if changed
 }
 
 public function analyzeFiles(){
-
 	$this->referenceFileArray=$this->allFilesArray;
 	$potentiallyDeletedFilesArray=$this->allFilesArray; //will remove found files to leave deletable ones behind
 	$newAllFilesArray=array();
@@ -176,8 +201,7 @@ public function analyzeFiles(){
 
 		$fileName=basename($filePath);
 		
-		
-		if (!$this->checkExclusion($filePath) and substr($fileName, 0, 1)!='.' and $fileName!=__FILENAME__){	
+		if (!$this->fileIsExcluded($filePath)){	
 			$fileName=basename($filePath);
 			$fileHash=$this->hashFile($filePath);
 			$nameHash=md5($filePath);
@@ -186,7 +210,7 @@ public function analyzeFiles(){
 			unset($potentiallyDeletedFilesArray[$nameHash]);
 
 
-			if (is_array($this->referenceFileArray[$nameHash])){
+			if (isset($this->referenceFileArray[$nameHash])){
 			
 				if ($fileHash==$this->referenceFileArray[$nameHash]['fileHash']){
 					$this->unchangedArray[$nameHash]=$this->referenceFileArray[$nameHash];
@@ -218,10 +242,13 @@ public function analyzeFiles(){
 			}
 
 		}
+
 	}
+
 	$this->deletedFilesArray=$potentiallyDeletedFilesArray; //all files found by glob were removed
 	$this->allFilesArray=$newAllFilesArray;
 }
+
 private function figureFtpPath($localPath){
 /*
 	$localPath=realpath($localPath);
@@ -246,6 +273,8 @@ private function figureFtpPath($localPath){
 	}
 return ($ftpOutPath);
 }
+
+
 public function sendFile($localPath){
 	
 	$destPath=$this->figureFtpPath($localPath);
@@ -261,19 +290,25 @@ public function sendFile($localPath){
 				$ftp->connect($this->ftpHost);
 				$ftp->login($this->ftpUser, $this->ftpPass);
 				$ftp->pasv(true);
-				
+
 			//	$result=$ftp->nlist('./public_html'); //get name list, ie, ls, sort of
 			
 	
 				$result=$ftp->mkDirRecursive(dirname($destPath));
 				
 				$result=$ftp->put('./'.$destPath, $localPath, FTP_BINARY);
+				
+
 				$ftp->close();
+				
+			$this->uploadedFileCount++;
+			$this->processStatusArray['ftpMessage']="uploaded {$this->uploadedFileCount} files";
 			
 			}
 			else{
 			
 				$this->processStatusArray['ftpMessage']="dry run flag set, no ftp executed";
+				$result='';
 			}
 			
 			$url=str_replace($this->urlTranslationArray['docRootDir'], $this->urlTranslationArray['baseUrl'], $destPath);
@@ -312,9 +347,8 @@ public function sendFile($localPath){
 			
 			
 			}
-			
+	
 		$this->uploadReportArray[]=processTemplateArray($this->uploadFileTemplate, $report);
-
 
 	}
 
@@ -338,7 +372,7 @@ public function deleteFile($localPath){
 			
 			}
 			else{
-			$this->processStatusArray[]="dry run flag set, no ftp executed";
+			$this->processStatusArray['deleteMessage']="dry run flag set, no ftp deletions executed";
 			}
 
 
@@ -388,6 +422,7 @@ public function executeFTP(){
 	
 	
 }
+
 public function showFileArray($fileArray){
 	$outString='';
 	
@@ -404,7 +439,15 @@ public function showFileArray($fileArray){
 	";
 	echo $outString;
 }
+
+public function clearExclusionString(){
+	$this->exclusionStringArray=array();
+	$this->exclusionStringArray=$this->mandatoryExcludes;
+	$this->addExclusionString($this->controlFileName);
+}
+
 public function addExclusionString($item){
 	$this->exclusionStringArray[]=$item;
 }
+
 } //end of class

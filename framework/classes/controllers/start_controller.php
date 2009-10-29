@@ -1,7 +1,6 @@
 <?php
 class StartController extends BaseController{
 
-
 public function __construct(){
 		parent::__construct(); //initialize the basic stuff
 		$this->entryClassName=__CLASS__;

@@ -30,4 +30,19 @@ protected function _getTemplatePath($templateName){
 		return $templatePath;
 	}
 
+protected function _getControllerNameForUrl(){
+	return preg_replace('/Controller$/', '', $this->entryClassName);
+}
+	
+protected function _getUrlPath($templateName=''){
+	$controller=$this->_getControllerNameForUrl();
+	if (empty($templateName)){
+		$path="/$controller";
+	}
+	else{
+		$path="/$controller/$templateName";
+	}
+	return $path;
+}
+
 } //end of class
