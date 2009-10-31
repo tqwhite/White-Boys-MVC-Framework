@@ -11,16 +11,16 @@ public function index(){
 $urlList=array();
 $item=array();
 
-$item['url']='OpenSource';
+$item['url']='/OpenSource';
 $item['text']='Open Source Page 1';
 $urlList[]=$item;
-$item['url']='OpenSource/2';
+$item['url']='/OpenSource/2';
 $item['text']='Open Source Page 2';
 $urlList[]=$item;
-$item['url']='siteUtilities';
+$item['url']='/siteUtilities';
 $item['text']='Site Utilities';
 $urlList[]=$item;
-$item['url']='start';
+$item['url']='/start';
 $item['text']='Front Page';
 $urlList[]=$item;
 
