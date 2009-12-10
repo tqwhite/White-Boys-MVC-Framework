@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/!svn/ver/6808/trunk/lib/Doctrine/ORM/Id
+END
+SequenceIdentityGenerator.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/5802/trunk/lib/Doctrine/ORM/Id/SequenceIdentityGenerator.php
+END
+Assigned.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/!svn/ver/6808/trunk/lib/Doctrine/ORM/Id/Assigned.php
+END
+TableGenerator.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/!svn/ver/6262/trunk/lib/Doctrine/ORM/Id/TableGenerator.php
+END
+SequenceGenerator.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/!svn/ver/6687/trunk/lib/Doctrine/ORM/Id/SequenceGenerator.php
+END
+IdentityGenerator.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/!svn/ver/5802/trunk/lib/Doctrine/ORM/Id/IdentityGenerator.php
+END
+AbstractIdGenerator.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/!svn/ver/5802/trunk/lib/Doctrine/ORM/Id/AbstractIdGenerator.php
+END

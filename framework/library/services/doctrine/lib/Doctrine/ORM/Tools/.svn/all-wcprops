@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/!svn/ver/6902/trunk/lib/Doctrine/ORM/Tools
+END
+ConvertDoctrine1Schema.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/6705/trunk/lib/Doctrine/ORM/Tools/ConvertDoctrine1Schema.php
+END
+SchemaTool.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/!svn/ver/6902/trunk/lib/Doctrine/ORM/Tools/SchemaTool.php
+END

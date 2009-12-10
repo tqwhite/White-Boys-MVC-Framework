@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/!svn/ver/6442/trunk/lib/Doctrine/Common/Util
+END
+Inflector.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/!svn/ver/6442/trunk/lib/Doctrine/Common/Util/Inflector.php
+END
+Debug.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/!svn/ver/6327/trunk/lib/Doctrine/Common/Util/Debug.php
+END

@@ -1,0 +1,8 @@
+version_name=2.0.0-ALPHA2
+version=2.0.0
+stability=alpha
+build.dir=build
+dist.dir=dist
+report.dir=reports
+log.archive.dir=logs
+svn.path=/usr/bin/svn

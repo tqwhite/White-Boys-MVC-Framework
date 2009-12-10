@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/!svn/ver/6881/trunk/tests/Doctrine/Tests/DBAL/Functional/Schema
+END
+SchemaManagerFunctionalTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/!svn/ver/6881/trunk/tests/Doctrine/Tests/DBAL/Functional/Schema/SchemaManagerFunctionalTestCase.php
+END
+SqliteSchemaManagerTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/!svn/ver/6844/trunk/tests/Doctrine/Tests/DBAL/Functional/Schema/SqliteSchemaManagerTest.php
+END
+PostgreSqlSchemaManagerTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/!svn/ver/6828/trunk/tests/Doctrine/Tests/DBAL/Functional/Schema/PostgreSqlSchemaManagerTest.php
+END
+MySqlSchemaManagerTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/!svn/ver/6844/trunk/tests/Doctrine/Tests/DBAL/Functional/Schema/MySqlSchemaManagerTest.php
+END
+OracleSchemaManagerTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/!svn/ver/6844/trunk/tests/Doctrine/Tests/DBAL/Functional/Schema/OracleSchemaManagerTest.php
+END

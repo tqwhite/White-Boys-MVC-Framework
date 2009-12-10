@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/!svn/ver/6908/trunk/tests/Doctrine/Tests/ORM/Hydration
+END
+AllTests.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/!svn/ver/5802/trunk/tests/Doctrine/Tests/ORM/Hydration/AllTests.php
+END
+ArrayHydratorTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/!svn/ver/6222/trunk/tests/Doctrine/Tests/ORM/Hydration/ArrayHydratorTest.php
+END
+HydrationTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/!svn/ver/5890/trunk/tests/Doctrine/Tests/ORM/Hydration/HydrationTestCase.php
+END
+ScalarHydratorTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/!svn/ver/5890/trunk/tests/Doctrine/Tests/ORM/Hydration/ScalarHydratorTest.php
+END
+ObjectHydratorTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/!svn/ver/6908/trunk/tests/Doctrine/Tests/ORM/Hydration/ObjectHydratorTest.php
+END
+SingleScalarHydratorTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/!svn/ver/5890/trunk/tests/Doctrine/Tests/ORM/Hydration/SingleScalarHydratorTest.php
+END
+ResultSetMappingTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/!svn/ver/6194/trunk/tests/Doctrine/Tests/ORM/Hydration/ResultSetMappingTest.php
+END

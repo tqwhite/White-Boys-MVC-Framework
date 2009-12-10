@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/!svn/ver/6595/trunk/tests/Doctrine/Tests/ORM/Proxy/fixtures
+END
+NonNamespacedProxies.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/!svn/ver/6595/trunk/tests/Doctrine/Tests/ORM/Proxy/fixtures/NonNamespacedProxies.php
+END

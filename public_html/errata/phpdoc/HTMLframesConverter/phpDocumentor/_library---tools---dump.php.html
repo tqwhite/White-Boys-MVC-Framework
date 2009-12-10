@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs for page dump.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="file-name">/library/tools/dump.php</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-functions">Functions</a>
+			</div>
+	<div class="info-box-body">	
+		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Write out human readable and PHP includable data.  Keep the data  types the same, so null and false and 0 and '' are all different.</p>
+<p class="description"><p>Something like an improved var_dump() or a neater var_export().</p><p>Unlike the built-in functions, this does write out null, 0, '', and  false appropriately.  Think of it as a data pretty-printer or a data  formatter for writing include files.  It even detects and handles  circular references.</p><p>Of course, it would be nice if it could dump the recursive variables  so that running the code would set the pointers up, but until I think of  an extra-clever way ....</p><p>function dump($data, $name = false, $html = true, $echo_out = true)    $data = What you want to dump    $name = The name to display, great for naming the dumped data    $html = Escape for HTML, turn off to make an include file    $echo_out = Write to output, turn off if you want the content returned</p><p>Also includes dump_callstack() to show where you are.</p></p>
+	<ul class="tags">
+				<li><span class="field">filesource:</span> <a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html">Source Code for this file</a></li>
+			</ul>
+		
+			</div>
+</div>
+		
+
+	
+	
+	
+	<a name="sec-functions"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Functions</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<span class="disabled">Functions</span>
+		</div>
+		<div class="info-box-body">	
+			<a name="functiondump" id="functiondump"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">dump</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a65">65</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Dumps data - Calls the __dump_anything() function for the real work</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			dump
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$html</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$echo_out</span> = <span class="var-default">true</span>])
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$data</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$html</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$echo_out</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functiondump_callstack" id="functiondump_callstack"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">dump_callstack</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a718">718</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Dump the call stack to the current point.</p>
+<p class="description"><p>$return = false (wrap in HTML and echo), or true (return text)</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			dump_callstack
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$return</span> = <span class="var-default">false</span>])
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$return</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="function__dump_anything" id="function__dump_anything"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">__dump_anything</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a139">139</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determines how to write the data - calls __dump_* helper functions</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__dump_anything
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$data</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$html</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$indentation</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqStack</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$noFormat</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$data</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$html</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$indentation</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqStack</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$noFormat</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="function__dump_array" id="function__dump_array"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">__dump_array</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a154">154</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Writes out an array, avoids recursion.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__dump_array
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$data</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$html</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$indentation</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqStack</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$noFormat</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$data</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$html</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$indentation</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqStack</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$noFormat</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="function__dump_boolean" id="function__dump_boolean"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">__dump_boolean</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a402">402</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Writes out a boolean value</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__dump_boolean
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$data</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$html</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$indentation</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqStack</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$noFormat</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$data</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$html</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$indentation</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqStack</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$noFormat</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="function__dump_collapse_end" id="function__dump_collapse_end"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">__dump_collapse_end</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a240">240</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Closes a toggle</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__dump_collapse_end
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$html</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$noFormat</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$html</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$noFormat</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="function__dump_collapse_start" id="function__dump_collapse_start"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">__dump_collapse_start</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a209">209</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Starts a toggle so the user can show/hide large amounts of data</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__dump_collapse_start
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$html</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$noFormat</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$count</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$html</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$noFormat</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$count</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="function__dump_default" id="function__dump_default"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">__dump_default</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a515">515</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">This is the default catch-all that should never get used.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__dump_default
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$data</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$html</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$indentation</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqStack</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$noFormat</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$data</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$html</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$indentation</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqStack</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$noFormat</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="function__dump_double" id="function__dump_double"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">__dump_double</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a474">474</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Writes out a number.  No special formatting needed.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__dump_double
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$data</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$html</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$indentation</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqStack</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$noFormat</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$data</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$html</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$indentation</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqStack</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$noFormat</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="function__dump_index" id="function__dump_index"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">__dump_index</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a254">254</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Write out an index to an array or object.</p>
+<p class="description"><p>Only called from __dump_array, __dump_object, and __dump_recursive.  Only handles known data types (try to keep it to strings and integers).</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__dump_index
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$data</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$html</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$data</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$html</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="function__dump_integer" id="function__dump_integer"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">__dump_integer</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a467">467</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Writes out an integer by calling __dump_double</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__dump_integer
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$data</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$html</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$indentation</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqStack</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$noFormat</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$data</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$html</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$indentation</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqStack</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$noFormat</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="function__dump_NULL" id="function__dump_NULL"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">__dump_NULL</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a485">485</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Writes out a null value</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__dump_NULL
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$data</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$html</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$indentation</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqStack</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$noFormat</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$data</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$html</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$indentation</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqStack</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$noFormat</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="function__dump_object" id="function__dump_object"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">__dump_object</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a263">263</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Writes out an object, avoids recursion.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__dump_object
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$data</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$html</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$indentation</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqStack</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$noFormat</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$data</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$html</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$indentation</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqStack</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$noFormat</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="function__dump_recursive" id="function__dump_recursive"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">__dump_recursive</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a355">355</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Writes out a recursion message.</p>
+<p class="description"><p>Called by __dump_array and __dump_object when recursion is detected.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__dump_recursive
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$uniqStack</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$html</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$noFormat</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$uniqStack</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$html</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$noFormat</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="function__dump_resource" id="function__dump_resource"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">__dump_resource</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a494">494</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Writes out a resource</p>
+<p class="description"><p>If it is a stream resource, additional attributes are also shown.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__dump_resource
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$data</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$html</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$indentation</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqStack</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$noFormat</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$data</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$html</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$indentation</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqStack</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$noFormat</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="function__dump_sql" id="function__dump_sql"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">__dump_sql</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a540">540</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Write out JS to show the select statement in a new window.</p>
+<p class="description"><p>Do not pass $data by reference for this function.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__dump_sql
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$data</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$data</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="function__dump_sql_html" id="function__dump_sql_html"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">__dump_sql_html</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a669">669</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__dump_sql_html
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$sql</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$sql</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="function__dump_sql_test" id="function__dump_sql_test"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">__dump_sql_test</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a522">522</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determine if we should allow the display of this statement as SQL</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__dump_sql_test
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$data</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$data</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="function__dump_sql_token" id="function__dump_sql_token"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">__dump_sql_token</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a609">609</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__dump_sql_token
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$token</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$indent</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$token</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$indent</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="function__dump_string" id="function__dump_string"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">__dump_string</span> (line <span class="line-number"><a href="../__filesource/fsource_phpDocumentor__librarytoolsdump.php.html#a424">424</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Writes out an escaped string.</p>
+<p class="description"><p>To avoid additional overhead if the string is parsed, single quotes are  preferred.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__dump_string
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$data</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$html</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$indentation</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$uniqStack</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$noFormat</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$data</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$html</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$indentation</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$uniqStack</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$noFormat</span>			</li>
+				</ul>
+		
+	
+</div>
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Thu, 03 Dec 2009 12:52:08 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

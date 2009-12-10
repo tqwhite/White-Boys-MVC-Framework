@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/!svn/ver/6914/trunk/tests/Doctrine/Tests
+END
+OrmTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/!svn/ver/6598/trunk/tests/Doctrine/Tests/OrmTestCase.php
+END
+OrmFunctionalTestSuite.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/!svn/ver/5802/trunk/tests/Doctrine/Tests/OrmFunctionalTestSuite.php
+END
+AllTests.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/!svn/ver/5802/trunk/tests/Doctrine/Tests/AllTests.php
+END
+OrmPerformanceTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/!svn/ver/5802/trunk/tests/Doctrine/Tests/OrmPerformanceTestCase.php
+END
+DbalTestSuite.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/!svn/ver/5802/trunk/tests/Doctrine/Tests/DbalTestSuite.php
+END
+OrmFunctionalTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/!svn/ver/6855/trunk/tests/Doctrine/Tests/OrmFunctionalTestCase.php
+END
+TestUtil.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/!svn/ver/6791/trunk/tests/Doctrine/Tests/TestUtil.php
+END
+DbalTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/!svn/ver/5802/trunk/tests/Doctrine/Tests/DbalTestCase.php
+END
+DbalFunctionalTestSuite.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/5802/trunk/tests/Doctrine/Tests/DbalFunctionalTestSuite.php
+END
+DoctrineTestSuite.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/!svn/ver/5802/trunk/tests/Doctrine/Tests/DoctrineTestSuite.php
+END
+DbalFunctionalTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/!svn/ver/5802/trunk/tests/Doctrine/Tests/DbalFunctionalTestCase.php
+END
+TestInit.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/!svn/ver/6385/trunk/tests/Doctrine/Tests/TestInit.php
+END
+DoctrineTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/!svn/ver/6598/trunk/tests/Doctrine/Tests/DoctrineTestCase.php
+END
+OrmTestSuite.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/!svn/ver/5802/trunk/tests/Doctrine/Tests/OrmTestSuite.php
+END

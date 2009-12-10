@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/!svn/ver/6908/trunk/tests/Doctrine/Tests/ORM/Functional/Ticket
+END
+DDC168Test.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/!svn/ver/6908/trunk/tests/Doctrine/Tests/ORM/Functional/Ticket/DDC168Test.php
+END
+AllTests.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/!svn/ver/6882/trunk/tests/Doctrine/Tests/ORM/Functional/Ticket/AllTests.php
+END
+DDC199Test.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/!svn/ver/6908/trunk/tests/Doctrine/Tests/ORM/Functional/Ticket/DDC199Test.php
+END
+Ticket2481Test.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/!svn/ver/6326/trunk/tests/Doctrine/Tests/ORM/Functional/Ticket/Ticket2481Test.php
+END
+DDC192Test.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/!svn/ver/6882/trunk/tests/Doctrine/Tests/ORM/Functional/Ticket/DDC192Test.php
+END

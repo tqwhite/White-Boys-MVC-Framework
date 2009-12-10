@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/!svn/ver/6876/trunk/lib/Doctrine/ORM/Tools/Cli/Tasks
+END
+HelpTask.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/6737/trunk/lib/Doctrine/ORM/Tools/Cli/Tasks/HelpTask.php
+END
+EnsureProductionSettingsTask.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/!svn/ver/6737/trunk/lib/Doctrine/ORM/Tools/Cli/Tasks/EnsureProductionSettingsTask.php
+END
+ClearCacheTask.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/6737/trunk/lib/Doctrine/ORM/Tools/Cli/Tasks/ClearCacheTask.php
+END
+ConvertMappingTask.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/!svn/ver/6737/trunk/lib/Doctrine/ORM/Tools/Cli/Tasks/ConvertMappingTask.php
+END
+SchemaToolTask.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/6876/trunk/lib/Doctrine/ORM/Tools/Cli/Tasks/SchemaToolTask.php
+END
+AbstractTask.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/6737/trunk/lib/Doctrine/ORM/Tools/Cli/Tasks/AbstractTask.php
+END
+GenerateProxiesTask.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/!svn/ver/6737/trunk/lib/Doctrine/ORM/Tools/Cli/Tasks/GenerateProxiesTask.php
+END
+RunSqlTask.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/!svn/ver/6737/trunk/lib/Doctrine/ORM/Tools/Cli/Tasks/RunSqlTask.php
+END
+RunDqlTask.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/!svn/ver/6737/trunk/lib/Doctrine/ORM/Tools/Cli/Tasks/RunDqlTask.php
+END
+VersionTask.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/6737/trunk/lib/Doctrine/ORM/Tools/Cli/Tasks/VersionTask.php
+END

@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/!svn/ver/6913/trunk/lib/Doctrine/ORM
+END
+AbstractQuery.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/!svn/ver/6788/trunk/lib/Doctrine/ORM/AbstractQuery.php
+END
+QueryBuilder.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/!svn/ver/6424/trunk/lib/Doctrine/ORM/QueryBuilder.php
+END
+EntityRepository.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/!svn/ver/6880/trunk/lib/Doctrine/ORM/EntityRepository.php
+END
+NativeQuery.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/!svn/ver/6788/trunk/lib/Doctrine/ORM/NativeQuery.php
+END
+OptimisticLockException.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/!svn/ver/6880/trunk/lib/Doctrine/ORM/OptimisticLockException.php
+END
+PersistentCollection.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/!svn/ver/6791/trunk/lib/Doctrine/ORM/PersistentCollection.php
+END
+ORMException.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/!svn/ver/6846/trunk/lib/Doctrine/ORM/ORMException.php
+END
+Events.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/!svn/ver/6270/trunk/lib/Doctrine/ORM/Events.php
+END
+Query.php
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/!svn/ver/6901/trunk/lib/Doctrine/ORM/Query.php
+END
+EntityManagerException.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/!svn/ver/6084/trunk/lib/Doctrine/ORM/EntityManagerException.php
+END
+UnitOfWork.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/!svn/ver/6880/trunk/lib/Doctrine/ORM/UnitOfWork.php
+END
+Configuration.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/!svn/ver/6791/trunk/lib/Doctrine/ORM/Configuration.php
+END
+EntityManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/!svn/ver/6808/trunk/lib/Doctrine/ORM/EntityManager.php
+END

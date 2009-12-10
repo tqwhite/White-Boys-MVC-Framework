@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/!svn/ver/6850/trunk/lib/Doctrine/DBAL/Types
+END
+BigIntType.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/!svn/ver/5898/trunk/lib/Doctrine/DBAL/Types/BigIntType.php
+END
+DateTimeType.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/!svn/ver/6418/trunk/lib/Doctrine/DBAL/Types/DateTimeType.php
+END
+DateType.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/!svn/ver/6418/trunk/lib/Doctrine/DBAL/Types/DateType.php
+END
+IntegerType.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/!svn/ver/6791/trunk/lib/Doctrine/DBAL/Types/IntegerType.php
+END
+ArrayType.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/!svn/ver/5898/trunk/lib/Doctrine/DBAL/Types/ArrayType.php
+END
+DecimalType.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/!svn/ver/5898/trunk/lib/Doctrine/DBAL/Types/DecimalType.php
+END
+TimeType.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/!svn/ver/6418/trunk/lib/Doctrine/DBAL/Types/TimeType.php
+END
+BooleanType.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/!svn/ver/6302/trunk/lib/Doctrine/DBAL/Types/BooleanType.php
+END
+Type.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/!svn/ver/6442/trunk/lib/Doctrine/DBAL/Types/Type.php
+END
+SmallIntType.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/!svn/ver/6850/trunk/lib/Doctrine/DBAL/Types/SmallIntType.php
+END
+TextType.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/!svn/ver/6414/trunk/lib/Doctrine/DBAL/Types/TextType.php
+END
+ObjectType.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/!svn/ver/6414/trunk/lib/Doctrine/DBAL/Types/ObjectType.php
+END
+StringType.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/!svn/ver/5802/trunk/lib/Doctrine/DBAL/Types/StringType.php
+END

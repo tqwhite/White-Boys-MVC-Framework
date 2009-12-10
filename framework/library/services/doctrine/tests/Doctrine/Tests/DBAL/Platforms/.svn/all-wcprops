@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/!svn/ver/6867/trunk/tests/Doctrine/Tests/DBAL/Platforms
+END
+MySqlPlatformTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/!svn/ver/6867/trunk/tests/Doctrine/Tests/DBAL/Platforms/MySqlPlatformTest.php
+END
+OraclePlatformTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/!svn/ver/6867/trunk/tests/Doctrine/Tests/DBAL/Platforms/OraclePlatformTest.php
+END
+MsSqlPlatformTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/!svn/ver/6867/trunk/tests/Doctrine/Tests/DBAL/Platforms/MsSqlPlatformTest.php
+END
+AbstractPlatformTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/!svn/ver/6867/trunk/tests/Doctrine/Tests/DBAL/Platforms/AbstractPlatformTestCase.php
+END
+SqlitePlatformTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/!svn/ver/6865/trunk/tests/Doctrine/Tests/DBAL/Platforms/SqlitePlatformTest.php
+END
+PostgreSqlPlatformTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/!svn/ver/6867/trunk/tests/Doctrine/Tests/DBAL/Platforms/PostgreSqlPlatformTest.php
+END

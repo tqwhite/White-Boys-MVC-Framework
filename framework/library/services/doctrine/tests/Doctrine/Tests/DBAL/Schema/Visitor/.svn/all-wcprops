@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/!svn/ver/6871/trunk/tests/Doctrine/Tests/DBAL/Schema/Visitor
+END
+SchemaSqlCollectorTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/!svn/ver/6871/trunk/tests/Doctrine/Tests/DBAL/Schema/Visitor/SchemaSqlCollectorTest.php
+END

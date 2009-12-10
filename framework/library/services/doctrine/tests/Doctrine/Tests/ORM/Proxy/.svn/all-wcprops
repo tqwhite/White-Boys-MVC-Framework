@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/!svn/ver/6595/trunk/tests/Doctrine/Tests/ORM/Proxy
+END
+AllTests.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/!svn/ver/6226/trunk/tests/Doctrine/Tests/ORM/Proxy/AllTests.php
+END
+ProxyClassGeneratorTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/!svn/ver/6595/trunk/tests/Doctrine/Tests/ORM/Proxy/ProxyClassGeneratorTest.php
+END

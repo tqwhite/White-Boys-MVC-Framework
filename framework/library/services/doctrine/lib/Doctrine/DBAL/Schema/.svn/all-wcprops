@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/!svn/ver/6882/trunk/lib/Doctrine/DBAL/Schema
+END
+SchemaDiff.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/!svn/ver/6876/trunk/lib/Doctrine/DBAL/Schema/SchemaDiff.php
+END
+Column.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/!svn/ver/6866/trunk/lib/Doctrine/DBAL/Schema/Column.php
+END
+Schema.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/!svn/ver/6876/trunk/lib/Doctrine/DBAL/Schema/Schema.php
+END
+AbstractAsset.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/!svn/ver/6857/trunk/lib/Doctrine/DBAL/Schema/AbstractAsset.php
+END
+Comparator.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/!svn/ver/6872/trunk/lib/Doctrine/DBAL/Schema/Comparator.php
+END
+ForeignKeyConstraint.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/6871/trunk/lib/Doctrine/DBAL/Schema/ForeignKeyConstraint.php
+END
+Index.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/!svn/ver/6862/trunk/lib/Doctrine/DBAL/Schema/Index.php
+END
+Sequence.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/!svn/ver/6812/trunk/lib/Doctrine/DBAL/Schema/Sequence.php
+END
+MsSqlSchemaManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/!svn/ver/6262/trunk/lib/Doctrine/DBAL/Schema/MsSqlSchemaManager.php
+END
+SqliteSchemaManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/6857/trunk/lib/Doctrine/DBAL/Schema/SqliteSchemaManager.php
+END
+AbstractSchemaManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/!svn/ver/6872/trunk/lib/Doctrine/DBAL/Schema/AbstractSchemaManager.php
+END
+PostgreSqlSchemaManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/!svn/ver/6867/trunk/lib/Doctrine/DBAL/Schema/PostgreSqlSchemaManager.php
+END
+SchemaException.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/!svn/ver/6876/trunk/lib/Doctrine/DBAL/Schema/SchemaException.php
+END
+TableDiff.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/!svn/ver/6864/trunk/lib/Doctrine/DBAL/Schema/TableDiff.php
+END
+OracleSchemaManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/6857/trunk/lib/Doctrine/DBAL/Schema/OracleSchemaManager.php
+END
+MySqlSchemaManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/!svn/ver/6857/trunk/lib/Doctrine/DBAL/Schema/MySqlSchemaManager.php
+END
+Constraint.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/!svn/ver/6848/trunk/lib/Doctrine/DBAL/Schema/Constraint.php
+END
+ColumnDiff.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/!svn/ver/6866/trunk/lib/Doctrine/DBAL/Schema/ColumnDiff.php
+END
+Table.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/!svn/ver/6882/trunk/lib/Doctrine/DBAL/Schema/Table.php
+END

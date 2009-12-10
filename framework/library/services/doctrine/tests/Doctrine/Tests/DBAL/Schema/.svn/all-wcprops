@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/!svn/ver/6887/trunk/tests/Doctrine/Tests/DBAL/Schema
+END
+SchemaDiffTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/6876/trunk/tests/Doctrine/Tests/DBAL/Schema/SchemaDiffTest.php
+END
+ColumnTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/!svn/ver/6866/trunk/tests/Doctrine/Tests/DBAL/Schema/ColumnTest.php
+END
+SchemaTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/!svn/ver/6880/trunk/tests/Doctrine/Tests/DBAL/Schema/SchemaTest.php
+END
+ComparatorTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/6870/trunk/tests/Doctrine/Tests/DBAL/Schema/ComparatorTest.php
+END
+IndexTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/!svn/ver/6818/trunk/tests/Doctrine/Tests/DBAL/Schema/IndexTest.php
+END
+TableTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/!svn/ver/6887/trunk/tests/Doctrine/Tests/DBAL/Schema/TableTest.php
+END

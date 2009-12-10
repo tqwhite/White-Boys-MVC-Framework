@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/!svn/ver/6706/trunk/lib/Doctrine/ORM/Tools/Export
+END
+ClassMetadataExporter.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/!svn/ver/6460/trunk/lib/Doctrine/ORM/Tools/Export/ClassMetadataExporter.php
+END
