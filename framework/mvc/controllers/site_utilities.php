@@ -51,7 +51,8 @@ public function dispatchSpecial(){
 * @author TQ White II
 *
 */
-public function index(){$urlList=array();
+public function index(){
+		$urlList=array();
 		$item=array();
 		$domain=\configs\appConfig::getServerVar('HTTP_HOST');
 		
@@ -115,11 +116,22 @@ public function sendFilesToHost(){
 			make sendFile check if mkdir is needed
 			make it so it only logs in once
 		*/
+	
+		$transferDirectory=new \library\services\transferDirectory(dirname(ROOT));
 		
-		$transferDirectory=new transferDirectory(dirname(ROOT));
-		
-		HostFtpConfig::copyIntoTransferDirectoryObject(&$transferDirectory); //from configs/host_ftp_config.php
-		
+		\configs\HostFtpConfig::copyIntoTransferDirectoryObject($transferDirectory); //from configs/host_ftp_config.php
+
+
+
+
+						
+		$transferDirectory->dryRunFlag=false; //false says we're in production, upload files
+		$transferDirectory->initDatabase=false; //true says init db even though dryRunFlag==true, ignored if dryRunFlag==false
+
+
+
+
+		$transferDirectory->initConnection();
 		$transferDirectory->clearExclusionString();
 		$transferDirectory->addExclusionString('configs');
 		
@@ -142,15 +154,12 @@ public function sendFilesToHost(){
 					source: <!localPath!><br>dest: <!destPath!>
 					</div>
 				</div>';
-				
-		$transferDirectory->dryRunFlag=false; //false says we're in production, upload files
-		$transferDirectory->initDatabase=false; //true says init db even though dryRunFlag==true, ignored if dryRunFlag==false
 		
 		//execute the FTP
 			$transferDirectory->analyzeFiles();
 			$transferDirectory->executeFTP();
 			$transferDirectory->saveThisObject();
-			
+			$transferDirectory->closeConnection();
 		
 			//dump($transferDirectory->deletedFilesArray);
 		

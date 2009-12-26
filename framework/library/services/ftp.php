@@ -1,5 +1,5 @@
 <?php
-
+namespace library\services; //has to match namespace reference in client code
 /**
  * FTP - access to an FTP server.
  *
@@ -56,7 +56,7 @@ class Ftp
 		$func = 'ftp_' . (isset(self::$aliases[$func]) ? self::$aliases[$func] : $func);
 
 		if (!function_exists($func)) {
-			throw new Exception("Call to undefined method Ftp::$name().");
+			throw new \Exception("Call to undefined method Ftp::$name().");
 		}
 
 		$this->errorMsg = NULL;
@@ -182,6 +182,6 @@ class Ftp
 
 
 
-class FtpException extends Exception
+class FtpException extends \Exception
 {
 }

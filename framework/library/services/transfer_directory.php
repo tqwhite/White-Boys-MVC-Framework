@@ -1,9 +1,13 @@
 <?
+namespace library\services;
 class transferDirectory{
 	
 	public $ftpUser;
 	public $ftpPass;
-	public $ftpHost;	
+	public $ftpHost;
+	public $ftpPort;
+	
+	private $ftp; //handle for sftp instance
 	
 	public $dryRunFlag=false;
 	public $initDatabase=false;
@@ -274,6 +278,23 @@ private function figureFtpPath($localPath){
 return ($ftpOutPath);
 }
 
+public function initConnection(){
+			if ($this->dryRunFlag==false){
+			
+			//	$this->ftp = new Ftp;
+				$this->ftp = new Sftp;
+				$this->ftp->connect($this->ftpHost, $this->ftpPort);
+				$this->ftp->login($this->ftpUser, $this->ftpPass);
+				$this->ftp->pasv(true);
+			
+			}
+}
+
+public function closeConnection(){
+			if ($this->dryRunFlag==false){
+				$this->ftp->close();			
+			}
+}
 
 public function sendFile($localPath){
 	
@@ -285,21 +306,16 @@ public function sendFile($localPath){
 
 			
 			if ($this->dryRunFlag==false){
-			
-				$ftp = new Ftp;
-				$ftp->connect($this->ftpHost);
-				$ftp->login($this->ftpUser, $this->ftpPass);
-				$ftp->pasv(true);
 
-			//	$result=$ftp->nlist('./public_html'); //get name list, ie, ls, sort of
-			
-	
-				$result=$ftp->mkDirRecursive(dirname($destPath));
-				
-				$result=$ftp->put('./'.$destPath, $localPath, FTP_BINARY);
-				
 
-				$ftp->close();
+			//	$result=$this->ftp->nlist('./public_html'); //get name list, ie, ls, sort of
+			
+
+				$result=$this->ftp->mkDirRecursive('./'.dirname($destPath));
+				echo "<div style=color:red;font-size:8pt;>TransferDirectory::sendFile says, Have not tested prefix on mkdir with standard ftp, only sftp</div>";
+				
+				$result=$this->ftp->put('./'.$destPath, $localPath, FTP_BINARY);
+				
 				
 			$this->uploadedFileCount++;
 			$this->processStatusArray['ftpMessage']="uploaded {$this->uploadedFileCount} files";
@@ -361,14 +377,8 @@ public function deleteFile($localPath){
 		try {
 		
 		if ($this->dryRunFlag==false){
-			
-			$ftp = new Ftp;
-			$ftp->connect($this->ftpHost);
-			$ftp->login($this->ftpUser, $this->ftpPass);
-	
-			
-			$result=$ftp->delete('./'.$destPath);
-			$ftp->close();
+
+			$result=$this->ftp->delete('./'.$destPath);
 			
 			}
 			else{

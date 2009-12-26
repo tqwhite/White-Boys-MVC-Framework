@@ -1,5 +1,5 @@
 <?php
-
+namespace configs;
 class HostFtpConfig {
 
 public static $local=ROOT;
@@ -8,11 +8,12 @@ public static $remote='/';
 public static $baseUrl='http://tqwhite.org/';
 public static $docRootDir='/public_html/';
 
-public static $ftpUser='tq.org';
+public static $ftpUser='org.tqwhite';
 public static $ftpPass='tq3141';
-public static $ftpHost='tqwhite.org';	
+public static $ftpHost='38.108.46.145';	
+public static $ftpPort='22123';	
 
-public function copyIntoTransferDirectoryObject($transferDirectory){
+public function copyIntoTransferDirectoryObject(&$transferDirectory){
 
 	$itemArray=array();
 	
@@ -29,6 +30,7 @@ public function copyIntoTransferDirectoryObject($transferDirectory){
 	$transferDirectory->ftpUser=self::$ftpUser;
 	$transferDirectory->ftpPass=self::$ftpPass;
 	$transferDirectory->ftpHost=self::$ftpHost;
+	$transferDirectory->ftpPort=self::$ftpPort;
 
 }
 
