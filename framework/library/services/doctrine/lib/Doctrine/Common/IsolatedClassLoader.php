@@ -31,6 +31,8 @@ namespace Doctrine\Common;
  * 
  * @author Roman Borschel <roman@code-factory.org>
  * @since 2.0
+ * 
+ * @deprecated Use Doctrine\Common\ClassLoader instead.
  */
 class IsolatedClassLoader
 {

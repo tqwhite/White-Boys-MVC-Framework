@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 38
-/!svn/ver/6913/trunk/lib/Doctrine/DBAL
+/!svn/ver/6978/trunk/lib/Doctrine/DBAL
 END
 Driver.php
 K 25
@@ -19,7 +19,7 @@ Connection.php
 K 25
 svn:wc:ra_dav:version-url
 V 53
-/!svn/ver/6908/trunk/lib/Doctrine/DBAL/Connection.php
+/!svn/ver/6949/trunk/lib/Doctrine/DBAL/Connection.php
 END
 DBALException.php
 K 25

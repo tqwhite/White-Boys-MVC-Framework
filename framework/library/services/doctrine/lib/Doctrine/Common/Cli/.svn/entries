@@ -1,14 +1,14 @@
 10
 
 dir
-6935
+6992
 http://svn.doctrine-project.org/trunk/lib/Doctrine/Common/Cli
 http://svn.doctrine-project.org
 
 
 
-2009-11-17T01:29:20.630947Z
-6737
+2009-12-22T16:17:35.083643Z
+6978
 guilhermeblanco
 
 
@@ -26,16 +26,50 @@ guilhermeblanco
 
 625475ce-881a-0410-a577-b389adb331d8
 
+CliController.php
+file
+
+
+
+
+2009-12-26T20:23:32.000000Z
+3879e187a7c44cb491a46e8b748e8a7d
+2009-12-22T13:56:30.632673Z
+6975
+romanb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10463
+
 TaskDocumentation.php
 file
 
 
 
 
-2009-11-28T16:33:07.000000Z
-13f68084486ca2fa00af2f5ac0e72870
-2009-11-17T01:29:20.630947Z
-6737
+2009-12-26T20:23:32.000000Z
+704acab3414131d02556ba1d4e1e486d
+2009-12-21T17:38:14.333158Z
+6972
 guilhermeblanco
 
 
@@ -58,7 +92,44 @@ guilhermeblanco
 
 
 
-4708
+5264
+
+Tasks
+dir
+
+TaskNamespace.php
+file
+
+
+
+
+2009-12-26T20:23:32.000000Z
+b7d893a91af6dac64750ccd4387fbf0e
+2009-12-21T17:38:14.333158Z
+6972
+guilhermeblanco
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7109
 
 Printers
 dir
@@ -97,6 +168,40 @@ guilhermeblanco
 
 2577
 
+AbstractNamespace.php
+file
+
+
+
+
+2009-12-26T20:23:32.000000Z
+feb9c4e48bc74975a311e384332f3f52
+2009-12-21T17:38:14.333158Z
+6972
+guilhermeblanco
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6151
+
 OptionGroup.php
 file
 
@@ -130,6 +235,74 @@ guilhermeblanco
 
 
 15507
+
+CliException.php
+file
+
+
+
+
+2009-12-26T20:23:32.000000Z
+3ab7160cce25153ffe5fad77431b341e
+2009-12-21T17:38:14.333158Z
+6972
+guilhermeblanco
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2083
+
+Configuration.php
+file
+
+
+
+
+2009-12-26T20:23:32.000000Z
+5287256575384f4ecbfdb9b0a5f45b33
+2009-12-21T17:38:14.333158Z
+6972
+guilhermeblanco
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2585
 
 Option.php
 file

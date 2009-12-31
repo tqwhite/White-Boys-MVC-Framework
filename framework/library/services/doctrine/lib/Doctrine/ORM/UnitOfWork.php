@@ -223,6 +223,8 @@ class UnitOfWork implements PropertyChangedListener
      * @var array
      */
     private $_orphanRemovals = array();
+    
+    //private $_readOnlyObjects = array();
 
     /**
      * Initializes a new UnitOfWork instance, bound to the given EntityManager.
@@ -233,7 +235,6 @@ class UnitOfWork implements PropertyChangedListener
     {
         $this->_em = $em;
         $this->_evm = $em->getEventManager();
-        $this->_commitOrderCalculator = new Internal\CommitOrderCalculator();
         $this->_useCExtension = $this->_em->getConfiguration()->getUseCExtension();
     }
 
@@ -275,7 +276,7 @@ class UnitOfWork implements PropertyChangedListener
         $commitOrder = $this->_getCommitOrder();
 
         $conn = $this->_em->getConnection();
-        
+       
         $conn->beginTransaction();
         try {            
             if ($this->_entityInsertions) {
@@ -335,6 +336,7 @@ class UnitOfWork implements PropertyChangedListener
         $this->_collectionUpdates =
         $this->_collectionDeletions =
         $this->_visitedCollections =
+        $this->_scheduledForDirtyCheck =
         $this->_orphanRemovals = array();
     }
     
@@ -368,12 +370,6 @@ class UnitOfWork implements PropertyChangedListener
      * Computes all the changes that have been done to entities and collections
      * since the last commit and stores these changes in the _entityChangeSet map
      * temporarily for access by the persisters, until the UoW commit is finished.
-     *
-     * @param array $entities The entities for which to compute the changesets. If this
-     *          parameter is not specified, the changesets of all entities in the identity
-     *          map are computed if automatic dirty checking is enabled (the default).
-     *          If automatic dirty checking is disabled, only those changesets will be
-     *          computed that have been scheduled through scheduleForDirtyCheck().
      */
     public function computeChangeSets()
     {
@@ -395,7 +391,7 @@ class UnitOfWork implements PropertyChangedListener
             $class = $this->_em->getClassMetadata($className);
 
             // Skip class if change tracking happens through notification
-            if ($class->isChangeTrackingNotify()) {
+            if ($class->isChangeTrackingNotify() /* || $class->isReadOnly*/) {
                 continue;
             }
 
@@ -405,7 +401,7 @@ class UnitOfWork implements PropertyChangedListener
 
             foreach ($entitiesToProcess as $entity) {
                 // Ignore uninitialized proxy objects
-                if ($entity instanceof Proxy && ! $entity->__isInitialized__()) {
+                if (/* $entity is readOnly || */ $entity instanceof Proxy && ! $entity->__isInitialized__()) {
                     continue;
                 }
                 // Only MANAGED entities that are NOT SCHEDULED FOR INSERTION are processed here.
@@ -577,6 +573,13 @@ class UnitOfWork implements PropertyChangedListener
             $state = $this->getEntityState($entry, self::STATE_NEW);
             $oid = spl_object_hash($entry);
             if ($state == self::STATE_NEW) {
+                if (isset($targetClass->lifecycleCallbacks[Events::prePersist])) {
+                    $targetClass->invokeLifecycleCallbacks(Events::prePersist, $entry);
+                }
+                if ($this->_evm->hasListeners(Events::prePersist)) {
+                    $this->_evm->dispatchEvent(Events::prePersist, new LifecycleEventArgs($entry));
+                }
+                
                 // Get identifier, if possible (not post-insert)
                 $idGen = $targetClass->idGenerator;
                 if ( ! $idGen->isPostInsertGenerator()) {
@@ -694,7 +697,7 @@ class UnitOfWork implements PropertyChangedListener
                 }
             }
         }
-        
+
         $postInsertIds = $persister->executeInserts();
         
         if ($postInsertIds) {
@@ -815,14 +818,16 @@ class UnitOfWork implements PropertyChangedListener
                     );
         }
         
+        $calc = $this->getCommitOrderCalculator();
+        
         // See if there are any new classes in the changeset, that are not in the
         // commit order graph yet (dont have a node).
         $newNodes = array();
         foreach ($entityChangeSet as $oid => $entity) {
             $className = get_class($entity);         
-            if ( ! $this->_commitOrderCalculator->hasClass($className)) {
+            if ( ! $calc->hasClass($className)) {
                 $class = $this->_em->getClassMetadata($className);
-                $this->_commitOrderCalculator->addClass($class);
+                $calc->addClass($class);
                 $newNodes[] = $class;
             }
         }
@@ -832,15 +837,15 @@ class UnitOfWork implements PropertyChangedListener
             foreach ($class->associationMappings as $assoc) {
                 if ($assoc->isOwningSide && $assoc->isOneToOne()) {
                     $targetClass = $this->_em->getClassMetadata($assoc->targetEntityName);
-                    if ( ! $this->_commitOrderCalculator->hasClass($targetClass->name)) {
-                        $this->_commitOrderCalculator->addClass($targetClass);
+                    if ( ! $calc->hasClass($targetClass->name)) {
+                        $calc->addClass($targetClass);
                     }
-                    $this->_commitOrderCalculator->addDependency($targetClass, $class);
+                    $calc->addDependency($targetClass, $class);
                 }
             }
         }
 
-        return $this->_commitOrderCalculator->getCommitOrder();
+        return $calc->getCommitOrder();
     }
 
     /**
@@ -864,7 +869,7 @@ class UnitOfWork implements PropertyChangedListener
         }
 
         $this->_entityInsertions[$oid] = $entity;
-        
+
         if (isset($this->_entityIdentifiers[$oid])) {
             $this->addToIdentityMap($entity);
         }
@@ -1376,11 +1381,11 @@ class UnitOfWork implements PropertyChangedListener
                     }
                 }
                 if ($class->isChangeTrackingNotify()) {
-                    //TODO
+                    //TODO: put changed fields in changeset...?
                 }
             }
             if ($class->isChangeTrackingDeferredExplicit()) {
-                //TODO
+                //TODO: Mark $managedCopy for dirty check...? ($this->_scheduledForDirtyCheck)
             }
         }
 
@@ -1389,8 +1394,12 @@ class UnitOfWork implements PropertyChangedListener
             $prevClass = $this->_em->getClassMetadata(get_class($prevManagedCopy));
             if ($assoc->isOneToOne()) {
                 $prevClass->reflFields[$assocField]->setValue($prevManagedCopy, $managedCopy);
+                //TODO: What about back-reference if bidirectional?
             } else {
-                $prevClass->reflFields[$assocField]->getValue($prevManagedCopy)->hydrateAdd($managedCopy);
+                $prevClass->reflFields[$assocField]->getValue($prevManagedCopy)->unwrap()->add($managedCopy);
+                if ($assoc->isOneToMany()) {
+                    $class->reflFields[$assoc->mappedByFieldName]->setValue($managedCopy, $prevManagedCopy);
+                }
             }
         }
 
@@ -1630,6 +1639,9 @@ class UnitOfWork implements PropertyChangedListener
      */
     public function getCommitOrderCalculator()
     {
+        if ($this->_commitOrderCalculator === null) {
+            $this->_commitOrderCalculator = new Internal\CommitOrderCalculator;
+        }
         return $this->_commitOrderCalculator;
     }
 
@@ -1651,7 +1663,9 @@ class UnitOfWork implements PropertyChangedListener
         $this->_collectionUpdates =
         $this->_extraUpdates =
         $this->_orphanRemovals = array();
-        $this->_commitOrderCalculator->clear();
+        if ($this->_commitOrderCalculator !== null) {
+            $this->_commitOrderCalculator->clear();
+        }
     }
     
     /**
@@ -1691,15 +1705,18 @@ class UnitOfWork implements PropertyChangedListener
      * Creates an entity. Used for reconstitution of entities during hydration.
      *
      * @ignore
-     * @param string $className  The name of the entity class.
-     * @param array $data  The data for the entity.
-     * @return object The created entity instance.
+     * @param string $className The name of the entity class.
+     * @param array $data The data for the entity.
+     * @param array $hints Any hints to account for during reconstitution/lookup of the entity.
+     * @return object The entity instance.
      * @internal Highly performance-sensitive method.
+     * 
      * @todo Rename: getOrCreateEntity
      */
     public function createEntity($className, array $data, &$hints = array())
     {
         $class = $this->_em->getClassMetadata($className);
+        //$isReadOnly = isset($hints[Query::HINT_READ_ONLY]);
 
         if ($class->isIdentifierComposite) {
             $id = array();
@@ -1761,9 +1778,11 @@ class UnitOfWork implements PropertyChangedListener
                                 }
                             }
                             if ( ! $associatedId) {
+                                // Foreign key is NULL
                                 $class->reflFields[$field]->setValue($entity, null);
                                 $this->_originalEntityData[$oid][$field] = null;
                             } else {
+                                // Foreign key is set
                                 // Check identity map first
                                 // FIXME: Can break easily with composite keys if join column values are in
                                 //        wrong order. The correct order is the one in ClassMetadata#identifier.
@@ -1784,15 +1803,15 @@ class UnitOfWork implements PropertyChangedListener
                                 $class->reflFields[$field]->setValue($entity, $newValue);
                             }
                         } else {
-                            // Inverse side can never be lazy
-                            $targetEntity = $assoc->load($entity, null, $this->_em);
-                            $class->reflFields[$field]->setValue($entity, $targetEntity);
+                            // Inverse side of x-to-one can never be lazy
+                            $class->reflFields[$field]->setValue($entity, $assoc->load($entity, null, $this->_em));
                         }
                     } else {
                         // Inject collection
                         $reflField = $class->reflFields[$field];
                         $pColl = new PersistentCollection(
                             $this->_em, $targetClass,
+                            //TODO: getValue might be superfluous once DDC-79 is implemented. 
                             $reflField->getValue($entity) ?: new ArrayCollection
                         );
                         $pColl->setOwner($entity, $assoc);

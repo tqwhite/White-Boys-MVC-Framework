@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 48
-/!svn/ver/6872/trunk/lib/Doctrine/DBAL/Platforms
+/!svn/ver/6937/trunk/lib/Doctrine/DBAL/Platforms
 END
 MySqlPlatform.php
 K 25
@@ -13,7 +13,7 @@ OraclePlatform.php
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/!svn/ver/6869/trunk/lib/Doctrine/DBAL/Platforms/OraclePlatform.php
+/!svn/ver/6937/trunk/lib/Doctrine/DBAL/Platforms/OraclePlatform.php
 END
 MsSqlPlatform.php
 K 25
@@ -31,7 +31,7 @@ AbstractPlatform.php
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/!svn/ver/6871/trunk/lib/Doctrine/DBAL/Platforms/AbstractPlatform.php
+/!svn/ver/6937/trunk/lib/Doctrine/DBAL/Platforms/AbstractPlatform.php
 END
 PostgreSqlPlatform.php
 K 25

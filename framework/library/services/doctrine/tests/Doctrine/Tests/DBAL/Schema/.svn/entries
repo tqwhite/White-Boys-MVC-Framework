@@ -1,14 +1,14 @@
 10
 
 dir
-6935
+6992
 http://svn.doctrine-project.org/trunk/tests/Doctrine/Tests/DBAL/Schema
 http://svn.doctrine-project.org
 
 
 
-2009-12-07T19:19:54.749482Z
-6887
+2009-12-10T23:55:47.170060Z
+6938
 beberlei
 
 
@@ -103,44 +103,10 @@ file
 
 
 
-2009-12-10T16:52:30.000000Z
-f473a2d0bfb2a165f48c9f201eaee609
-2009-12-07T12:47:23.823191Z
-6880
-romanb
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5890
-
-ComparatorTest.php
-file
-
-
-
-
-2009-12-10T16:52:30.000000Z
-2114cde661bfbe73ab835d1f0f53d48e
-2009-12-06T13:06:09.361136Z
-6870
+2009-12-26T20:23:32.000000Z
+e3fe9e822eae16c6dc15b7b2d2f79557
+2009-12-10T23:55:47.170060Z
+6938
 beberlei
 has-props
 
@@ -163,7 +129,41 @@ has-props
 
 
 
-21226
+6803
+
+ComparatorTest.php
+file
+
+
+
+
+2009-12-26T20:23:32.000000Z
+e3580ac70bc581d2e70803e552aa599d
+2009-12-10T23:55:47.170060Z
+6938
+beberlei
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+21025
 
 IndexTest.php
 file

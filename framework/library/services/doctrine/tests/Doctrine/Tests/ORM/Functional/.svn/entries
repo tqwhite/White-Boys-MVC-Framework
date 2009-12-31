@@ -1,14 +1,14 @@
 10
 
 dir
-6935
+6992
 http://svn.doctrine-project.org/trunk/tests/Doctrine/Tests/ORM/Functional
 http://svn.doctrine-project.org
 
 
 
-2009-12-09T17:00:18.461881Z
-6914
+2009-12-18T13:20:22.591472Z
+6953
 romanb
 
 
@@ -653,10 +653,10 @@ file
 
 
 
-2009-12-10T16:52:30.000000Z
-0773e34b8294e7672408221baf2ca770
-2009-12-09T17:00:18.461881Z
-6914
+2009-12-26T20:23:32.000000Z
+be4797a1ae75a03393f19610429362b8
+2009-12-10T21:27:20.488454Z
+6936
 romanb
 has-props
 
@@ -679,7 +679,7 @@ has-props
 
 
 
-21146
+21652
 
 QueryTest.php
 file
@@ -687,11 +687,11 @@ file
 
 
 
-2009-12-10T16:52:30.000000Z
-2832ffc4328c6a45e3dc09cd139e090b
-2009-12-08T20:53:01.356414Z
-6901
-beberlei
+2009-12-26T20:23:32.000000Z
+4c32d9e992bd71e4a03467988ea3a1df
+2009-12-18T13:20:22.591472Z
+6953
+romanb
 has-props
 
 
@@ -713,7 +713,7 @@ has-props
 
 
 
-7368
+7650
 
 ClassTableInheritanceTest2.php
 file
@@ -823,10 +823,10 @@ file
 
 
 
-2009-12-10T16:52:30.000000Z
-c68452896c3c8fd60a4d53e6470c20a6
-2009-12-09T12:37:57.710625Z
-6908
+2009-12-26T20:23:32.000000Z
+fef999036424b0c122e75914ece960a2
+2009-12-18T12:30:19.721638Z
+6952
 romanb
 
 
@@ -849,7 +849,7 @@ romanb
 
 
 
-4365
+5844
 
 EntityRepositoryTest.php
 file

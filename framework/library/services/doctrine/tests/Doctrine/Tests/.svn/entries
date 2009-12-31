@@ -1,15 +1,15 @@
 10
 
 dir
-6935
+6992
 http://svn.doctrine-project.org/trunk/tests/Doctrine/Tests
 http://svn.doctrine-project.org
 
 
 
-2009-12-09T17:00:18.461881Z
-6914
-romanb
+2009-12-27T19:02:07.632161Z
+6986
+guilhermeblanco
 
 
 
@@ -211,10 +211,10 @@ file
 
 
 
-2009-10-27T15:11:58.000000Z
-d4c43d44434cc384419b830a9163d09f
-2009-09-19T12:10:59.391215Z
-6385
+2009-12-26T20:23:32.000000Z
+675702557ce325abeaa78fd559a7b95b
+2009-12-15T21:06:32.833853Z
+6949
 romanb
 has-props
 
@@ -237,7 +237,7 @@ has-props
 
 
 
-581
+565
 
 DoctrineTestCase.php
 file

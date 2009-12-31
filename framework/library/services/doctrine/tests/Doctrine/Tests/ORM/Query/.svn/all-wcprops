@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 51
-/!svn/ver/6682/trunk/tests/Doctrine/Tests/ORM/Query
+/!svn/ver/6986/trunk/tests/Doctrine/Tests/ORM/Query
 END
 AllTests.php
 K 25
@@ -13,7 +13,7 @@ SelectSqlGenerationTest.php
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/!svn/ver/6660/trunk/tests/Doctrine/Tests/ORM/Query/SelectSqlGenerationTest.php
+/!svn/ver/6986/trunk/tests/Doctrine/Tests/ORM/Query/SelectSqlGenerationTest.php
 END
 ParserResultTest.php
 K 25
@@ -25,7 +25,7 @@ DeleteSqlGenerationTest.php
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/!svn/ver/6660/trunk/tests/Doctrine/Tests/ORM/Query/DeleteSqlGenerationTest.php
+/!svn/ver/6982/trunk/tests/Doctrine/Tests/ORM/Query/DeleteSqlGenerationTest.php
 END
 ExprTest.php
 K 25
@@ -49,5 +49,5 @@ LanguageRecognitionTest.php
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/!svn/ver/6660/trunk/tests/Doctrine/Tests/ORM/Query/LanguageRecognitionTest.php
+/!svn/ver/6986/trunk/tests/Doctrine/Tests/ORM/Query/LanguageRecognitionTest.php
 END

@@ -157,18 +157,6 @@ final class PersistentCollection implements \Doctrine\Common\Collections\Collect
     {
         return $this->_owner;
     }
-
-    /**
-     * Gets the class descriptor for the owning entity class.
-     *
-     * @return Doctrine\ORM\Mapping\ClassMetadata
-     * @deprecated
-     * @todo Remove
-     */
-    public function getOwnerClass()
-    {
-        return $this->_typeClass;
-    }
     
     public function getTypeClass()
     {
@@ -194,6 +182,10 @@ final class PersistentCollection implements \Doctrine\Common\Collections\Collect
                 // OneToMany
                 $this->_typeClass->reflFields[$this->_backRefFieldName]
                         ->setValue($element, $this->_owner);
+                $this->_em->getUnitOfWork()->setOriginalEntityProperty(
+                        spl_object_hash($element),
+                        $this->_backRefFieldName,
+                        $this->_owner);
             } else {
                 // ManyToMany
                 $this->_typeClass->reflFields[$this->_backRefFieldName] 
@@ -283,7 +275,8 @@ final class PersistentCollection implements \Doctrine\Common\Collections\Collect
      */
     public function getDeleteDiff()
     {
-        return array_udiff($this->_snapshot, $this->_coll->toArray(), array($this, '_compareRecords'));
+        return array_udiff_assoc($this->_snapshot, $this->_coll->toArray(),
+                function($a, $b) {return $a === $b ? 0 : 1;});
     }
 
     /**
@@ -294,17 +287,8 @@ final class PersistentCollection implements \Doctrine\Common\Collections\Collect
      */
     public function getInsertDiff()
     {
-        return array_udiff($this->_coll->toArray(), $this->_snapshot, array($this, '_compareRecords'));
-    }
-
-    /**
-     * Compares two records. To be used on _snapshot diffs using array_udiff.
-     *
-     * @return integer
-     */
-    private function _compareRecords($a, $b)
-    {
-        return $a === $b ? 0 : 1;
+        return array_udiff_assoc($this->_coll->toArray(), $this->_snapshot,
+                function($a, $b) {return $a === $b ? 0 : 1;});
     }
 
     /**

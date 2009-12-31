@@ -1,19 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/!svn/ver/6902/trunk/tests/Doctrine/Tests/ORM/Functional/SchemaTool
+/!svn/ver/6941/trunk/tests/Doctrine/Tests/ORM/Functional/SchemaTool
 END
 AllTests.php
 K 25
 svn:wc:ra_dav:version-url
 V 80
-/!svn/ver/6301/trunk/tests/Doctrine/Tests/ORM/Functional/SchemaTool/AllTests.php
+/!svn/ver/6941/trunk/tests/Doctrine/Tests/ORM/Functional/SchemaTool/AllTests.php
 END
 PostgreSqlSchemaToolTest.php
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/!svn/ver/6325/trunk/tests/Doctrine/Tests/ORM/Functional/SchemaTool/PostgreSqlSchemaToolTest.php
+/!svn/ver/6941/trunk/tests/Doctrine/Tests/ORM/Functional/SchemaTool/PostgreSqlSchemaToolTest.php
 END
 MySqlSchemaToolTest.php
 K 25

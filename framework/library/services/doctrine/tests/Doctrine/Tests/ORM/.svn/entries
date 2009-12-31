@@ -1,15 +1,15 @@
 10
 
 dir
-6935
+6992
 http://svn.doctrine-project.org/trunk/tests/Doctrine/Tests/ORM
 http://svn.doctrine-project.org
 
 
 
-2009-12-09T17:00:18.461881Z
-6914
-romanb
+2009-12-27T19:02:07.632161Z
+6986
+guilhermeblanco
 
 
 
@@ -109,10 +109,10 @@ file
 
 
 
-2009-11-04T15:40:31.000000Z
-525e9c1b35309e10b2d29f3e7de23a91
-2009-11-03T18:30:21.362573Z
-6644
+2009-12-26T20:23:32.000000Z
+ab03e330f4254307d1a48ba6fdc5be92
+2009-12-18T13:20:22.591472Z
+6953
 romanb
 has-props
 
@@ -135,7 +135,7 @@ has-props
 
 
 
-3087
+3067
 
 UnitOfWorkTest.php
 file

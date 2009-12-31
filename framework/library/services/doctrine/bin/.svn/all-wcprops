@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 24
-/!svn/ver/6871/trunk/bin
+/!svn/ver/6972/trunk/bin
 END
 doctrine
 K 25
@@ -13,5 +13,5 @@ doctrine.php
 K 25
 svn:wc:ra_dav:version-url
 V 37
-/!svn/ver/6871/trunk/bin/doctrine.php
+/!svn/ver/6972/trunk/bin/doctrine.php
 END

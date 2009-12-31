@@ -21,7 +21,8 @@
  
 namespace Doctrine\ORM\Tools\Cli\Tasks;
 
-use Doctrine\Common\Cache\AbstractDriver;
+use Doctrine\Common\Cli\Tasks\AbstractTask,
+    Doctrine\Common\Cli\CliException;
 
 /**
  * CLI Task to ensure that Doctrine is properly configured for a production environment.
@@ -30,6 +31,7 @@ use Doctrine\Common\Cache\AbstractDriver;
  * @link    www.doctrine-project.org
  * @since   2.0
  * @version $Revision$
+ * @author  Benjamin Eberlei <kontakt@beberlei.de>
  * @author  Guilherme Blanco <guilhermeblanco@hotmail.com>
  * @author  Jonathan Wage <jonwage@gmail.com>
  * @author  Roman Borschel <roman@code-factory.org>
@@ -51,17 +53,24 @@ class EnsureProductionSettingsTask extends AbstractTask
      */
     public function validate()
     {
+        // Check if we have an active EntityManager
+        $em = $this->getConfiguration()->getAttribute('em');
+        
+        if ($em === null) {
+            throw new CliException(
+                "Attribute 'em' of CLI Configuration is not defined or it is not a valid EntityManager."
+            );
+        }
+        
         return true;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function run()
     {
-        $printer = $this->getPrinter();
-        
-        try {
-            $this->getEntityManager()->getConfiguration()->ensureProductionSettings();
-        } catch (\Doctrine\Common\DoctrineException $e) {
-            $printer->writeln($e->getMessage(), 'ERROR');
-        }
+        $em = $this->getConfiguration()->getAttribute('em');
+        $em->getConfiguration()->ensureProductionSettings();
     }
 }

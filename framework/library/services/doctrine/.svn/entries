@@ -1,15 +1,15 @@
 10
 
 dir
-6935
+6992
 http://svn.doctrine-project.org/trunk
 http://svn.doctrine-project.org
 
 
 
-2009-12-09T17:00:18.461881Z
-6914
-romanb
+2009-12-27T19:02:07.632161Z
+6986
+guilhermeblanco
 has-props
 
 
@@ -214,11 +214,11 @@ file
 
 
 
-2009-12-10T16:52:32.000000Z
-33a7420225536d14e1c6ba4b749db6c7
-2009-12-06T23:11:35.971706Z
-6876
-beberlei
+2009-12-26T20:23:33.000000Z
+a31f711512e88a318a6eeb5ca2ee4b7c
+2009-12-21T17:38:14.333158Z
+6972
+guilhermeblanco
 
 
 
@@ -240,7 +240,7 @@ beberlei
 
 
 
-4290
+4463
 
 doctrine-mapping.xsd
 file
@@ -248,10 +248,10 @@ file
 
 
 
-2009-10-27T15:12:01.000000Z
-38df65e16fab5822e4f9ad8d41ed807a
-2009-08-27T13:05:25.999058Z
-6268
+2009-12-26T20:23:33.000000Z
+b84ecc988a06a0c35306bd918394ddbb
+2009-12-19T14:06:22.959768Z
+6969
 romanb
 
 
@@ -274,7 +274,7 @@ romanb
 
 
 
-9620
+10686
 
 build.xml
 file

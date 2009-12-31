@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 41
-/!svn/ver/6914/trunk/tests/Doctrine/Tests
+/!svn/ver/6986/trunk/tests/Doctrine/Tests
 END
 OrmTestCase.php
 K 25
@@ -73,7 +73,7 @@ TestInit.php
 K 25
 svn:wc:ra_dav:version-url
 V 54
-/!svn/ver/6385/trunk/tests/Doctrine/Tests/TestInit.php
+/!svn/ver/6949/trunk/tests/Doctrine/Tests/TestInit.php
 END
 DoctrineTestCase.php
 K 25

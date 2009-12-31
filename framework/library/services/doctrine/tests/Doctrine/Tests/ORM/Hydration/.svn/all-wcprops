@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 55
-/!svn/ver/6908/trunk/tests/Doctrine/Tests/ORM/Hydration
+/!svn/ver/6967/trunk/tests/Doctrine/Tests/ORM/Hydration
 END
 AllTests.php
 K 25
@@ -37,11 +37,11 @@ SingleScalarHydratorTest.php
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/!svn/ver/5890/trunk/tests/Doctrine/Tests/ORM/Hydration/SingleScalarHydratorTest.php
+/!svn/ver/6953/trunk/tests/Doctrine/Tests/ORM/Hydration/SingleScalarHydratorTest.php
 END
 ResultSetMappingTest.php
 K 25
 svn:wc:ra_dav:version-url
 V 80
-/!svn/ver/6194/trunk/tests/Doctrine/Tests/ORM/Hydration/ResultSetMappingTest.php
+/!svn/ver/6967/trunk/tests/Doctrine/Tests/ORM/Hydration/ResultSetMappingTest.php
 END

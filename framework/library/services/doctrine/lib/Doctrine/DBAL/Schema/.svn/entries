@@ -1,15 +1,15 @@
 10
 
 dir
-6935
+6992
 http://svn.doctrine-project.org/trunk/lib/Doctrine/DBAL/Schema
 http://svn.doctrine-project.org
 
 
 
-2009-12-07T16:21:29.782474Z
-6882
-romanb
+2009-12-10T23:55:47.170060Z
+6938
+beberlei
 
 
 
@@ -100,10 +100,10 @@ file
 
 
 
-2009-12-10T16:52:31.000000Z
-3f089cfe51062f5cf7508b9de49408a5
-2009-12-06T23:11:35.971706Z
-6876
+2009-12-26T20:23:32.000000Z
+211c0a065e9068751d7d7fa6820a4c03
+2009-12-10T23:55:47.170060Z
+6938
 beberlei
 has-props
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-8195
+8359
 
 AbstractAsset.php
 file
@@ -134,10 +134,10 @@ file
 
 
 
-2009-12-10T16:52:31.000000Z
-c9fa304ca18230c959b7c69b806b710e
-2009-12-04T22:41:09.285679Z
-6857
+2009-12-26T20:23:32.000000Z
+26e201f8323bf746292692d8efbc4fa1
+2009-12-10T22:39:28.641961Z
+6937
 beberlei
 has-props
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-3063
+2967
 
 Comparator.php
 file
@@ -409,10 +409,10 @@ file
 
 
 
-2009-12-10T16:52:31.000000Z
-f3e326afffa4a48a671e596e1876e6f3
-2009-12-06T18:55:08.854367Z
-6872
+2009-12-26T20:23:32.000000Z
+c510868e346409b6910f412580aec908
+2009-12-10T23:55:47.170060Z
+6938
 beberlei
 has-props
 
@@ -435,7 +435,7 @@ has-props
 
 
 
-27197
+27599
 
 PostgreSqlSchemaManager.php
 file
@@ -641,17 +641,17 @@ has-props
 
 1873
 
-Table.php
+SchemaConfig.php
 file
 
 
 
 
-2009-12-10T16:52:31.000000Z
-a4c778e2ad87ae779ac3c131caeb7c6f
-2009-12-07T16:21:29.782474Z
-6882
-romanb
+2009-12-26T20:23:32.000000Z
+55bd2b0a9114fc4b74dd1c1c2f6db538
+2009-12-10T23:55:47.170060Z
+6938
+beberlei
 has-props
 
 
@@ -673,5 +673,39 @@ has-props
 
 
 
-14639
+2115
+
+Table.php
+file
+
+
+
+
+2009-12-26T20:23:32.000000Z
+696b0780b28163619280fa464206c42d
+2009-12-10T23:55:47.170060Z
+6938
+beberlei
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15310
 

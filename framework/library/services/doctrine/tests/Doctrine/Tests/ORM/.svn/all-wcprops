@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 45
-/!svn/ver/6914/trunk/tests/Doctrine/Tests/ORM
+/!svn/ver/6986/trunk/tests/Doctrine/Tests/ORM
 END
 AllTests.php
 K 25
@@ -37,5 +37,5 @@ EntityManagerTest.php
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/!svn/ver/6644/trunk/tests/Doctrine/Tests/ORM/EntityManagerTest.php
+/!svn/ver/6953/trunk/tests/Doctrine/Tests/ORM/EntityManagerTest.php
 END

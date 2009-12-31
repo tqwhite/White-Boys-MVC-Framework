@@ -1,14 +1,14 @@
 10
 
 dir
-6935
+6992
 http://svn.doctrine-project.org/trunk/tests/Doctrine/Tests/ORM/Mapping/xml
 http://svn.doctrine-project.org
 
 
 
-2009-08-25T09:14:08.691267Z
-6257
+2009-12-16T13:47:59.502658Z
+6950
 romanb
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2009-10-27T15:11:57.000000Z
-b02b20a5e82e50556a98e635426a9279
-2009-08-25T09:14:08.691267Z
-6257
+2009-12-26T20:23:31.000000Z
+018631c94aaff4cf50514289d31a7889
+2009-12-16T13:47:59.502658Z
+6950
 romanb
 
 
@@ -58,5 +58,5 @@ romanb
 
 
 
-1738
+1753
 

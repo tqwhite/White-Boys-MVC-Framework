@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 60
-/!svn/ver/6660/trunk/tests/Doctrine/Tests/Common/Annotations
+/!svn/ver/6974/trunk/tests/Doctrine/Tests/Common/Annotations
 END
 AllTests.php
 K 25
@@ -13,7 +13,7 @@ ParserTest.php
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/!svn/ver/6660/trunk/tests/Doctrine/Tests/Common/Annotations/ParserTest.php
+/!svn/ver/6974/trunk/tests/Doctrine/Tests/Common/Annotations/ParserTest.php
 END
 AnnotationReaderTest.php
 K 25

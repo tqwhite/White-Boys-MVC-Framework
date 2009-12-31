@@ -1,14 +1,14 @@
 10
 
 dir
-6935
+6992
 http://svn.doctrine-project.org/trunk/lib/Doctrine/DBAL/Platforms
 http://svn.doctrine-project.org
 
 
 
-2009-12-06T18:55:08.854367Z
-6872
+2009-12-10T22:39:28.641961Z
+6937
 beberlei
 
 
@@ -66,10 +66,10 @@ file
 
 
 
-2009-12-10T16:52:31.000000Z
-95ecf3442f704debac85ca0728e15226
-2009-12-06T13:00:49.019388Z
-6869
+2009-12-26T20:23:32.000000Z
+02a56531a2396475c63c1264b2a0a87a
+2009-12-10T22:39:28.641961Z
+6937
 beberlei
 has-props
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-19270
+19473
 
 MsSqlPlatform.php
 file
@@ -168,10 +168,10 @@ file
 
 
 
-2009-12-10T16:52:31.000000Z
-d0eda62fd2957fc6ba2de9bf60515435
-2009-12-06T18:36:46.933149Z
-6871
+2009-12-26T20:23:32.000000Z
+53b79784e2e4f6bc2d33597f819626fd
+2009-12-10T22:39:28.641961Z
+6937
 beberlei
 has-props
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-54401
+54605
 
 PostgreSqlPlatform.php
 file

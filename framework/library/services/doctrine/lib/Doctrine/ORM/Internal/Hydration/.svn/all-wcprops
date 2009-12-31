@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 56
-/!svn/ver/6913/trunk/lib/Doctrine/ORM/Internal/Hydration
+/!svn/ver/6967/trunk/lib/Doctrine/ORM/Internal/Hydration
 END
 ArrayHydrator.php
 K 25
@@ -13,7 +13,7 @@ AbstractHydrator.php
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/!svn/ver/6913/trunk/lib/Doctrine/ORM/Internal/Hydration/AbstractHydrator.php
+/!svn/ver/6967/trunk/lib/Doctrine/ORM/Internal/Hydration/AbstractHydrator.php
 END
 HydrationException.php
 K 25
@@ -37,7 +37,7 @@ SingleScalarHydrator.php
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/!svn/ver/6880/trunk/lib/Doctrine/ORM/Internal/Hydration/SingleScalarHydrator.php
+/!svn/ver/6953/trunk/lib/Doctrine/ORM/Internal/Hydration/SingleScalarHydrator.php
 END
 IterableResult.php
 K 25

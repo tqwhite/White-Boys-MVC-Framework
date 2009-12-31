@@ -1,10 +1,12 @@
 <?php
 
-require __DIR__ . '/../../lib/Doctrine/Common/IsolatedClassLoader.php';
+require __DIR__ . '/../../lib/Doctrine/Common/ClassLoader.php';
 
-$classLoader = new \Doctrine\Common\IsolatedClassLoader('Doctrine');
-$classLoader->setBasePath(__DIR__ . '/../../lib');
+$classLoader = new \Doctrine\Common\ClassLoader('Doctrine', __DIR__ . '/../../lib');
 $classLoader->register();
 
-$cli = new \Doctrine\ORM\Tools\Cli\CliController();
+// Variable $configuration is defined inside cli-config.php
+require __DIR__ . '/cli-config.php';
+
+$cli = new \Doctrine\Common\Cli\CliController($configuration);
 $cli->run($_SERVER['argv']);

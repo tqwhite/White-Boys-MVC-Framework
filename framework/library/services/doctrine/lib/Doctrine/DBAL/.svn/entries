@@ -1,15 +1,15 @@
 10
 
 dir
-6935
+6992
 http://svn.doctrine-project.org/trunk/lib/Doctrine/DBAL
 http://svn.doctrine-project.org
 
 
 
-2009-12-09T16:06:39.579950Z
-6913
-romanb
+2009-12-22T16:17:35.083643Z
+6978
+guilhermeblanco
 
 
 
@@ -27,6 +27,9 @@ romanb
 625475ce-881a-0410-a577-b389adb331d8
 
 Schema
+dir
+
+Tools
 dir
 
 Event
@@ -109,10 +112,10 @@ file
 
 
 
-2009-12-10T16:52:31.000000Z
-008780c0e8299e7d31c6e61953672d2f
-2009-12-09T12:37:57.710625Z
-6908
+2009-12-26T20:23:32.000000Z
+22ecf3f26d5f22c9009f77f53c22f350
+2009-12-15T21:06:32.833853Z
+6949
 romanb
 has-props
 
@@ -135,7 +138,7 @@ has-props
 
 
 
-23027
+23014
 
 Logging
 dir

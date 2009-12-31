@@ -1,19 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 64
-/!svn/ver/6881/trunk/tests/Doctrine/Tests/DBAL/Functional/Schema
+/!svn/ver/6952/trunk/tests/Doctrine/Tests/DBAL/Functional/Schema
 END
 SchemaManagerFunctionalTestCase.php
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/!svn/ver/6881/trunk/tests/Doctrine/Tests/DBAL/Functional/Schema/SchemaManagerFunctionalTestCase.php
+/!svn/ver/6938/trunk/tests/Doctrine/Tests/DBAL/Functional/Schema/SchemaManagerFunctionalTestCase.php
 END
 SqliteSchemaManagerTest.php
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/!svn/ver/6844/trunk/tests/Doctrine/Tests/DBAL/Functional/Schema/SqliteSchemaManagerTest.php
+/!svn/ver/6952/trunk/tests/Doctrine/Tests/DBAL/Functional/Schema/SqliteSchemaManagerTest.php
 END
 PostgreSqlSchemaManagerTest.php
 K 25

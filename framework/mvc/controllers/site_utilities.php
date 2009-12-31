@@ -133,7 +133,7 @@ public function sendFilesToHost(){
 
 		$transferDirectory->initConnection();
 		$transferDirectory->clearExclusionString();
-		$transferDirectory->addExclusionString('configs');
+		$transferDirectory->addExclusionString('_config');
 		
 		$transferDirectory->uploadFileTemplate='
 			<div style=margin-bottom:10pt;font-family:sans-serif;font-size:8pt;>

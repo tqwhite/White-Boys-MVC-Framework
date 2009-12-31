@@ -1,14 +1,14 @@
 10
 
 dir
-6935
+6992
 http://svn.doctrine-project.org/trunk/tests/Doctrine/Tests/DBAL/Functional/Schema
 http://svn.doctrine-project.org
 
 
 
-2009-12-07T13:04:54.243985Z
-6881
+2009-12-18T12:30:19.721638Z
+6952
 romanb
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2009-12-10T16:52:30.000000Z
-2b7fb9cdc463636081d76b8ed7e45829
-2009-12-07T13:04:54.243985Z
-6881
-romanb
+2009-12-26T20:23:32.000000Z
+b9653039a250a5ea37ac8c3c2e07a741
+2009-12-10T23:55:47.170060Z
+6938
+beberlei
 
 
 
@@ -58,7 +58,7 @@ romanb
 
 
 
-18544
+18611
 
 SqliteSchemaManagerTest.php
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2009-12-10T16:52:30.000000Z
-e29336dc1eb7d44d78f03b1b5434f863
-2009-12-02T18:52:21.651251Z
-6844
-beberlei
+2009-12-26T20:23:32.000000Z
+635f4b5b1dbce339ae34a198c4d152a3
+2009-12-18T12:30:19.721638Z
+6952
+romanb
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-2964
+3374
 
 PostgreSqlSchemaManagerTest.php
 file

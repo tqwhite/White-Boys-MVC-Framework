@@ -1,6 +1,6 @@
 <?php
 /*
- *  $Id: AbstractAsset.php 6857 2009-12-04 22:41:09Z beberlei $
+ *  $Id: AbstractAsset.php 6937 2009-12-10 22:39:28Z beberlei $
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
@@ -35,10 +35,6 @@ namespace Doctrine\DBAL\Schema;
  */
 abstract class AbstractAsset
 {
-    const CASE_UPPER = "upper";
-    const CASE_LOWER = "lower";
-    const CASE_KEEP  = "keep";
-
     /**
      * @var string
      */

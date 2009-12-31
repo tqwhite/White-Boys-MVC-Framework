@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 48
-/!svn/ver/6908/trunk/lib/Doctrine/ORM/Persisters
+/!svn/ver/6975/trunk/lib/Doctrine/ORM/Persisters
 END
 JoinedSubclassPersister.php
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/!svn/ver/6908/trunk/lib/Doctrine/ORM/Persisters/JoinedSubclassPersister.php
+/!svn/ver/6952/trunk/lib/Doctrine/ORM/Persisters/JoinedSubclassPersister.php
 END
 UnionSubclassPersister.php
 K 25
@@ -25,7 +25,7 @@ SingleTablePersister.php
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/!svn/ver/6908/trunk/lib/Doctrine/ORM/Persisters/SingleTablePersister.php
+/!svn/ver/6951/trunk/lib/Doctrine/ORM/Persisters/SingleTablePersister.php
 END
 ManyToManyPersister.php
 K 25
@@ -37,13 +37,13 @@ StandardEntityPersister.php
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/!svn/ver/6908/trunk/lib/Doctrine/ORM/Persisters/StandardEntityPersister.php
+/!svn/ver/6975/trunk/lib/Doctrine/ORM/Persisters/StandardEntityPersister.php
 END
 AbstractCollectionPersister.php
 K 25
 svn:wc:ra_dav:version-url
 V 80
-/!svn/ver/6791/trunk/lib/Doctrine/ORM/Persisters/AbstractCollectionPersister.php
+/!svn/ver/6949/trunk/lib/Doctrine/ORM/Persisters/AbstractCollectionPersister.php
 END
 ElementCollectionPersister.php
 K 25

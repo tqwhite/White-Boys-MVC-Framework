@@ -1,15 +1,15 @@
 10
 
 dir
-6935
+6992
 http://svn.doctrine-project.org/trunk/lib/Doctrine/ORM/Tools/Cli/Tasks
 http://svn.doctrine-project.org
 
 
 
-2009-12-06T23:11:35.971706Z
-6876
-beberlei
+2009-12-26T15:13:26.678479Z
+6981
+guilhermeblanco
 
 
 
@@ -26,50 +26,16 @@ beberlei
 
 625475ce-881a-0410-a577-b389adb331d8
 
-HelpTask.php
-file
-
-
-
-
-2009-11-28T16:33:08.000000Z
-7b1e4c8abe23b434a80d0d8479ff4c96
-2009-11-17T01:29:20.630947Z
-6737
-guilhermeblanco
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2755
-
 EnsureProductionSettingsTask.php
 file
 
 
 
 
-2009-11-28T16:33:08.000000Z
-ec126826a02966f92fa8a70e082c0285
-2009-11-17T01:29:20.630947Z
-6737
+2009-12-26T20:23:33.000000Z
+b076ffd2c3d074b9d99ef875794bb712
+2009-12-21T17:38:14.333158Z
+6972
 guilhermeblanco
 
 
@@ -92,7 +58,7 @@ guilhermeblanco
 
 
 
-2248
+2545
 
 ClearCacheTask.php
 file
@@ -100,10 +66,10 @@ file
 
 
 
-2009-11-28T16:33:08.000000Z
-e3894715a2ce0caa817d9c929a4e177b
-2009-11-17T01:29:20.630947Z
-6737
+2009-12-26T20:23:33.000000Z
+57b13d7550a065f1c723c63e06a2c412
+2009-12-22T16:17:35.083643Z
+6978
 guilhermeblanco
 
 
@@ -126,7 +92,7 @@ guilhermeblanco
 
 
 
-7252
+7414
 
 ConvertMappingTask.php
 file
@@ -134,10 +100,10 @@ file
 
 
 
-2009-11-28T16:33:08.000000Z
-3ae57a02049a6d153b53b24ca049607c
-2009-11-17T01:29:20.630947Z
-6737
+2009-12-26T20:23:33.000000Z
+980909b3344526eb187d2747c6e8365a
+2009-12-26T15:13:26.678479Z
+6981
 guilhermeblanco
 
 
@@ -160,7 +126,7 @@ guilhermeblanco
 
 
 
-8235
+9024
 
 SchemaToolTask.php
 file
@@ -168,44 +134,10 @@ file
 
 
 
-2009-12-10T16:52:31.000000Z
-dfb0949db2cff58a0deeb93aa446cdfc
-2009-12-06T23:11:35.971706Z
-6876
-beberlei
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8804
-
-AbstractTask.php
-file
-
-
-
-
-2009-11-28T16:33:08.000000Z
-ee59b6b443cd444ec8fc1fad9a6f3fd0
-2009-11-17T01:29:20.630947Z
-6737
+2009-12-26T20:23:33.000000Z
+b46eed237f37ac1c4c7e2b92bdfb5bad
+2009-12-22T16:17:35.083643Z
+6978
 guilhermeblanco
 
 
@@ -228,7 +160,7 @@ guilhermeblanco
 
 
 
-6738
+8757
 
 GenerateProxiesTask.php
 file
@@ -236,10 +168,10 @@ file
 
 
 
-2009-11-28T16:33:08.000000Z
-be524a63aceacc13b4bc9c7f9288a203
-2009-11-17T01:29:20.630947Z
-6737
+2009-12-26T20:23:33.000000Z
+2ca21cc233708599ae9c6915ef6cf531
+2009-12-22T16:17:35.083643Z
+6978
 guilhermeblanco
 
 
@@ -262,41 +194,7 @@ guilhermeblanco
 
 
 
-2875
-
-RunSqlTask.php
-file
-
-
-
-
-2009-11-28T16:33:08.000000Z
-f93be3088a552b3831bf100dae50af7e
-2009-11-17T01:29:20.630947Z
-6737
-guilhermeblanco
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4058
+3220
 
 RunDqlTask.php
 file
@@ -304,10 +202,10 @@ file
 
 
 
-2009-11-28T16:33:08.000000Z
-f1abf1a46c1b350c17296cc301cae9ba
-2009-11-17T01:29:20.630947Z
-6737
+2009-12-26T20:23:33.000000Z
+4b37e9677956a76cb9b957e177451621
+2009-12-21T17:38:14.333158Z
+6972
 guilhermeblanco
 
 
@@ -330,7 +228,7 @@ guilhermeblanco
 
 
 
-3103
+3263
 
 VersionTask.php
 file
@@ -338,10 +236,10 @@ file
 
 
 
-2009-11-28T16:33:08.000000Z
-305700eb73c5d41a1d117d06dac48e78
-2009-11-17T01:29:20.630947Z
-6737
+2009-12-26T20:23:33.000000Z
+83eca6f0e048a96ce56efc0aa432b245
+2009-12-21T17:38:14.333158Z
+6972
 guilhermeblanco
 
 
@@ -364,5 +262,5 @@ guilhermeblanco
 
 
 
-2103
+2095
 

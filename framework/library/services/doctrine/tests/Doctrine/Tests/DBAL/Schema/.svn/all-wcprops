@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 53
-/!svn/ver/6887/trunk/tests/Doctrine/Tests/DBAL/Schema
+/!svn/ver/6938/trunk/tests/Doctrine/Tests/DBAL/Schema
 END
 SchemaDiffTest.php
 K 25
@@ -19,13 +19,13 @@ SchemaTest.php
 K 25
 svn:wc:ra_dav:version-url
 V 68
-/!svn/ver/6880/trunk/tests/Doctrine/Tests/DBAL/Schema/SchemaTest.php
+/!svn/ver/6938/trunk/tests/Doctrine/Tests/DBAL/Schema/SchemaTest.php
 END
 ComparatorTest.php
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/!svn/ver/6870/trunk/tests/Doctrine/Tests/DBAL/Schema/ComparatorTest.php
+/!svn/ver/6938/trunk/tests/Doctrine/Tests/DBAL/Schema/ComparatorTest.php
 END
 IndexTest.php
 K 25

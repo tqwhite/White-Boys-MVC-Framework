@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 47
-/!svn/ver/6790/trunk/lib/Doctrine/ORM/Query/AST
+/!svn/ver/6982/trunk/lib/Doctrine/ORM/Query/AST
 END
 Subselect.php
 K 25
@@ -153,17 +153,17 @@ svn:wc:ra_dav:version-url
 V 59
 /!svn/ver/6500/trunk/lib/Doctrine/ORM/Query/AST/Literal.php
 END
-Join.php
-K 25
-svn:wc:ra_dav:version-url
-V 56
-/!svn/ver/6213/trunk/lib/Doctrine/ORM/Query/AST/Join.php
-END
 ExistsExpression.php
 K 25
 svn:wc:ra_dav:version-url
 V 68
 /!svn/ver/6213/trunk/lib/Doctrine/ORM/Query/AST/ExistsExpression.php
+END
+Join.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/!svn/ver/6213/trunk/lib/Doctrine/ORM/Query/AST/Join.php
 END
 FromClause.php
 K 25
@@ -229,7 +229,7 @@ PathExpression.php
 K 25
 svn:wc:ra_dav:version-url
 V 66
-/!svn/ver/6213/trunk/lib/Doctrine/ORM/Query/AST/PathExpression.php
+/!svn/ver/6982/trunk/lib/Doctrine/ORM/Query/AST/PathExpression.php
 END
 UpdateClause.php
 K 25

@@ -1,14 +1,14 @@
 10
 
 dir
-6935
+6992
 http://svn.doctrine-project.org/trunk/tests/Doctrine/Tests/ORM/Functional/SchemaTool
 http://svn.doctrine-project.org
 
 
 
-2009-12-08T21:52:26.621500Z
-6902
+2009-12-11T00:56:47.141101Z
+6941
 beberlei
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2009-10-27T15:11:57.000000Z
-e0faa4aef28d387e0fe8fbf7ba433433
-2009-09-04T20:31:11.673800Z
-6301
-romanb
+2009-12-26T20:23:31.000000Z
+9c33a7eceee5803312dd79b6004ff285
+2009-12-11T00:56:47.141101Z
+6941
+beberlei
 
 
 
@@ -58,7 +58,7 @@ romanb
 
 
 
-796
+794
 
 PostgreSqlSchemaToolTest.php
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2009-10-27T15:11:57.000000Z
-67e5f29f8e1774cd6756019750a72dfb
-2009-09-08T18:12:01.750540Z
-6325
-jwage
+2009-12-26T20:23:31.000000Z
+41edfa2bf05a4adc9beb8ff0a8003ad1
+2009-12-11T00:56:47.141101Z
+6941
+beberlei
 
 
 
@@ -92,7 +92,7 @@ jwage
 
 
 
-3720
+4127
 
 MySqlSchemaToolTest.php
 file

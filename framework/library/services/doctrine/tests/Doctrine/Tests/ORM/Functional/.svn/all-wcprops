@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 56
-/!svn/ver/6914/trunk/tests/Doctrine/Tests/ORM/Functional
+/!svn/ver/6953/trunk/tests/Doctrine/Tests/ORM/Functional
 END
 ManyToManyBasicAssociationTest.php
 K 25
@@ -115,13 +115,13 @@ BasicFunctionalTest.php
 K 25
 svn:wc:ra_dav:version-url
 V 80
-/!svn/ver/6914/trunk/tests/Doctrine/Tests/ORM/Functional/BasicFunctionalTest.php
+/!svn/ver/6936/trunk/tests/Doctrine/Tests/ORM/Functional/BasicFunctionalTest.php
 END
 QueryTest.php
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/!svn/ver/6901/trunk/tests/Doctrine/Tests/ORM/Functional/QueryTest.php
+/!svn/ver/6953/trunk/tests/Doctrine/Tests/ORM/Functional/QueryTest.php
 END
 ClassTableInheritanceTest2.php
 K 25
@@ -135,11 +135,11 @@ svn:wc:ra_dav:version-url
 V 81
 /!svn/ver/6575/trunk/tests/Doctrine/Tests/ORM/Functional/MappedSuperclassTest.php
 END
-EntityRepositoryTest.php
+LifecycleCallbackTest.php
 K 25
 svn:wc:ra_dav:version-url
-V 81
-/!svn/ver/6231/trunk/tests/Doctrine/Tests/ORM/Functional/EntityRepositoryTest.php
+V 82
+/!svn/ver/6952/trunk/tests/Doctrine/Tests/ORM/Functional/LifecycleCallbackTest.php
 END
 NativeQueryTest.php
 K 25
@@ -147,11 +147,11 @@ svn:wc:ra_dav:version-url
 V 76
 /!svn/ver/6788/trunk/tests/Doctrine/Tests/ORM/Functional/NativeQueryTest.php
 END
-LifecycleCallbackTest.php
+EntityRepositoryTest.php
 K 25
 svn:wc:ra_dav:version-url
-V 82
-/!svn/ver/6908/trunk/tests/Doctrine/Tests/ORM/Functional/LifecycleCallbackTest.php
+V 81
+/!svn/ver/6231/trunk/tests/Doctrine/Tests/ORM/Functional/EntityRepositoryTest.php
 END
 OneToOneUnidirectionalAssociationTest.php
 K 25
@@ -165,27 +165,27 @@ svn:wc:ra_dav:version-url
 V 82
 /!svn/ver/5802/trunk/tests/Doctrine/Tests/ORM/Functional/SequenceGeneratorTest.php
 END
-CustomTreeWalkersTest.php
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/!svn/ver/6226/trunk/tests/Doctrine/Tests/ORM/Functional/CustomTreeWalkersTest.php
-END
 ManyToManyUnidirectionalAssociationTest.php
 K 25
 svn:wc:ra_dav:version-url
 V 100
 /!svn/ver/6525/trunk/tests/Doctrine/Tests/ORM/Functional/ManyToManyUnidirectionalAssociationTest.php
 END
-ClassTableInheritanceTest.php
+CustomTreeWalkersTest.php
 K 25
 svn:wc:ra_dav:version-url
-V 86
-/!svn/ver/6644/trunk/tests/Doctrine/Tests/ORM/Functional/ClassTableInheritanceTest.php
+V 82
+/!svn/ver/6226/trunk/tests/Doctrine/Tests/ORM/Functional/CustomTreeWalkersTest.php
 END
 IdentityMapTest.php
 K 25
 svn:wc:ra_dav:version-url
 V 76
 /!svn/ver/6700/trunk/tests/Doctrine/Tests/ORM/Functional/IdentityMapTest.php
+END
+ClassTableInheritanceTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/!svn/ver/6644/trunk/tests/Doctrine/Tests/ORM/Functional/ClassTableInheritanceTest.php
 END

@@ -1,14 +1,14 @@
 10
 
 dir
-6935
+6992
 http://svn.doctrine-project.org/trunk/tests/Doctrine/Tests/DBAL/Platforms
 http://svn.doctrine-project.org
 
 
 
-2009-12-06T12:13:15.513087Z
-6867
+2009-12-10T23:55:47.170060Z
+6938
 beberlei
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2009-12-10T16:52:30.000000Z
-20ef6cdd78a9eb1cc25fed08824bec87
-2009-12-06T12:13:15.513087Z
-6867
+2009-12-26T20:23:32.000000Z
+a134121ca4acfad5b619cf843d53a92d
+2009-12-10T23:55:47.170060Z
+6938
 beberlei
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-6149
+6417
 
 OraclePlatformTest.php
 file
@@ -66,10 +66,10 @@ file
 
 
 
-2009-12-10T16:52:30.000000Z
-4d7b29b3d6d0cd48deb23db67f288401
-2009-12-06T12:13:15.513087Z
-6867
+2009-12-26T20:23:32.000000Z
+0ac6f0d67731dd88275daeeb754d47b2
+2009-12-10T23:55:47.170060Z
+6938
 beberlei
 
 
@@ -92,7 +92,7 @@ beberlei
 
 
 
-6657
+6941
 
 MsSqlPlatformTest.php
 file
@@ -100,10 +100,10 @@ file
 
 
 
-2009-12-10T16:52:30.000000Z
-fb000a1626ed52d218b0804c23e128e6
-2009-12-06T12:13:15.513087Z
-6867
+2009-12-26T20:23:32.000000Z
+561425315e6e963939998001c7e26c40
+2009-12-10T23:55:47.170060Z
+6938
 beberlei
 has-props
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-6172
+6424
 
 AbstractPlatformTestCase.php
 file
@@ -134,10 +134,10 @@ file
 
 
 
-2009-12-10T16:52:30.000000Z
-1d8939e5316492a5eade5af1f166b226
-2009-12-06T12:13:15.513087Z
-6867
+2009-12-26T20:23:32.000000Z
+a47cb506f173eed76beb10f9e658b77b
+2009-12-10T23:55:47.170060Z
+6938
 beberlei
 has-props
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-4376
+4979
 
 SqlitePlatformTest.php
 file
@@ -168,10 +168,10 @@ file
 
 
 
-2009-12-10T16:52:30.000000Z
-f1320cae097bf8a0d309f5c9e6bd175c
-2009-12-05T23:06:29.860145Z
-6865
+2009-12-26T20:23:32.000000Z
+49b321157f79c6f65cb6cd4264052b42
+2009-12-10T23:55:47.170060Z
+6938
 beberlei
 has-props
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-4050
+4332
 
 PostgreSqlPlatformTest.php
 file
@@ -202,10 +202,10 @@ file
 
 
 
-2009-12-10T16:52:31.000000Z
-74de08fa45845ae185944065afd9813b
-2009-12-06T12:13:15.513087Z
-6867
+2009-12-26T20:23:32.000000Z
+d9bd223b08bf3179cbea8424898d7cd3
+2009-12-10T23:55:47.170060Z
+6938
 beberlei
 has-props
 
@@ -228,5 +228,5 @@ has-props
 
 
 
-7037
+7318
 

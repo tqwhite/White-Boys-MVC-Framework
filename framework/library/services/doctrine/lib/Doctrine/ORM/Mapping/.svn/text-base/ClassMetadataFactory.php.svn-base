@@ -50,6 +50,7 @@ class ClassMetadataFactory
     /** The used cache driver. */
     private $_cacheDriver;
     private $_loadedMetadata = array();
+    private $_initialized = false;
     
     /**
      * Creates a new factory instance that uses the given metadata driver implementation.
@@ -59,24 +60,16 @@ class ClassMetadataFactory
     public function __construct(\Doctrine\ORM\EntityManager $em)
     {
         $this->_em = $em;
-        $this->_driver = $em->getConfiguration()->getMetadataDriverImpl();
-        $this->_targetPlatform = $em->getConnection()->getDatabasePlatform();
-        $this->_evm = $em->getEventManager();
     }
 
     /**
-     * Sets the cache driver used by the factory to cache ClassMetadata instances
-     * and invokes the preload() method of the metadata driver to prepopulate the cache.
+     * Sets the cache driver used by the factory to cache ClassMetadata instances.
      *
      * @param Doctrine\Common\Cache\Cache $cacheDriver
      */
     public function setCacheDriver($cacheDriver)
     {
         $this->_cacheDriver = $cacheDriver;
-        foreach ($this->_driver->preload() as $className) {
-            $cacheKey = "$className\$CLASSMETADATA";
-            $this->_cacheDriver->save($cacheKey, $this->getMetadataFor($className), null);
-        }
     }
 
     /**
@@ -92,6 +85,38 @@ class ClassMetadataFactory
     public function getLoadedMetadata()
     {
         return $this->_loadedMetadata;
+    }
+    
+    /**
+     * Forces the factory to load the metadata of all classes known to the underlying
+     * mapping driver.
+     * 
+     * @return array The ClassMetadata instances of all mapped classes.
+     */
+    public function getAllMetadata()
+    {
+        if ( ! $this->_initialized) {
+            $this->_initialize();
+        }
+        
+        $metadata = array();
+        foreach ($this->_driver->getAllClassNames() as $className) {
+            $metadata[] = $this->getMetadataFor($className);
+        }
+        
+        return $metadata;
+    }
+    
+    /**
+     * Lazy initialization of this stuff, especially the metadata driver,
+     * since these are not needed at all when a metadata cache is active.
+     */
+    private function _initialize()
+    {
+        $this->_driver = $this->_em->getConfiguration()->getMetadataDriverImpl();
+        $this->_targetPlatform = $this->_em->getConnection()->getDatabasePlatform();
+        $this->_evm = $this->_em->getEventManager();
+        $this->_initialized = true;
     }
 
     /**
@@ -121,9 +146,10 @@ class ClassMetadataFactory
     }
     
     /**
+     * Checks whether the factory has the metadata for a class loaded already.
      * 
-     * @param $className
-     * @return boolean
+     * @param string $className
+     * @return boolean TRUE if the metadata of the class in question is already loaded, FALSE otherwise.
      */
     public function hasMetadataFor($className)
     {
@@ -152,6 +178,10 @@ class ClassMetadataFactory
      */
     protected function _loadMetadata($name)
     {
+        if ( ! $this->_initialized) {
+            $this->_initialize();
+        }
+        
         $loaded = array();
         
         // Collect parent classes, ignoring transient (not-mapped) classes.
@@ -224,10 +254,6 @@ class ClassMetadataFactory
                 $eventArgs = new \Doctrine\ORM\Event\LoadClassMetadataEventArgs($class);
                 $this->_evm->dispatchEvent(Events::loadClassMetadata, $eventArgs);
             }
-
-            if ( ! $class->isMappedSuperclass) {
-                $this->_generateStaticSql($class);
-            }
             
             $this->_loadedMetadata[$className] = $class;
             
@@ -295,82 +321,6 @@ class ClassMetadataFactory
     }
 
     /**
-     * Generates any static SQL strings for a class and stores them in the descriptor.
-     *
-     * @param ClassMetadata $class
-     */
-    private function _generateStaticSql($class)
-    {
-        if ($versioned = $class->isVersioned) {
-            $versionField = $class->versionField;
-        }
-
-        // Generate INSERT SQL
-        $columns = $values = array();
-        if ($class->inheritanceType == ClassMetadata::INHERITANCE_TYPE_JOINED) {
-            // Generate INSERT SQL for inheritance type JOINED
-            foreach ($class->reflFields as $name => $field) {
-                if (isset($class->fieldMappings[$name]['inherited']) && ! isset($class->fieldMappings[$name]['id'])
-                        || isset($class->inheritedAssociationFields[$name])
-                        || ($versioned && $versionField == $name)) {
-                    continue;
-                }
-
-                if (isset($class->associationMappings[$name])) {
-                    $assoc = $class->associationMappings[$name];
-                    if ($assoc->isOneToOne() && $assoc->isOwningSide) {
-                        foreach ($assoc->targetToSourceKeyColumns as $sourceCol) {
-                            $columns[] = $assoc->getQuotedJoinColumnName($sourceCol, $this->_targetPlatform);
-                        }
-                    }
-                } else if ($class->name != $class->rootEntityName || ! $class->isIdGeneratorIdentity() || $class->identifier[0] != $name) {
-                    $columns[] = $class->getQuotedColumnName($name, $this->_targetPlatform);
-                }
-            }
-        } else {
-            // Generate INSERT SQL for inheritance types NONE, SINGLE_TABLE, TABLE_PER_CLASS
-            foreach ($class->reflFields as $name => $field) {
-                if ($versioned && $versionField == $name) {
-                    continue;
-                }
-                if (isset($class->associationMappings[$name])) {
-                    $assoc = $class->associationMappings[$name];
-                    if ($assoc->isOwningSide && $assoc->isOneToOne()) {
-                        foreach ($assoc->targetToSourceKeyColumns as $sourceCol) {
-                            $columns[] = $assoc->getQuotedJoinColumnName($sourceCol, $this->_targetPlatform);
-                        }
-                    }
-                } else if ($class->generatorType != ClassMetadata::GENERATOR_TYPE_IDENTITY ||  $class->identifier[0] != $name) {
-                    $columns[] = $class->getQuotedColumnName($name, $this->_targetPlatform);
-                }
-            }
-        }
-        
-        // Add discriminator column to the INSERT SQL if necessary
-        if (isset($class->discriminatorColumn['name'])) {
-            if ($class->isInheritanceTypeSingleTable() || $class->isInheritanceTypeJoined()
-                    && $class->name == $class->rootEntityName) {
-                $columns[] = $class->getQuotedDiscriminatorColumnName($this->_targetPlatform);
-            }
-        }
-
-        if (empty($columns)) {
-            $class->insertSql = $this->_targetPlatform->getEmptyIdentityInsertSql(
-                $class->getQuotedTableName($this->_targetPlatform),
-                $class->getQuotedColumnName($class->identifier[0], $this->_targetPlatform)
-            );
-        } else {
-            $columns = array_unique($columns);
-            $values = array_fill(0, count($columns), '?');
-
-            $class->insertSql = 'INSERT INTO ' .
-                 $class->getQuotedTableName($this->_targetPlatform)
-                . ' (' . implode(', ', $columns) . ') '
-                . 'VALUES (' . implode(', ', $values) . ')';
-        }
-    }
-
-    /**
      * Completes the ID generator mapping. If "auto" is specified we choose the generator
      * most appropriate for the targeted database platform.
      *
@@ -400,7 +350,7 @@ class ClassMetadataFactory
                 if ( ! $definition) {
                     $sequenceName = $class->getTableName() . '_' . $class->getSingleIdentifierColumnName() . '_seq';
                     $definition['sequenceName'] = $this->_targetPlatform->fixSchemaElementName($sequenceName);
-                    $definition['allocationSize'] = 20;
+                    $definition['allocationSize'] = 10;
                     $definition['initialValue'] = 1;
                     $class->setSequenceGeneratorDefinition($definition);
                 }

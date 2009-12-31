@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 53
-/!svn/ver/6675/trunk/tests/Doctrine/Tests/ORM/Mapping
+/!svn/ver/6950/trunk/tests/Doctrine/Tests/ORM/Mapping
 END
 AllTests.php
 K 25
@@ -31,7 +31,7 @@ MappingDriverTest.php
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/!svn/ver/6274/trunk/tests/Doctrine/Tests/ORM/Mapping/MappingDriverTest.php
+/!svn/ver/6949/trunk/tests/Doctrine/Tests/ORM/Mapping/MappingDriverTest.php
 END
 ClassMetadataLoadEventTest.php
 K 25

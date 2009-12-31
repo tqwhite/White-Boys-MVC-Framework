@@ -38,7 +38,6 @@ use Doctrine\Common\DoctrineException,
  * @version $Revision$
  * @author  Guilherme Blanco <guilhermeblanco@hotmail.com>
  * @author  Jonathan Wage <jonwage@gmail.com>
- * @author  Roman Borschel <roman@code-factory.org>
  */
 class DatabaseDriver implements Driver
 {
@@ -88,7 +87,7 @@ class DatabaseDriver implements Driver
             }
 
             $fieldMapping = array();
-            if (in_array($column->getName(), $indexes['primary']->getColumns())) {
+            if (isset($indexes['primary']) && in_array($column->getName(), $indexes['primary']->getColumns())) {
                 $fieldMapping['id'] = true;
             }
 
@@ -170,12 +169,9 @@ class DatabaseDriver implements Driver
     }
 
     /**
-     * Preloads all mapping information found in any documents within the
-     * configured paths and returns a list of class names that have been preloaded.
-     * 
-     * @return array The list of class names that have been preloaded.
+     * {@inheritDoc}
      */
-    public function preload()
+    public function getAllClassNames()
     {
         $tables = array();
         foreach ($this->_sm->listTables() as $table) {

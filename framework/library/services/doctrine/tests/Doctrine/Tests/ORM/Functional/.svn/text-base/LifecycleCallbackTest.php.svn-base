@@ -11,7 +11,8 @@ class LifecycleCallbackTest extends \Doctrine\Tests\OrmFunctionalTestCase
         try {
             $this->_schemaTool->createSchema(array(
                 $this->_em->getClassMetadata('Doctrine\Tests\ORM\Functional\LifecycleCallbackTestEntity'),
-                $this->_em->getClassMetadata('Doctrine\Tests\ORM\Functional\LifecycleCallbackTestUser')
+                $this->_em->getClassMetadata('Doctrine\Tests\ORM\Functional\LifecycleCallbackTestUser'),
+                $this->_em->getClassMetadata('Doctrine\Tests\ORM\Functional\LifecycleCallbackCascader'),
             ));
         } catch (\Exception $e) {
             // Swallow all exceptions. We do not test the schema tool here.
@@ -79,6 +80,31 @@ class LifecycleCallbackTest extends \Doctrine\Tests\OrmFunctionalTestCase
         $reference->getId(); // trigger proxy load
         $this->assertTrue($reference->postLoadCallbackInvoked);
     }
+
+    /**
+     * @group DDC-113
+     */
+    public function testCascadedEntitiesCallsPrePersist()
+    {
+        //$this->_em->getConnection()->getConfiguration()->setSqlLogger(new \Doctrine\DBAL\Logging\EchoSqlLogger);
+        
+        $e1 = new LifecycleCallbackTestEntity;
+        $e2 = new LifecycleCallbackTestEntity;
+
+        $c = new LifecycleCallbackCascader();
+        $this->_em->persist($c);
+        
+        $c->entities[] = $e1;
+        $c->entities[] = $e2;
+        $e1->cascader = $c;
+        $e2->cascader = $c;
+        
+        //$this->_em->persist($c);
+        $this->_em->flush();
+
+        $this->assertTrue($e1->prePersistCallbackInvoked);
+        $this->assertTrue($e2->prePersistCallbackInvoked);
+    }
 }
 
 /** @Entity @HasLifecycleCallbacks */
@@ -116,9 +142,15 @@ class LifecycleCallbackTestEntity
      */
     private $id;
     /**
-     * @Column(type="string")
+     * @Column(type="string", nullable=true)
      */
     public $value;
+
+    /**
+     * @ManyToOne(targetEntity="LifecycleCallbackCascader")
+     * @JoinColumn(name="cascader_id", referencedColumnName="id")
+     */
+    public $cascader;
 
     public function getId() {
         return $this->id;
@@ -142,5 +174,28 @@ class LifecycleCallbackTestEntity
     /** @PreUpdate */
     public function doStuffOnPreUpdate() {
         $this->value = 'changed from preUpdate callback!';
+    }
+}
+
+/**
+ * @Entity
+ * @Table(name="lc_cb_test_cascade")
+ */
+class LifecycleCallbackCascader
+{
+    /**
+     * @Id @Column(type="integer")
+     * @GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @OneToMany(targetEntity="LifecycleCallbackTestEntity", mappedBy="cascader", cascade={"persist"})
+     */
+    public $entities;
+
+    public function __construct()
+    {
+        $this->entities = new \Doctrine\Common\Collections\ArrayCollection();
     }
 }

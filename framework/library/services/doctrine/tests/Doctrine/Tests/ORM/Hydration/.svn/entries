@@ -1,14 +1,14 @@
 10
 
 dir
-6935
+6992
 http://svn.doctrine-project.org/trunk/tests/Doctrine/Tests/ORM/Hydration
 http://svn.doctrine-project.org
 
 
 
-2009-12-09T12:37:57.710625Z
-6908
+2009-12-19T13:38:54.354039Z
+6967
 romanb
 
 
@@ -202,10 +202,10 @@ file
 
 
 
-2009-10-27T15:11:57.000000Z
-80e27afeb5dcb7d896b69c6d1724cfca
-2009-06-15T18:25:47.984366Z
-5890
+2009-12-26T20:23:31.000000Z
+dde86a076289daaadf200b0a1b4baf3e
+2009-12-18T13:20:22.591472Z
+6953
 romanb
 has-props
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-2445
+2431
 
 ResultSetMappingTest.php
 file
@@ -236,10 +236,10 @@ file
 
 
 
-2009-10-27T15:11:57.000000Z
-c68daab31302403690cf4c87682abd32
-2009-08-03T13:25:56.796100Z
-6194
+2009-12-26T20:23:31.000000Z
+05148a90ceebed9fa178a8da3c1513f3
+2009-12-19T13:38:54.354039Z
+6967
 romanb
 has-props
 
@@ -262,5 +262,5 @@ has-props
 
 
 
-2082
+2085
 

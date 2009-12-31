@@ -36,5 +36,17 @@ Host FTP Transfer Status
 
 ";
 
+$outString="
+		<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01//EN'>
+		<html>
+		<head>
+		  <title>FILE TRANSFER</title>
+		</head>
+		
+		<body style='font-family:sans-serif;font-size:10pt;'>
+		$outString
+		</body>
+		</html>
+	";
 echo $outString;
 

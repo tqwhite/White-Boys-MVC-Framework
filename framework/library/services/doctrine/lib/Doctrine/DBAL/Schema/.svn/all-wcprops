@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 45
-/!svn/ver/6882/trunk/lib/Doctrine/DBAL/Schema
+/!svn/ver/6938/trunk/lib/Doctrine/DBAL/Schema
 END
 SchemaDiff.php
 K 25
@@ -19,19 +19,19 @@ Schema.php
 K 25
 svn:wc:ra_dav:version-url
 V 56
-/!svn/ver/6876/trunk/lib/Doctrine/DBAL/Schema/Schema.php
+/!svn/ver/6938/trunk/lib/Doctrine/DBAL/Schema/Schema.php
 END
 AbstractAsset.php
 K 25
 svn:wc:ra_dav:version-url
 V 63
-/!svn/ver/6857/trunk/lib/Doctrine/DBAL/Schema/AbstractAsset.php
+/!svn/ver/6937/trunk/lib/Doctrine/DBAL/Schema/AbstractAsset.php
 END
-Comparator.php
+Index.php
 K 25
 svn:wc:ra_dav:version-url
-V 60
-/!svn/ver/6872/trunk/lib/Doctrine/DBAL/Schema/Comparator.php
+V 55
+/!svn/ver/6862/trunk/lib/Doctrine/DBAL/Schema/Index.php
 END
 ForeignKeyConstraint.php
 K 25
@@ -39,11 +39,11 @@ svn:wc:ra_dav:version-url
 V 70
 /!svn/ver/6871/trunk/lib/Doctrine/DBAL/Schema/ForeignKeyConstraint.php
 END
-Index.php
+Comparator.php
 K 25
 svn:wc:ra_dav:version-url
-V 55
-/!svn/ver/6862/trunk/lib/Doctrine/DBAL/Schema/Index.php
+V 60
+/!svn/ver/6872/trunk/lib/Doctrine/DBAL/Schema/Comparator.php
 END
 Sequence.php
 K 25
@@ -63,11 +63,11 @@ svn:wc:ra_dav:version-url
 V 69
 /!svn/ver/6857/trunk/lib/Doctrine/DBAL/Schema/SqliteSchemaManager.php
 END
-AbstractSchemaManager.php
+SchemaException.php
 K 25
 svn:wc:ra_dav:version-url
-V 71
-/!svn/ver/6872/trunk/lib/Doctrine/DBAL/Schema/AbstractSchemaManager.php
+V 65
+/!svn/ver/6876/trunk/lib/Doctrine/DBAL/Schema/SchemaException.php
 END
 PostgreSqlSchemaManager.php
 K 25
@@ -75,11 +75,11 @@ svn:wc:ra_dav:version-url
 V 73
 /!svn/ver/6867/trunk/lib/Doctrine/DBAL/Schema/PostgreSqlSchemaManager.php
 END
-SchemaException.php
+AbstractSchemaManager.php
 K 25
 svn:wc:ra_dav:version-url
-V 65
-/!svn/ver/6876/trunk/lib/Doctrine/DBAL/Schema/SchemaException.php
+V 71
+/!svn/ver/6938/trunk/lib/Doctrine/DBAL/Schema/AbstractSchemaManager.php
 END
 TableDiff.php
 K 25
@@ -111,9 +111,15 @@ svn:wc:ra_dav:version-url
 V 60
 /!svn/ver/6866/trunk/lib/Doctrine/DBAL/Schema/ColumnDiff.php
 END
+SchemaConfig.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/!svn/ver/6938/trunk/lib/Doctrine/DBAL/Schema/SchemaConfig.php
+END
 Table.php
 K 25
 svn:wc:ra_dav:version-url
 V 55
-/!svn/ver/6882/trunk/lib/Doctrine/DBAL/Schema/Table.php
+/!svn/ver/6938/trunk/lib/Doctrine/DBAL/Schema/Table.php
 END

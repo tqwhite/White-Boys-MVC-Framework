@@ -79,7 +79,7 @@ class AnnotationDriver implements Driver
         } else if (isset($classAnnotations['Doctrine\ORM\Mapping\MappedSuperclass'])) {
             $metadata->isMappedSuperclass = true;
         } else {
-            throw DoctrineException::classIsNotAValidEntityOrMapperSuperClass($className);
+            throw DoctrineException::classIsNotAValidEntityOrMappedSuperClass($className);
         }
 
         // Evaluate DoctrineTable annotation
@@ -336,16 +336,19 @@ class AnnotationDriver implements Driver
                ! isset($classAnnotations['Doctrine\ORM\Mapping\MappedSuperclass']);
     }
     
-    public function preload()
+    /**
+     * {@inheritDoc}
+     */
+    public function getAllClassNames()
     {
         if ($this->_classDirectory) {
             $iter = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($this->_classDirectory),
-                                                  \RecursiveIteratorIterator::LEAVES_ONLY);
+                    \RecursiveIteratorIterator::LEAVES_ONLY);
         
             $declared = get_declared_classes();          
             foreach ($iter as $item) {
                 $info = pathinfo($item->getPathName());
-                if (! isset($info['extension']) || $info['extension'] != 'php') {
+                if ( ! isset($info['extension']) || $info['extension'] != 'php') {
                     continue;
                 }
                 require_once $item->getPathName();
@@ -363,4 +366,5 @@ class AnnotationDriver implements Driver
             return array();
         }
     }
+    
 }
