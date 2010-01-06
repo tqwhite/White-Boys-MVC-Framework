@@ -9,7 +9,7 @@ class User {
      * @GeneratedValue(strategy="AUTO")
      */
     private $id;
-    /** @Column(type="string", length=50) */
+    /** @Column(type="string", length=350) */
     private $name;
     /**
      * @OneToOne(targetEntity="Address")

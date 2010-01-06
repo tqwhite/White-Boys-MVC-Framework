@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 43
-/!svn/ver/6982/trunk/lib/Doctrine/ORM/Query
+/!svn/ver/7002/trunk/lib/Doctrine/ORM/Query
 END
 ParserResult.php
 K 25
@@ -13,13 +13,13 @@ Parser.php
 K 25
 svn:wc:ra_dav:version-url
 V 54
-/!svn/ver/6982/trunk/lib/Doctrine/ORM/Query/Parser.php
+/!svn/ver/6996/trunk/lib/Doctrine/ORM/Query/Parser.php
 END
 Expr.php
 K 25
 svn:wc:ra_dav:version-url
 V 52
-/!svn/ver/6330/trunk/lib/Doctrine/ORM/Query/Expr.php
+/!svn/ver/7002/trunk/lib/Doctrine/ORM/Query/Expr.php
 END
 Lexer.php
 K 25
@@ -43,7 +43,7 @@ SqlWalker.php
 K 25
 svn:wc:ra_dav:version-url
 V 57
-/!svn/ver/6982/trunk/lib/Doctrine/ORM/Query/SqlWalker.php
+/!svn/ver/6993/trunk/lib/Doctrine/ORM/Query/SqlWalker.php
 END
 TreeWalker.php
 K 25

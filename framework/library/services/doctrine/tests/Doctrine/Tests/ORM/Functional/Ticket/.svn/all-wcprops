@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 63
-/!svn/ver/6952/trunk/tests/Doctrine/Tests/ORM/Functional/Ticket
+/!svn/ver/7004/trunk/tests/Doctrine/Tests/ORM/Functional/Ticket
 END
 DDC168Test.php
 K 25
@@ -50,4 +50,10 @@ K 25
 svn:wc:ra_dav:version-url
 V 78
 /!svn/ver/6882/trunk/tests/Doctrine/Tests/ORM/Functional/Ticket/DDC192Test.php
+END
+DDC237Test.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/!svn/ver/7004/trunk/tests/Doctrine/Tests/ORM/Functional/Ticket/DDC237Test.php
 END

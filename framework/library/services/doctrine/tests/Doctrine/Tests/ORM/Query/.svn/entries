@@ -1,14 +1,14 @@
 10
 
 dir
-6992
+7006
 http://svn.doctrine-project.org/trunk/tests/Doctrine/Tests/ORM/Query
 http://svn.doctrine-project.org
 
 
 
-2009-12-27T19:02:07.632161Z
-6986
+2010-01-04T16:37:39.441590Z
+7002
 guilhermeblanco
 
 
@@ -66,10 +66,10 @@ file
 
 
 
-2009-12-31T12:27:36.000000Z
-3ea90552b7391c1027844c111e4dce27
-2009-12-27T19:02:07.632161Z
-6986
+2010-01-06T00:35:35.000000Z
+5d84a5d60b5fd154bfba3a5e4425b467
+2009-12-31T22:48:51.691962Z
+6993
 guilhermeblanco
 has-props
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-22354
+23079
 
 ParserResultTest.php
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2009-10-27T15:11:58.000000Z
-4fe021524b93ca960a00d08dcdd3fa85
-2009-09-08T22:19:03.592312Z
-6330
-jwage
+2010-01-06T00:35:35.000000Z
+1260b32851f3a0251dc912ee794af7ab
+2010-01-04T16:37:39.441590Z
+7002
+guilhermeblanco
 
 
 
@@ -194,7 +194,7 @@ jwage
 
 
 
-9882
+9808
 
 UpdateSqlGenerationTest.php
 file
@@ -270,10 +270,10 @@ file
 
 
 
-2009-12-31T12:27:36.000000Z
-d183d897541382956d09e4157db38bee
-2009-12-27T19:02:07.632161Z
-6986
+2010-01-06T00:35:35.000000Z
+ed0e6ca5e50fee581a6644b845d6211e
+2009-12-31T22:50:44.343242Z
+6994
 guilhermeblanco
 has-props
 
@@ -296,5 +296,5 @@ has-props
 
 
 
-15066
+15443
 

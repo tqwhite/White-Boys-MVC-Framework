@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 48
-/!svn/ver/6424/trunk/lib/Doctrine/ORM/Query/Expr
+/!svn/ver/7002/trunk/lib/Doctrine/ORM/Query/Expr
 END
 Math.php
 K 25
@@ -49,7 +49,7 @@ From.php
 K 25
 svn:wc:ra_dav:version-url
 V 57
-/!svn/ver/6424/trunk/lib/Doctrine/ORM/Query/Expr/From.php
+/!svn/ver/7002/trunk/lib/Doctrine/ORM/Query/Expr/From.php
 END
 OrderBy.php
 K 25

@@ -1,14 +1,14 @@
 10
 
 dir
-6992
+7006
 http://svn.doctrine-project.org/trunk/tests/Doctrine/Tests/ORM/Functional
 http://svn.doctrine-project.org
 
 
 
-2009-12-18T13:20:22.591472Z
-6953
+2010-01-05T11:45:38.830306Z
+7004
 romanb
 
 
@@ -239,10 +239,10 @@ file
 
 
 
-2009-11-28T16:33:06.000000Z
-9adc932ed4b3a26b77f7b6c5c09fb086
-2009-11-21T18:52:02.277830Z
-6791
+2010-01-06T00:35:35.000000Z
+412d49610b0d30470863ab06f8f4b1e1
+2010-01-05T11:45:38.830306Z
+7004
 romanb
 
 
@@ -265,7 +265,7 @@ romanb
 
 
 
-3033
+3029
 
 SchemaTool
 dir
@@ -783,18 +783,17 @@ romanb
 
 2618
 
-NativeQueryTest.php
+EntityRepositoryTest.php
 file
 
 
 
 
-2009-11-28T16:33:06.000000Z
-81a92fc1e43df68d7d90db52b52f7a5f
-2009-11-21T13:13:19.305339Z
-6788
-beberlei
-has-props
+2009-10-27T15:11:57.000000Z
+a783076462d64c9a5d090f92a705e2cd
+2009-08-14T11:04:31.968621Z
+6231
+romanb
 
 
 
@@ -815,7 +814,8 @@ has-props
 
 
 
-6006
+
+2021
 
 LifecycleCallbackTest.php
 file
@@ -851,17 +851,18 @@ romanb
 
 5844
 
-EntityRepositoryTest.php
+NativeQueryTest.php
 file
 
 
 
 
-2009-10-27T15:11:57.000000Z
-a783076462d64c9a5d090f92a705e2cd
-2009-08-14T11:04:31.968621Z
-6231
-romanb
+2009-11-28T16:33:06.000000Z
+81a92fc1e43df68d7d90db52b52f7a5f
+2009-11-21T13:13:19.305339Z
+6788
+beberlei
+has-props
 
 
 
@@ -882,8 +883,7 @@ romanb
 
 
 
-
-2021
+6006
 
 OneToOneUnidirectionalAssociationTest.php
 file

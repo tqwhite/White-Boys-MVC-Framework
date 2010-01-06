@@ -1,7 +1,7 @@
 10
 
 dir
-6992
+7006
 http://svn.doctrine-project.org/trunk/lib/Doctrine/DBAL/Schema
 http://svn.doctrine-project.org
 
@@ -162,16 +162,16 @@ has-props
 
 2967
 
-Comparator.php
+Index.php
 file
 
 
 
 
 2009-12-10T16:52:31.000000Z
-509ab1ecc726735cad25e450774ecda3
-2009-12-06T18:55:08.854367Z
-6872
+d6ea44772a64e171a827b02608392c43
+2009-12-05T10:33:46.202425Z
+6862
 beberlei
 has-props
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-14602
+2855
 
 ForeignKeyConstraint.php
 file
@@ -230,16 +230,16 @@ has-props
 
 3138
 
-Index.php
+Comparator.php
 file
 
 
 
 
 2009-12-10T16:52:31.000000Z
-d6ea44772a64e171a827b02608392c43
-2009-12-05T10:33:46.202425Z
-6862
+509ab1ecc726735cad25e450774ecda3
+2009-12-06T18:55:08.854367Z
+6872
 beberlei
 has-props
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-2855
+14602
 
 Sequence.php
 file
@@ -369,16 +369,16 @@ has-props
 
 8200
 
-SchemaException.php
+PostgreSqlSchemaManager.php
 file
 
 
 
 
 2009-12-10T16:52:31.000000Z
-117b87257a9f1a1e0fd43fcd781c49f3
-2009-12-06T23:11:35.971706Z
-6876
+ef1b641fdd050e7b6673af9e6661bf10
+2009-12-06T12:13:15.513087Z
+6867
 beberlei
 has-props
 
@@ -401,7 +401,7 @@ has-props
 
 
 
-3672
+11314
 
 AbstractSchemaManager.php
 file
@@ -437,16 +437,16 @@ has-props
 
 27599
 
-PostgreSqlSchemaManager.php
+SchemaException.php
 file
 
 
 
 
 2009-12-10T16:52:31.000000Z
-ef1b641fdd050e7b6673af9e6661bf10
-2009-12-06T12:13:15.513087Z
-6867
+117b87257a9f1a1e0fd43fcd781c49f3
+2009-12-06T23:11:35.971706Z
+6876
 beberlei
 has-props
 
@@ -469,7 +469,7 @@ has-props
 
 
 
-11314
+3672
 
 TableDiff.php
 file

@@ -1,11 +1,11 @@
 <?php
 
-
-
 $linkString='';
 foreach ($urlList as $data){
-$linkString.="<a href={$data['url']}>{$data['text']}</a><p/>";
+$linkString.="<a href={$data->getUrl()}>{$data->getAnchorText()}</a><p/>";
 }
+
+
 $outString="
 <div style=font-family:sans-serif;margin-bottom:15px;>
 <div style='margin:15px;border:1pt solid gray;background:#BBBB66;color:883333;font-family:sans-serif;width:400px;padding-top:20px;text-align:center;'>

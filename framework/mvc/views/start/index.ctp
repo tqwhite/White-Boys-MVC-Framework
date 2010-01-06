@@ -1,8 +1,7 @@
 <?php
-
 $linkString='';
 foreach ($urlList as $data){
-$linkString.="<a href={$data['url']}>{$data['text']}</a><p/>";
+$linkString.="<a href={$data->getUrl()}>{$data->getAnchorText()}</a><p/>";
 }
 
 /*

@@ -1,15 +1,15 @@
 10
 
 dir
-6992
+7006
 http://svn.doctrine-project.org/trunk/tests/Doctrine/Tests
 http://svn.doctrine-project.org
 
 
 
-2009-12-27T19:02:07.632161Z
-6986
-guilhermeblanco
+2010-01-05T11:45:38.830306Z
+7004
+romanb
 
 
 
@@ -202,8 +202,39 @@ has-props
 Common
 dir
 
-Proxies
-dir
+DoctrineTestCase.php
+file
+
+
+
+
+2009-11-04T15:40:32.000000Z
+5bffd1864b4d58face65f75c5ed332bf
+2009-10-31T22:23:36.916598Z
+6598
+beberlei
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+164
 
 TestInit.php
 file
@@ -239,41 +270,7 @@ has-props
 
 565
 
-DoctrineTestCase.php
-file
-
-
-
-
-2009-11-04T15:40:32.000000Z
-5bffd1864b4d58face65f75c5ed332bf
-2009-10-31T22:23:36.916598Z
-6598
-beberlei
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-164
-
-ORM
+Proxies
 dir
 
 OrmTestSuite.php
@@ -310,6 +307,9 @@ has-props
 
 158
 
+ORM
+dir
+
 OrmPerformanceTestCase.php
 file
 
@@ -344,6 +344,9 @@ has-props
 
 1282
 
+DBAL
+dir
+
 DbalTestSuite.php
 file
 
@@ -377,9 +380,6 @@ has-props
 
 
 162
-
-DBAL
-dir
 
 OrmFunctionalTestCase.php
 file

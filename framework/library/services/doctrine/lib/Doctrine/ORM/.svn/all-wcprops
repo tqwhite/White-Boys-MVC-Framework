@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 37
-/!svn/ver/6982/trunk/lib/Doctrine/ORM
+/!svn/ver/7006/trunk/lib/Doctrine/ORM
 END
 AbstractQuery.php
 K 25
@@ -19,13 +19,13 @@ QueryBuilder.php
 K 25
 svn:wc:ra_dav:version-url
 V 54
-/!svn/ver/6424/trunk/lib/Doctrine/ORM/QueryBuilder.php
+/!svn/ver/7002/trunk/lib/Doctrine/ORM/QueryBuilder.php
 END
 EntityRepository.php
 K 25
 svn:wc:ra_dav:version-url
 V 58
-/!svn/ver/6949/trunk/lib/Doctrine/ORM/EntityRepository.php
+/!svn/ver/7006/trunk/lib/Doctrine/ORM/EntityRepository.php
 END
 NativeQuery.php
 K 25
@@ -43,7 +43,7 @@ PersistentCollection.php
 K 25
 svn:wc:ra_dav:version-url
 V 62
-/!svn/ver/6947/trunk/lib/Doctrine/ORM/PersistentCollection.php
+/!svn/ver/7004/trunk/lib/Doctrine/ORM/PersistentCollection.php
 END
 ORMException.php
 K 25
@@ -73,7 +73,7 @@ UnitOfWork.php
 K 25
 svn:wc:ra_dav:version-url
 V 52
-/!svn/ver/6979/trunk/lib/Doctrine/ORM/UnitOfWork.php
+/!svn/ver/7004/trunk/lib/Doctrine/ORM/UnitOfWork.php
 END
 Configuration.php
 K 25

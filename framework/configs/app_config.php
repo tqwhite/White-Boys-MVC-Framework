@@ -18,6 +18,9 @@ class AppConfig {
 		define('LIBROOT', ROOT.'framework/library/');
 		define('HTMLROOT', ROOT.'public_html/');
 		
+		define('USE_DOCTRINE', true);
+		define('DOCTRINEROOT', FRAMEWORKROOT.'library/services/doctrine/');
+		
 		
 		//initialize system stuff
 		

@@ -1,15 +1,15 @@
 10
 
 dir
-6992
+7006
 http://svn.doctrine-project.org/trunk/lib/Doctrine/ORM/Persisters
 http://svn.doctrine-project.org
 
 
 
-2009-12-22T13:56:30.632673Z
-6975
-romanb
+2010-01-05T17:07:57.748505Z
+7005
+guilhermeblanco
 
 
 
@@ -202,11 +202,11 @@ file
 
 
 
-2009-12-26T20:23:33.000000Z
-13384104062b11d9ccf6e54a12b6b76f
-2009-12-22T13:56:30.632673Z
-6975
-romanb
+2010-01-06T00:35:36.000000Z
+b316e18b0d20c50c792c39ae2e9c1e66
+2010-01-05T17:07:57.748505Z
+7005
+guilhermeblanco
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-33690
+33691
 
 AbstractCollectionPersister.php
 file

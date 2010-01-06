@@ -1,15 +1,15 @@
 10
 
 dir
-6992
+7006
 http://svn.doctrine-project.org/trunk/lib/Doctrine/ORM/Proxy
 http://svn.doctrine-project.org
 
 
 
-2009-12-07T22:10:40.101600Z
-6895
-beberlei
+2010-01-05T11:45:38.830306Z
+7004
+romanb
 has-props
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2009-12-10T16:52:31.000000Z
-850f66eaf7e0726dff7b33a6ee475ac2
-2009-12-07T22:10:40.101600Z
-6895
-beberlei
+2010-01-06T00:35:35.000000Z
+fa3a4558cc64fb88bc70dd98cbc7638e
+2010-01-05T11:45:38.830306Z
+7004
+romanb
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-10335
+10301
 
 Proxy.php
 file
@@ -66,10 +66,10 @@ file
 
 
 
-2009-11-28T16:33:07.000000Z
-8ecada70697af3e549e6703c420b69dd
-2009-11-21T18:52:02.277830Z
-6791
+2010-01-06T00:35:35.000000Z
+0c989b54a5c7a08a57acacb406aaf211
+2010-01-05T11:45:38.830306Z
+7004
 romanb
 
 
@@ -92,5 +92,5 @@ romanb
 
 
 
-1187
+1152
 

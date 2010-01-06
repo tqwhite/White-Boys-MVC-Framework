@@ -1,7 +1,7 @@
 10
 
 dir
-6992
+7006
 http://svn.doctrine-project.org/trunk/lib/Doctrine/Common
 http://svn.doctrine-project.org
 
@@ -199,9 +199,6 @@ has-props
 
 4908
 
-Cache
-dir
-
 GlobalClassLoader.php
 file
 
@@ -235,6 +232,9 @@ romanb
 
 
 5110
+
+Cache
+dir
 
 Lexer.php
 file
@@ -270,6 +270,9 @@ guilhermeblanco
 
 6972
 
+Cli
+dir
+
 IsolatedClassLoader.php
 file
 
@@ -303,9 +306,6 @@ romanb
 
 
 3589
-
-Cli
-dir
 
 DoctrineException.php
 file
@@ -341,9 +341,6 @@ has-props
 
 5063
 
-Util
-dir
-
 NotifyPropertyChanged.php
 file
 
@@ -377,6 +374,9 @@ has-props
 
 
 1706
+
+Util
+dir
 
 Collections
 dir

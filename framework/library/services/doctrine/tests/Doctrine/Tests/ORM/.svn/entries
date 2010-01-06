@@ -1,15 +1,15 @@
 10
 
 dir
-6992
+7006
 http://svn.doctrine-project.org/trunk/tests/Doctrine/Tests/ORM
 http://svn.doctrine-project.org
 
 
 
-2009-12-27T19:02:07.632161Z
-6986
-guilhermeblanco
+2010-01-05T11:45:38.830306Z
+7004
+romanb
 
 
 
@@ -25,9 +25,6 @@ guilhermeblanco
 
 
 625475ce-881a-0410-a577-b389adb331d8
-
-Proxy
-dir
 
 AllTests.php
 file
@@ -62,6 +59,9 @@ has-props
 
 
 1268
+
+Proxy
+dir
 
 CommitOrderCalculatorTest.php
 file
@@ -103,40 +103,6 @@ dir
 Id
 dir
 
-EntityManagerTest.php
-file
-
-
-
-
-2009-12-26T20:23:32.000000Z
-ab03e330f4254307d1a48ba6fdc5be92
-2009-12-18T13:20:22.591472Z
-6953
-romanb
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3067
-
 UnitOfWorkTest.php
 file
 
@@ -171,51 +137,57 @@ has-props
 
 8235
 
+EntityManagerTest.php
+file
+
+
+
+
+2010-01-06T00:35:35.000000Z
+07a7d747f1e9e6ca900eb7ceef31feb2
+2010-01-04T16:37:39.441590Z
+7002
+guilhermeblanco
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3667
+
 Associations
 dir
 
 Tools
 dir
 
-Hydration
-dir
-
 Performance
 dir
 
-PersistentCollectionTest.php
-file
-
-
-
-
-2009-10-27T15:11:58.000000Z
-f96a3d95f46653805512c7faba654d24
-2009-08-03T13:25:56.796100Z
-6194
-romanb
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1992
+Hydration
+dir
+
+Functional
+dir
+
+Criteria
+dir
 
 QueryBuilderTest.php
 file
@@ -251,11 +223,39 @@ jwage
 
 14403
 
-Criteria
-dir
-
-Functional
-dir
+PersistentCollectionTest.php
+file
+
+
+
+
+2009-10-27T15:11:58.000000Z
+f96a3d95f46653805512c7faba654d24
+2009-08-03T13:25:56.796100Z
+6194
+romanb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1992
 
 Cache
 dir

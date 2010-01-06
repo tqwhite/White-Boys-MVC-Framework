@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 48
-/!svn/ver/6975/trunk/lib/Doctrine/ORM/Persisters
+/!svn/ver/7005/trunk/lib/Doctrine/ORM/Persisters
 END
 JoinedSubclassPersister.php
 K 25
@@ -37,7 +37,7 @@ StandardEntityPersister.php
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/!svn/ver/6975/trunk/lib/Doctrine/ORM/Persisters/StandardEntityPersister.php
+/!svn/ver/7005/trunk/lib/Doctrine/ORM/Persisters/StandardEntityPersister.php
 END
 AbstractCollectionPersister.php
 K 25

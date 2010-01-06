@@ -58,7 +58,7 @@ class LanguageRecognitionTest extends \Doctrine\Tests\OrmTestCase
         
         return $parser->parse();
     }
-
+    
     public function testEmptyQueryString()
     {
         $this->assertInvalidDql('');
@@ -84,6 +84,11 @@ class LanguageRecognitionTest extends \Doctrine\Tests\OrmTestCase
         $this->assertValidDql('SELECT u, p FROM Doctrine\Tests\Models\CMS\CmsUser u JOIN u.phonenumbers p');
     }
 
+    public function testSelectMultipleComponentsWithAsterisk2()
+    {
+        $this->assertValidDql('SELECT a.user.name FROM Doctrine\Tests\Models\CMS\CmsArticle a');
+    }
+
     public function testSelectDistinctIsSupported()
     {
         $this->assertValidDql('SELECT DISTINCT u.name FROM Doctrine\Tests\Models\CMS\CmsUser u');
@@ -92,6 +97,11 @@ class LanguageRecognitionTest extends \Doctrine\Tests\OrmTestCase
     public function testAggregateFunctionInSelect()
     {
         $this->assertValidDql('SELECT COUNT(u.id) FROM Doctrine\Tests\Models\CMS\CmsUser u');
+    }
+    
+    public function testDuplicatedAliasInAggregateFunction()
+    {
+        $this->assertInvalidDql('SELECT COUNT(u.id) AS num, SUM(u.id) AS num FROM Doctrine\Tests\Models\CMS\CmsUser u');
     }
 
     public function testAggregateFunctionWithDistinctInSelect()
