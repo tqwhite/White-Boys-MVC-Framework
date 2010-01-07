@@ -12,45 +12,44 @@
 <p>Documentation is available at <a href="../phpDocumentor/_mvc---views---start---index.ctp.html">index.ctp</a></p>
 <div class="src-code">
 <div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
-<li><div class="src-line"><a name="a2"></a>&nbsp;</div></li>
-<li><div class="src-line"><a name="a3"></a><span class="src-var">$linkString</span>=<span class="src-str">''</span><span class="src-sym">;</span></div></li>
-<li><div class="src-line"><a name="a4"></a><span class="src-key">foreach&nbsp;</span><span class="src-sym">(</span><span class="src-var">$urlList&nbsp;</span><span class="src-key">as&nbsp;</span><span class="src-var">$data</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
-<li><div class="src-line"><a name="a5"></a><span class="src-var">$linkString</span>.=<span class="src-str">&quot;</span><span class="src-str">&lt;a&nbsp;href={<span class="src-var">$data</span><span class="src-sym">[</span><span class="src-str">'url'</span><span class="src-sym">]</span><span class="src-sym">}</span>&gt;{<span class="src-var">$data</span><span class="src-sym">[</span><span class="src-str">'text'</span><span class="src-sym">]</span><span class="src-sym">}</span>&lt;/a&gt;&lt;p/&gt;</span><span class="src-str">&quot;</span><span class="src-sym">;</span></div></li>
-<li><div class="src-line"><a name="a6"></a><span class="src-sym">}</span></div></li>
-<li><div class="src-line"><a name="a7"></a>&nbsp;</div></li>
-<li><div class="src-line"><a name="a8"></a><span class="src-comm">/*</span></div></li>
-<li><div class="src-line"><a name="a9"></a><span class="src-comm">&lt;link&nbsp;rel=&quot;stylesheet&quot;&nbsp;href=&quot;style-original.css&quot;&nbsp;/&gt;</span></div></li>
-<li><div class="src-line"><a name="a10"></a><span class="src-comm">&lt;link&nbsp;rel=&quot;alternate&quot;</span></div></li>
-<li><div class="src-line"><a name="a11"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type=&quot;application/atom+xml&quot;</span></div></li>
-<li><div class="src-line"><a name="a12"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title=&quot;My&nbsp;Weblog&nbsp;feed&quot;</span></div></li>
-<li><div class="src-line"><a name="a13"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;href=&quot;/feed/&quot;&nbsp;/&gt;</span></div></li>
-<li><div class="src-line"><a name="a14"></a><span class="src-comm">*/</span></div></li>
-<li><div class="src-line"><a name="a15"></a>&nbsp;</div></li>
-<li><div class="src-line"><a name="a16"></a><span class="src-var">$outString</span>=<span class="src-str">&quot;</div></li>
-<li><div class="src-line"><a name="a17"></a>&nbsp;</div></li>
-<li><div class="src-line"><a name="a18"></a></span><span class="src-str">&lt;!doctype&nbsp;html&gt;</span></div></li>
-<li><div class="src-line"><a name="a19"></a></span><span class="src-str">&lt;html&nbsp;lang='en'&gt;</span></div></li>
-<li><div class="src-line"><a name="a20"></a></span><span class="src-str">&lt;head&gt;</span></div></li>
-<li><div class="src-line"><a name="a21"></a></span><span class="src-str">&lt;meta&nbsp;charset='utf-8'&gt;</span></div></li>
-<li><div class="src-line"><a name="a22"></a>&nbsp;</div></li>
-<li><div class="src-line"><a name="a23"></a></span><span class="src-str">&lt;div&nbsp;style=font-family:sans-serif;margin-bottom:15px;&gt;</span></div></li>
-<li><div class="src-line"><a name="a24"></a></span><span class="src-str">&lt;div&nbsp;style='margin:15px;border:1pt&nbsp;solid&nbsp;gray;background:#BBBB66;color:883333;font-family:sans-serif;width:400px;padding-top:20px;text-align:center;'&gt;</span></div></li>
-<li><div class="src-line"><a name="a25"></a></span><span class="src-str">&lt;div&nbsp;style=font-weight:bold;margin-bottom:5px;&gt;</span></div></li>
-<li><div class="src-line"><a name="a26"></a></span><span class="src-str"><span class="src-var">$title</span>&lt;/div&gt;</span></div></li>
-<li><div class="src-line"><a name="a27"></a></span><span class="src-str">&lt;div&nbsp;style=font-size:10pt;&gt;</span></div></li>
-<li><div class="src-line"><a name="a28"></a></span><span class="src-str"><span class="src-var">$linkString</span></span></div></li>
+<li><div class="src-line"><a name="a2"></a><span class="src-var">$linkString</span>=<span class="src-str">''</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-key">foreach&nbsp;</span><span class="src-sym">(</span><span class="src-var">$urlList&nbsp;</span><span class="src-key">as&nbsp;</span><span class="src-var">$data</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-var">$linkString</span>.=<span class="src-str">&quot;</span><span class="src-str">&lt;a&nbsp;href={<span class="src-var">$data</span></span><span class="src-sym">-&gt;</span><span class="src-id">getUrl</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-str"></span><span class="src-sym">}</span>&gt;{<span class="src-var">$data</span></span><span class="src-sym">-&gt;</span><span class="src-id">getAnchorText</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-str"></span><span class="src-sym">}</span>&lt;/a&gt;&lt;p/&gt;</span><span class="src-str">&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a6"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-comm">/*</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-comm">&lt;link&nbsp;rel=&quot;stylesheet&quot;&nbsp;href=&quot;style-original.css&quot;&nbsp;/&gt;</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-comm">&lt;link&nbsp;rel=&quot;alternate&quot;</span></div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type=&quot;application/atom+xml&quot;</span></div></li>
+<li><div class="src-line"><a name="a11"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title=&quot;My&nbsp;Weblog&nbsp;feed&quot;</span></div></li>
+<li><div class="src-line"><a name="a12"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;href=&quot;/feed/&quot;&nbsp;/&gt;</span></div></li>
+<li><div class="src-line"><a name="a13"></a><span class="src-comm">*/</span></div></li>
+<li><div class="src-line"><a name="a14"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a15"></a><span class="src-var">$outString</span>=<span class="src-str">&quot;</div></li>
+<li><div class="src-line"><a name="a16"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a17"></a></span><span class="src-str">&lt;!doctype&nbsp;html&gt;</span></div></li>
+<li><div class="src-line"><a name="a18"></a></span><span class="src-str">&lt;html&nbsp;lang='en'&gt;</span></div></li>
+<li><div class="src-line"><a name="a19"></a></span><span class="src-str">&lt;head&gt;</span></div></li>
+<li><div class="src-line"><a name="a20"></a></span><span class="src-str">&lt;meta&nbsp;charset='utf-8'&gt;</span></div></li>
+<li><div class="src-line"><a name="a21"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a22"></a></span><span class="src-str">&lt;div&nbsp;style=font-family:sans-serif;margin-bottom:15px;&gt;</span></div></li>
+<li><div class="src-line"><a name="a23"></a></span><span class="src-str">&lt;div&nbsp;style='margin:15px;border:1pt&nbsp;solid&nbsp;gray;background:#BBBB66;color:883333;font-family:sans-serif;width:400px;padding-top:20px;text-align:center;'&gt;</span></div></li>
+<li><div class="src-line"><a name="a24"></a></span><span class="src-str">&lt;div&nbsp;style=font-weight:bold;margin-bottom:5px;&gt;</span></div></li>
+<li><div class="src-line"><a name="a25"></a></span><span class="src-str"><span class="src-var">$title</span>&lt;/div&gt;</span></div></li>
+<li><div class="src-line"><a name="a26"></a></span><span class="src-str">&lt;div&nbsp;style=font-size:10pt;&gt;</span></div></li>
+<li><div class="src-line"><a name="a27"></a></span><span class="src-str"><span class="src-var">$linkString</span></span></div></li>
+<li><div class="src-line"><a name="a28"></a></span><span class="src-str">&lt;/div&gt;</span></div></li>
 <li><div class="src-line"><a name="a29"></a></span><span class="src-str">&lt;/div&gt;</span></div></li>
-<li><div class="src-line"><a name="a30"></a></span><span class="src-str">&lt;/div&gt;</span></div></li>
-<li><div class="src-line"><a name="a31"></a></span><span class="src-str">&lt;div&nbsp;style=font-size:80%;margin-left:15px;&gt;Brought&nbsp;to&nbsp;you&nbsp;by&lt;BR&gt;</span><span class="src-str">&quot;</span>.<a href="http://www.php.net/str_replace">str_replace</a><span class="src-sym">(</span><span class="src-str">'tq.org'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'tq.org&lt;BR&gt;'</span><span class="src-sym">,&nbsp;</span>__FILE__<span class="src-sym">)</span>.<span class="src-str">&quot;&lt;/div&gt;</span></div></li>
-<li><div class="src-line"><a name="a32"></a><span class="src-str">&lt;/div&gt;</span></div></li>
-<li><div class="src-line"><a name="a33"></a><span class="src-str">&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a30"></a></span><span class="src-str">&lt;div&nbsp;style=font-size:80%;margin-left:15px;&gt;Brought&nbsp;to&nbsp;you&nbsp;by&lt;BR&gt;</span><span class="src-str">&quot;</span>.<a href="http://www.php.net/str_replace">str_replace</a><span class="src-sym">(</span><span class="src-str">'tq.org'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'tq.org&lt;BR&gt;'</span><span class="src-sym">,&nbsp;</span>__FILE__<span class="src-sym">)</span>.<span class="src-str">&quot;&lt;/div&gt;</span></div></li>
+<li><div class="src-line"><a name="a31"></a><span class="src-str">&lt;/div&gt;</span></div></li>
+<li><div class="src-line"><a name="a32"></a><span class="src-str">&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a33"></a>&nbsp;</div></li>
 <li><div class="src-line"><a name="a34"></a>&nbsp;</div></li>
-<li><div class="src-line"><a name="a35"></a>&nbsp;</div></li>
-<li><div class="src-line"><a name="a36"></a>echo&nbsp;<span class="src-var">$outString</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a35"></a>echo&nbsp;<span class="src-var">$outString</span><span class="src-sym">;</span></div></li>
 </ol></div>
 </div>
 	<p class="notes" id="credit">
-		Documentation generated on Thu, 03 Dec 2009 12:52:13 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+		Documentation generated on Wed, 06 Jan 2010 16:02:31 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
 	</p>
 	</body>
 </html>

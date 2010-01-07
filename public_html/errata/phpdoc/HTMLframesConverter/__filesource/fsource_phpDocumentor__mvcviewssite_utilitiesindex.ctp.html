@@ -13,12 +13,12 @@
 <div class="src-code">
 <div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
 <li><div class="src-line"><a name="a2"></a>&nbsp;</div></li>
-<li><div class="src-line"><a name="a3"></a>&nbsp;</div></li>
-<li><div class="src-line"><a name="a4"></a>&nbsp;</div></li>
-<li><div class="src-line"><a name="a5"></a><span class="src-var">$linkString</span>=<span class="src-str">''</span><span class="src-sym">;</span></div></li>
-<li><div class="src-line"><a name="a6"></a><span class="src-key">foreach&nbsp;</span><span class="src-sym">(</span><span class="src-var">$urlList&nbsp;</span><span class="src-key">as&nbsp;</span><span class="src-var">$data</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
-<li><div class="src-line"><a name="a7"></a><span class="src-var">$linkString</span>.=<span class="src-str">&quot;</span><span class="src-str">&lt;a&nbsp;href={<span class="src-var">$data</span><span class="src-sym">[</span><span class="src-str">'url'</span><span class="src-sym">]</span><span class="src-sym">}</span>&gt;{<span class="src-var">$data</span><span class="src-sym">[</span><span class="src-str">'text'</span><span class="src-sym">]</span><span class="src-sym">}</span>&lt;/a&gt;&lt;p/&gt;</span><span class="src-str">&quot;</span><span class="src-sym">;</span></div></li>
-<li><div class="src-line"><a name="a8"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-var">$linkString</span>=<span class="src-str">''</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-key">foreach&nbsp;</span><span class="src-sym">(</span><span class="src-var">$urlList&nbsp;</span><span class="src-key">as&nbsp;</span><span class="src-var">$data</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-var">$linkString</span>.=<span class="src-str">&quot;</span><span class="src-str">&lt;a&nbsp;href={<span class="src-var">$data</span></span><span class="src-sym">-&gt;</span><span class="src-id">getUrl</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-str"></span><span class="src-sym">}</span>&gt;{<span class="src-var">$data</span></span><span class="src-sym">-&gt;</span><span class="src-id">getAnchorText</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-str"></span><span class="src-sym">}</span>&lt;/a&gt;&lt;p/&gt;</span><span class="src-str">&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a7"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a8"></a>&nbsp;</div></li>
 <li><div class="src-line"><a name="a9"></a><span class="src-var">$outString</span>=<span class="src-str">&quot;</div></li>
 <li><div class="src-line"><a name="a10"></a></span><span class="src-str">&lt;div&nbsp;style=font-family:sans-serif;margin-bottom:15px;&gt;</span></div></li>
 <li><div class="src-line"><a name="a11"></a></span><span class="src-str">&lt;div&nbsp;style='margin:15px;border:1pt&nbsp;solid&nbsp;gray;background:#BBBB66;color:883333;font-family:sans-serif;width:400px;padding-top:20px;text-align:center;'&gt;</span></div></li>
@@ -38,7 +38,7 @@
 </ol></div>
 </div>
 	<p class="notes" id="credit">
-		Documentation generated on Thu, 03 Dec 2009 12:52:13 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+		Documentation generated on Wed, 06 Jan 2010 16:02:31 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
 	</p>
 	</body>
 </html>

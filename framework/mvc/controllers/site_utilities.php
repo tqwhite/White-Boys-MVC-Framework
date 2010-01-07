@@ -245,6 +245,10 @@ public function generateTables(){
 		$item2['url']="errata/phpdoc/PDFdefaultConverter/documentation.pdf";
 			$item2['text']='Docs (pdf)';
 			$item['bookmarks'][]=$item2; $item2=array();
+					
+		$item2['url']=$this->_getUrlPath('demo');
+			$item2['text']='Renderer Demo';
+			$item['bookmarks'][]=$item2; $item2=array();
 		
 	$urlList[]=$item; $item=array();
 	
@@ -290,5 +294,31 @@ public function generateTables(){
 	$page->SetViewScopedValue('pageTitle', 'Generate Tables');
 	$page->render();
 }
+
+/**
+* Demo is an example of how to work a view
+*
+* @param none
+* @return none
+* @author TQ White II
+*
+*/
+
+public function demo(){
+	
+		$page=new \mvc\views\BaseView($this->_getTemplatePath('displayMessage'));
+		$page->SetViewScopedValue('messageArray', $messageArray);
+	
+		$messageArray[]="Dynamic message from the controller<BR>";
+		$page->SetViewScopedValue('messageArray', $messageArray);
+
+		$page=new \mvc\views\BaseView($this->_getTemplatePath(__METHOD__));
+		$page->SetViewScopedValue('title', "Demo Page Title");
+		$page->SetViewScopedValue('messageArray', $messageArray);
+		$page->render();
+		
+		return;
+	}
+
 
 } //end of class

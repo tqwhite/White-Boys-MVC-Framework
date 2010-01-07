@@ -14,6 +14,45 @@ class BaseView extends \mvc\BaseClass{
 	
 	private $templateExtension='ctp';
 	
+	public $pageElements;
+	
+	private $htmlPageWrapper="
+		<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01//EN'
+		   'http://www.w3.org/TR/html4/strict.dtd'>
+		<html>
+		<head>
+			<title><!--title--></title>
+			<!--cssLink-->
+			<!--cssCode-->
+			<!--cssInclude-->
+			<!--jsLink-->
+			<!--jsCode-->
+			<!--jsInclude-->
+			<!--otherHeader-->
+		</head>
+		<body>
+			<!--bodyText-->
+		</body>
+		</html>
+		";
+	
+	private $cssCodeWrapper="
+		<style type='text/css'>
+			<!--bodyText-->
+		</style>
+		";
+	
+	private $jsCodeWrapper="
+		<script type='text/javascript'>
+		/* <![CDATA[ */
+			<!--bodyText-->
+		/* ]]> */
+		</script>
+		";
+	
+	private $cssLinkWrapper="<link rel='stylesheet' type='text/css' href='<!--url-->' />";
+	private $jsLinkWrapper="<script type='text/javascript' src='<!--url-->'></script>";
+	
 /**
 * Generates a view object and, optionally, sets the template
 *
@@ -55,6 +94,68 @@ private function _createScopeAndRun($filePath){
 
 	}
 	
+private function _assembleOutput($template){
+	$elementsArray=$this->pageElements;
+	$outString=$template;
+	if (is_array($elementsArray)){
+	
+		foreach ($elementsArray as $label=>$data){
+		
+			if (is_array($data)){
+			$subString='';
+			switch ($label){
+				case '<!--jsLink-->':
+					foreach ($data as $label2=>$data2){
+						$subString.=str_replace('<!--url-->', $data2, $this->jsLinkWrapper);
+					}
+					break;
+				case '<!--bodyText-->':
+					foreach ($data as $label2=>$data2){
+						$subString.="$data2\n\n";
+					}
+					break;
+				case '<!--cssLink-->':
+					foreach ($data as $label2=>$data2){
+						$subString.=str_replace('<!--url-->', $data2, $this->cssLinkWrapper);
+					}
+					break;
+				case '<!--jsInclude-->':
+					foreach ($data as $label2=>$data2){
+						$data2=file_get_contents($data2);
+						$subString.=str_replace('<!--bodyText-->', $data2, $this->jsCodeWrapper);
+					}
+					break;
+				case '<!--cssInclude-->':
+					foreach ($data as $label2=>$data2){
+						$data2=file_get_contents($data2);
+						$subString.=str_replace('<!--bodyText-->', $data2, $this->cssCodeWrapper);
+					}
+					break;
+				case '<!--jsCode-->':
+					foreach ($data as $label2=>$data2){
+						$subString.=str_replace('<!--bodyText-->', $data2, $this->jsCodeWrapper);
+					}
+					break;
+				case '<!--cssCode-->':
+					foreach ($data as $label2=>$data2){
+						$subString.=str_replace('<!--bodyText-->', $data2, $this->cssCodeWrapper);
+					}
+					break;
+			}
+			$outString=str_replace($label, $subString, $outString);
+			}
+		
+			$outString=str_replace($label, $data, $outString);
+		}
+	
+	}
+	
+
+	
+	//return $this->_tidy($outString)->value;
+	return $outString;
+}
+	
 public function render(){
 		$mvcRoot=MVCROOT;
 		$ds=DS;
@@ -68,8 +169,54 @@ public function render(){
 			return;
 		}
 		else{
-		exit("FATAL ERROR: Trying to render missing template. Invalid filePath: $filePath.");
+		exit("FATAL ERROR: Trying to render missing template. Invalid filePath: $filePath (BaseView::render).");
 		}
 	}
+	
+private function _tidy($html){
+	//config options listed at: http://tidy.sourceforge.net/docs/quickref.html
+	//built in for easier evaluation of accessability, etc. not really done
+	$config = array(
+			   'indent'         => true,
+			   'output-xhtml'   => true,
+			   'wrap'           => 200);
+	
+	// Tidy
+	$tidy = new \tidy;
+	$tidy->parseString($html, $config, 'utf8');
+	$tidy->cleanRepair();
+	return $tidy;
+}
+
+
+protected function addSpecial($string, $item){
+	//eg, "<body>" becomes <body style=color:red;>
+	$this->pageElements[$string]=$item;
+}
+protected function addPageTitle($item){
+	$this->pageElements['<!--title-->']=$item;
+}
+protected function addToBody($item){
+	$this->pageElements['<!--bodyText-->'][]=$item;
+}
+
+protected function addJsLink($item){
+	$this->pageElements['<!--jsLink-->'][]=$item;
+}
+protected function addCssLink($item){
+	$this->pageElements['<!--cssLink-->'][]=$item;
+}
+protected function addJsInclude($item){
+	$this->pageElements['<!--jsInclude-->'][]=$item;
+}
+protected function addCssInclude($item){
+	$this->pageElements['<!--cssInclude-->'][]=$item;
+}
+protected function addJsCode($item){
+	$this->pageElements['<!--jsCode-->'][]=$item;
+}
+protected function addCssCode($item){
+	$this->pageElements['<!--cssCode-->'][]=$item;
+}
 
 } //end of class
