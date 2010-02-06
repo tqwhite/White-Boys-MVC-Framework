@@ -39,25 +39,10 @@ public function index(){
 
 		$urlList=array();
 		$item=array();
-	/*	
-		$item['url']='/OpenSource';
-			$item['text']='Open Source Page 1';
-			$urlList[]=$item;
-		$item['url']='/OpenSource/2';
-			$item['text']='Open Source Page 2';
-			$urlList[]=$item;
-		$item['url']='/siteUtilities';
-			$item['text']='Site Utilities';
-			$urlList[]=$item;
-		$item['url']='/errata/scratchpad.php';
-			$item['text']='Scratchpad';
-			$urlList[]=$item;
-			
-	*/
 	
-        $tmp=new \Entities\BookmarkList(); //not sure if this is giving the line below something to refer to or working around a bug
-		$bookmarkList = $this->entityManagerInstance->getRepository('\Entities\BookmarkList')->findBy(array('code'=>'frontPage'));
-		$urlList=$bookmarkList[0]->getBookmarks();
+        $tmp=new \mvc\models\BookmarkList(); //not sure if this is giving the line below something to refer to or working around a bug
+		$urlList=$tmp->getList('frontPage');
+		
 		
 		$page=new \mvc\views\BaseView($this->_getTemplatePath(__METHOD__));
 		$page->SetViewScopedValue('title', "A Title Sent by: startController::index");

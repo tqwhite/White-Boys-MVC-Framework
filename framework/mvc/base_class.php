@@ -1,5 +1,6 @@
 <?php
 namespace mvc;
+
 /** 
  * Base Class for White Boys' Framework
  * 
@@ -8,7 +9,13 @@ namespace mvc;
  * 
  */
 class BaseClass{
+		
+protected $entityManagerInstance; //assigned by init_environment
 	
+public function __construct(){
+		$this->entityManagerInstance=\configs\InitDoctrine::createEntityManager();
+	}
+
 
 	
 }

@@ -44,13 +44,16 @@ class transferDirectory{
 	public $uploadFileTemplate;
 	public $deleteFileTemplate;
 	public $linkTemplate='(<A href=<!url!> target=_new>here</A>)';
+	
+	public $connectionType;
 
 	
-public function __construct($baseDirPath){
+public function __construct($baseDirPath, $controlFileName){
 	
 	
 		$this->baseDirPath=$baseDirPath; 
-		$this->controlFileName='.ftpControl';
+		$this->controlFileName=$controlFileName;
+		
 		$this->controlFilePath=$this->baseDirPath.DIRECTORY_SEPARATOR.$this->controlFileName;
 		
 		
@@ -99,6 +102,9 @@ public function __construct($baseDirPath){
 	//moved to client page: $this->analyzeFiles();
 }
 
+public function setConnectionType($type){
+	$this->connectionType=$type;
+}
 
 public function showArrayProperty($property){
 	$outString='';
@@ -279,13 +285,25 @@ return ($ftpOutPath);
 }
 
 public function initConnection(){
-			if ($this->dryRunFlag==false){
-			
-			//	$this->ftp = new Ftp;
+
+if ($this->dryRunFlag==false){
+
+			if ($this->connectionType=='ftp'){
+				$this->ftp = new Ftp;
+				}
+			elseif ($this->connectionType=='sftp'){
 				$this->ftp = new Sftp;
+			}
+			else{
+				echo "You have to set a connection type, 'ftp' or 'sftp', eg, (\$transferDirectory->setConnectionType('sftp');";
+				exit;
+			}
 				$this->ftp->connect($this->ftpHost, $this->ftpPort);
 				$this->ftp->login($this->ftpUser, $this->ftpPass);
 				$this->ftp->pasv(true);
+				
+			$connType=strtoupper($this->connectionType);
+			$this->processStatusArray[]="Established $connType with host: {$this->ftpHost}";
 			
 			}
 }
@@ -303,22 +321,17 @@ public function sendFile($localPath){
 	if (!empty($destPath)){
 		try {
 
-
 			
 			if ($this->dryRunFlag==false){
-
-
-			//	$result=$this->ftp->nlist('./public_html'); //get name list, ie, ls, sort of
+				//	$result=$this->ftp->nlist('./public_html'); //get name list, ie, ls, sort of
 			
 
 				$result=$this->ftp->mkDirRecursive('./'.dirname($destPath));
-				echo "<div style=color:red;font-size:8pt;>TransferDirectory::sendFile says, Have not tested prefix on mkdir with standard ftp, only sftp</div>";
-				
 				$result=$this->ftp->put('./'.$destPath, $localPath, FTP_BINARY);
+			
 				
-				
-			$this->uploadedFileCount++;
-			$this->processStatusArray['ftpMessage']="uploaded {$this->uploadedFileCount} files";
+				$this->uploadedFileCount++;
+				$this->processStatusArray['ftpMessage']="uploaded {$this->uploadedFileCount} files";
 			
 			}
 			else{
@@ -334,11 +347,12 @@ public function sendFile($localPath){
 			//file is in docrRoot, needs link
 				
 				$report['url']=$url;
-				
+				$report['anchor']="<a href='$url' style=text-decoration:none;color:#aaaadd; target=_blank>$url</a>";			
+
 			}
-			else {
-				
+			else {				
 				$report['url']='';
+				$report['anchor']="n/a";
 			}
 
 		//	$report=$this->uploadFileTemplate;

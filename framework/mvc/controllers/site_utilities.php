@@ -56,13 +56,11 @@ public function index(){
 		$item=array();
 		$domain=\configs\appConfig::getServerVar('HTTP_HOST');
 		
-		$tmp=new \Entities\BookmarkList(); //not sure if this is giving the line below something to refer to or working around a bug
-		$bookmarkList = $this->entityManagerInstance->getRepository('\Entities\BookmarkList')->findBy(array('code'=>'siteUtilities'));
-
-		$urlList=$bookmarkList[0]->getBookmarks(); //this is an array of bookmark objects
+        $tmp=new \mvc\models\BookmarkList(); //not sure if this is giving the line below something to refer to or working around a bug
+		$urlList=$tmp->getList('siteUtilities');
 		
 		if (SYSTEM_TYPE=='development'){
-			$bookmark = new \Entities\Bookmark;
+			$bookmark = new \Entities\BookmarkBase;
 			$item=array();
 			$item['url']=$this->_getUrlPath('sendFilesToHost');
 			$item['anchorText']='Send Files to Host';
@@ -89,11 +87,18 @@ public function index(){
 * @author TQ White II
 *
 */	
-public function sendFilesToHost(){
+public function sendFilesToHost($destServerType){
 
 		if (SYSTEM_TYPE!='development'){
 			die("Host FTP Sync can only be used from development systems. This is not one of those.");
 			}
+	
+		if ($destServerType=='prod'){
+			$controlFileName='.ftpControl'; //I don't want  to have to reinitialize this, will remove exception later
+			}
+		else{
+			$controlFileName='.ftpControl_'.$destServerType;
+		}
 
 		/*
 			make user interface
@@ -109,23 +114,21 @@ public function sendFilesToHost(){
 			make it so it only logs in once
 		*/
 	
-		$transferDirectory=new \library\services\transferDirectory(dirname(ROOT));
+		$transferDirectory=new \library\services\transferDirectory(dirname(ROOT), $controlFileName);
 		
-		\configs\HostFtpConfig::copyIntoTransferDirectoryObject($transferDirectory); //from configs/host_ftp_config.php
-
-
+		\configs\HostFtpConfig::copyIntoTransferDirectoryObject($transferDirectory, $destServerType); //from configs/host_ftp_config.php
 
 
 						
 		$transferDirectory->dryRunFlag=false; //false says we're in production, upload files
 		$transferDirectory->initDatabase=false; //true says init db even though dryRunFlag==true, ignored if dryRunFlag==false
 
-
-
-
 		$transferDirectory->initConnection();
 		$transferDirectory->clearExclusionString();
 		$transferDirectory->addExclusionString('_config');
+
+//url: <!anchor!> is based on a shameful hack where I put format stuff into the library class
+//at SiteUtilities::sendFile, at the definition of $report['anchor']
 		
 		$transferDirectory->uploadFileTemplate='
 			<div style=margin-bottom:10pt;font-family:sans-serif;font-size:8pt;>
@@ -133,7 +136,11 @@ public function sendFilesToHost(){
 					UPLOAD status=<!result!> <!link!>
 					</div>
 				<div style=color:gray;>
-					source: <!localPath!><br>dest: <!destPath!>
+					source: <!localPath!><br>
+					dest: <!destPath!>
+					</div>
+				<div style=color:#aaaadd;>
+					url: <!anchor!>
 					</div>
 				</div>';
 		
@@ -193,8 +200,8 @@ public function generateTables(){
 	
 	$classesArray=array();
 	
-	$classesArray[]=$em->getClassMetadata('Entities\Bookmark');
-	$classesArray[]=$em->getClassMetadata('Entities\BookmarkList');
+	$classesArray[]=$em->getClassMetadata('Entities\BookmarkBase');
+	$classesArray[]=$em->getClassMetadata('Entities\BookmarkListBase');
 	
 	$tool->createSchema($classesArray);
 	//$tool->updateSchema($classesArray); //this causes an error
@@ -252,19 +259,27 @@ public function generateTables(){
 		
 	$urlList[]=$item; $item=array();
 	
+	
+	
+	$item['code']='general';
+	$item['title']='General Bookmarks List';
+	
+		
+	$urlList[]=$item; $item=array();
+	
 	foreach ($urlList as $data){
 
 		$bookmarksArray=$data['bookmarks'];
 		unset($data['bookmarks']);
 		
-		$bookmarkList = new \Entities\BookmarkList;
+		$bookmarkList = new \Entities\BookmarkListBase;
 		$bookmarkList->setFromArray($data);
 		
 		$messageArray[]="<div style=color:green;margin-top:10px;font-weight:bold;>{$data['code']}={$data['title']}<div>";
 		
 		if (is_array($bookmarksArray)){
 		foreach ($bookmarksArray as $data2){
-			$bookmark = new \Entities\Bookmark;
+			$bookmark = new \Entities\BookmarkBase;
 			
 			$messageArray[]="<div style=margin-left:10px;color:black;>{$data2['url']}={$data2['text']}</div>";
 			

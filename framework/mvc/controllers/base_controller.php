@@ -13,12 +13,6 @@ class BaseController extends \mvc\BaseClass{
 	
 	protected $unknownActionHandlerName='index'; //default can be changed by child class
 	
-	protected static $entityManagerInstance; //assigned by init_environment
-	
-public function __construct(){
-		$this->entityManagerInstance=\configs\InitDoctrine::createEntityManager();
-	}
-	
 public function setUnknownActionHandlerName($value){
 		$this->unknownActionHandlerName=$value;
 	}

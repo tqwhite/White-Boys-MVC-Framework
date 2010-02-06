@@ -28,7 +28,7 @@ class BaseView extends \mvc\BaseClass{
 			<!--jsLink-->
 			<!--jsCode-->
 			<!--jsInclude-->
-			<!--otherHeader-->
+			<!--otherHead-->
 		</head>
 		<body>
 			<!--bodyText-->
@@ -109,11 +109,6 @@ private function _assembleOutput($template){
 						$subString.=str_replace('<!--url-->', $data2, $this->jsLinkWrapper);
 					}
 					break;
-				case '<!--bodyText-->':
-					foreach ($data as $label2=>$data2){
-						$subString.="$data2\n\n";
-					}
-					break;
 				case '<!--cssLink-->':
 					foreach ($data as $label2=>$data2){
 						$subString.=str_replace('<!--url-->', $data2, $this->cssLinkWrapper);
@@ -141,6 +136,11 @@ private function _assembleOutput($template){
 						$subString.=str_replace('<!--bodyText-->', $data2, $this->cssCodeWrapper);
 					}
 					break;
+				case '<!--bodyText-->':
+					foreach ($data as $label2=>$data2){
+						$subString.="$data2\n\n";
+					}
+					break;
 			}
 			$outString=str_replace($label, $subString, $outString);
 			}
@@ -153,7 +153,7 @@ private function _assembleOutput($template){
 
 	
 	//return $this->_tidy($outString)->value;
-	return $outString;
+	return $this->_clearTokens($outString);
 }
 	
 public function render(){
@@ -188,6 +188,21 @@ private function _tidy($html){
 	return $tidy;
 }
 
+private function _clearTokens($html){
+
+$patternArray[]='<!--title-->'; $replaceArray[]='';
+$patternArray[]='<!--bodyText-->'; $replaceArray[]='';
+$patternArray[]='<!--jsLink-->'; $replaceArray[]='';
+$patternArray[]='<!--cssLink-->'; $replaceArray[]='';
+$patternArray[]='<!--jsInclude-->'; $replaceArray[]='';
+$patternArray[]='<!--cssInclude-->'; $replaceArray[]='';
+$patternArray[]='<!--jsCode-->'; $replaceArray[]='';
+$patternArray[]='<!--cssCode-->'; $replaceArray[]='';
+$patternArray[]='<!--otherHead-->'; $replaceArray[]='';
+
+return str_replace($patternArray, $replaceArray, $html);
+
+}
 
 protected function addSpecial($string, $item){
 	//eg, "<body>" becomes <body style=color:red;>
@@ -217,6 +232,9 @@ protected function addJsCode($item){
 }
 protected function addCssCode($item){
 	$this->pageElements['<!--cssCode-->'][]=$item;
+}
+protected function addOtherHead($item){
+	$this->pageElements['<!--otherHead-->'][]=$item;
 }
 
 } //end of class

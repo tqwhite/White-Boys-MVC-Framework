@@ -2,7 +2,7 @@
 
 $linkString='';
 foreach ($urlList as $data){
-$linkString.="<a href={$data->getUrl()}>{$data->getAnchorText()}</a><p/>";
+$linkString.="<a href={$data->getUrl()}>{$data->getAnchorText()} ({$data->getId()})</a><p/>";
 }
 
 

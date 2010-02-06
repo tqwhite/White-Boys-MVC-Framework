@@ -11,7 +11,11 @@ dump($result);
 */
 
 class executeQuery{
+
 	private $database;
+	private $_queryString;
+	private $dbNameLabel='--SELECT DATABASE--';
+	
 	public function __construct(){
 		$this->database=new \library\services\qdb\MysqlAccess();
 	}
@@ -45,7 +49,20 @@ class executeQuery{
 			}
 		}
 		
+		$this->_queryString=$parameterArray['queryString'];
+		$this->_dbName=$parameterArray['dbName'];
+		
+		if ($this->_dbName==$this->dbNameLabel){
+			$operation='noDb';
+		}
+		
 		switch ($operation){
+			case 'noDb':
+				$displayInfo['dbList']=$this->model('getDatabaseList');
+					$displayInfo['pageTitle']="Execute Query: no DB error";
+					$displayInfo['statusMessage']="You must Choose a Database";
+					$outString=$this->view('noResult', $displayInfo);
+				break;
 			default:
 			case 'index':
 				$displayInfo['dbList']=$this->model('getDatabaseList');
@@ -80,23 +97,41 @@ class executeQuery{
 		$outString='';	
 		//we always need the header
 			$optionString=$this->generateOptions($displayInfo['dbList']['dbResultArray'], 'Database', $_GET['dbName']);
-			if (!empty($_GET['queryString'])){
+			
+			if (!empty($_GET['queryString']) and !$_GET['dbName']==$this->dbNameLabel){
 				$queryString=$_GET['queryString'];
 			}
 			else{
 				$queryString='show tables';
 			}
+			
+			if (empty($this->_dbName) or $this->_dbName==$this->dbNameLabel){
+				$showTableString='';
+				}
+			else{
+				$showTableString="(<a href=executeQuery.php?dbName={$this->_dbName}&queryString=show+tables&operation=display>show tables</a>)";
+			}
+			
+			if (empty($displayInfo['statusMessage']))
+			{ $displayInfo['statusMessage']=''; }
+			{ $displayInfo['statusMessage']="<div style=font-size:125%;color:red;font-weight:bold;>{$displayInfo['statusMessage']}</div>"; }
+			
 			$headerString="
 				<select name='dbName'>
-					<option alue=''>--SELECT DATABASE--</option>
+					<option alue=''>{$this->dbNameLabel}</option>
 					$optionString
 				</select>
 				<input type=text name=queryString value='$queryString' style='width:500px;font-size:10pt;color:orange;' />
-				<input type=submit />
+				<input type=submit /> $showTableString
 				<input type=hidden name='operation' value='display' />
 			";
 			
 		switch ($viewName){
+			case 'noResult':
+				$titleString="
+					<title>{$displayInfo['pageTitle']}</title>
+				";
+				break;
 			case 'index':
 				$titleString="
 					<title>{$displayInfo['pageTitle']}</title>
@@ -105,7 +140,7 @@ class executeQuery{
 			case 'display':
 				$resultArray=$displayInfo['recordListArray'];
 				
-				$tmp=$this->showArray($resultArray);
+				$tmp=$this->_showArray($resultArray);
 				
 				$displayString="
 				$tmp<BR>
@@ -138,7 +173,7 @@ class executeQuery{
 		<body style='font-family:sans-serif;font-size:10pt;'>
 		<form method=get action=''>
 			$headerString
-			$safetyString
+			$safetyString {$displayInfo['statusMessage']}
 			$displayString
 		</form>
 		</body>
@@ -164,7 +199,7 @@ class executeQuery{
 		return $optionString;
 	}
 	
-	private function showArray($inArray){
+	private function _showArray($inArray){
 		
 					$color1='#ddffdd';
 					$color2='#ddddff';
@@ -176,10 +211,18 @@ class executeQuery{
 				$bodyString.="
 					<tr style=background:white;font-weight:bold;color:#bbbbbb;><td colspan=3>Record #$label of $count</td></tr>
 				";
-				foreach ($data as $label2=>$data2){
+				foreach ($data as $label2=>$data2){	
+					if (strtolower($this->_queryString)=='show tables'){
+					$newQueryString=urlencode("select * from $data2 limit 100");
+					$resultString="<a href='executeQuery.php?dbName={$this->_dbName}&queryString=$newQueryString&operation=display'>$data2</a>";
+					}
+					else{
+					$resultString=$data2;
+					}
+					
 					if ($bgColor==$color1){$bgColor=$color2;} else {$bgColor=$color1;}
 					$bodyString.="
-						<tr style=background:$bgColor;><td style=padding-left:35px;background:white;>&nbsp;</td><td style=padding-left:10px;padding-right:10px;>$label2</td><td style=width:100%;padding-left:10px;>$data2</td></tr>
+						<tr style=background:$bgColor;><td style=padding-left:35px;background:white;>&nbsp;</td><td style=padding-left:10px;padding-right:10px;>$label2</td><td style=width:100%;padding-left:10px;>$resultString</td></tr>
 					";
 				}
 			}
