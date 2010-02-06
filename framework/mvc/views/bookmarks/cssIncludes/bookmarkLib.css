@@ -1,0 +1,17 @@
+body{
+color:gray;
+font-size:14pt;
+margin:30px;
+font-family:sans-serif;
+}
+
+.bigRed{
+color:red;
+font-size:200%;
+}
+
+.smallGreen{
+color:green;
+font-size:100%;
+}
+

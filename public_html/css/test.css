@@ -1,0 +1,9 @@
+@font-face{
+	font-family:tqtest;
+	src:url(../elements/fonts/CooperBlackStd-Italic.otf); //url relative to acquiring url
+	}
+	
+.linkedClass{
+font-family:tqtest;
+color:red;
+}

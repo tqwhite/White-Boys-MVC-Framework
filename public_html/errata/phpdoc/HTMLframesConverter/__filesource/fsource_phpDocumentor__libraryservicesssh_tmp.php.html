@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for ssh_tmp.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file ssh_tmp.php</h1>
+<p>Documentation is available at <a href="../phpDocumentor/_library---services---ssh_tmp.php.html">ssh_tmp.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-comm">//&nbsp;ssh&nbsp;protocols</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-comm">//&nbsp;note:&nbsp;once&nbsp;openShell&nbsp;method&nbsp;is&nbsp;used,&nbsp;cmdExec&nbsp;does&nbsp;not&nbsp;work</span></div></li>
+<li><div class="src-line"><a name="a5"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-comm">/*</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-comm">from&nbsp;php.net:</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;suri&nbsp;dot&nbsp;suribala&nbsp;dot&nbsp;com</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;24-Feb-2005&nbsp;01:00</span></div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;With&nbsp;Sara's&nbsp;help,&nbsp;I&nbsp;have&nbsp;the&nbsp;following&nbsp;SS2&nbsp;class&nbsp;that&nbsp;is&nbsp;quite&nbsp;flexible.&nbsp;If&nbsp;anyone&nbsp;improves&nbsp;it,&nbsp;please&nbsp;feel&nbsp;free&nbsp;to&nbsp;let&nbsp;me&nbsp;know.</span></div></li>
+<li><div class="src-line"><a name="a11"></a><span class="src-comm">*/</span></div></li>
+<li><div class="src-line"><a name="a12"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a13"></a><span class="src-key">class&nbsp;</span><a href="../phpDocumentor/ssh2.html">ssh2</a>&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a14"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a15"></a>&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-var">$host&nbsp;</span>=&nbsp;<span class="src-str">'host'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a16"></a>&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-var">$user&nbsp;</span>=&nbsp;<span class="src-str">'user'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a17"></a>&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-var">$port&nbsp;</span>=&nbsp;<span class="src-str">'22'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a18"></a>&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-var">$password&nbsp;</span>=&nbsp;<span class="src-str">'password'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a19"></a>&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-var">$con&nbsp;</span>=&nbsp;<span class="src-id">null</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a20"></a>&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-var">$shell_type&nbsp;</span>=&nbsp;<span class="src-str">'xterm'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a21"></a>&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-var">$shell&nbsp;</span>=&nbsp;<span class="src-id">null</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a22"></a>&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><span class="src-var">$log&nbsp;</span>=&nbsp;<span class="src-str">''</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a23"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a24"></a>&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../phpDocumentor/ssh2.html#method__construct">__construct</a><span class="src-sym">(</span><span class="src-var">$host</span>=<span class="src-str">''</span><span class="src-sym">,&nbsp;</span><span class="src-var">$port</span>=<span class="src-str">''&nbsp;&nbsp;</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a25"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a26"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if</span><span class="src-sym">(&nbsp;</span><span class="src-var">$host</span>!=<span class="src-str">''&nbsp;</span><span class="src-sym">)&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">host&nbsp;&nbsp;</span>=&nbsp;<span class="src-var">$host</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a27"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if</span><span class="src-sym">(&nbsp;</span><span class="src-var">$port</span>!=<span class="src-str">''&nbsp;</span><span class="src-sym">)&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">port&nbsp;&nbsp;</span>=&nbsp;<span class="src-var">$port</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a28"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a29"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">con&nbsp;&nbsp;</span>=&nbsp;<a href="http://www.php.net/ssh2_connect">ssh2_connect</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">host</span><span class="src-sym">,&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">port</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a30"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if</span><span class="src-sym">(&nbsp;</span><span class="src-sym">!</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">con&nbsp;</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a31"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">log&nbsp;</span>.=&nbsp;<span class="src-str">&quot;Connection&nbsp;failed&nbsp;!&quot;</span><span class="src-sym">;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a32"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a33"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a34"></a>&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a35"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a36"></a>&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../phpDocumentor/ssh2.html#methodauthPassword">authPassword</a><span class="src-sym">(&nbsp;</span><span class="src-var">$user&nbsp;</span>=&nbsp;<span class="src-str">''</span><span class="src-sym">,&nbsp;</span><span class="src-var">$password&nbsp;</span>=&nbsp;<span class="src-str">''&nbsp;</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a37"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a38"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if</span><span class="src-sym">(&nbsp;</span><span class="src-var">$user</span>!=<span class="src-str">''&nbsp;</span><span class="src-sym">)&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">user&nbsp;&nbsp;</span>=&nbsp;<span class="src-var">$user</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a39"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if</span><span class="src-sym">(&nbsp;</span><span class="src-var">$password</span>!=<span class="src-str">''&nbsp;</span><span class="src-sym">)&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">password&nbsp;&nbsp;</span>=&nbsp;<span class="src-var">$password</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a40"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a41"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if</span><span class="src-sym">(&nbsp;</span><span class="src-sym">!</span><a href="http://www.php.net/ssh2_auth_password">ssh2_auth_password</a><span class="src-sym">(&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">con</span><span class="src-sym">,&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">user</span><span class="src-sym">,&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">password&nbsp;</span><span class="src-sym">)&nbsp;)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a42"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">log&nbsp;</span>.=&nbsp;<span class="src-str">&quot;Authorization&nbsp;failed&nbsp;!&quot;</span><span class="src-sym">;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a43"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a44"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a45"></a>&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a46"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a47"></a>&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../phpDocumentor/ssh2.html#methodopenShell">openShell</a><span class="src-sym">(&nbsp;</span><span class="src-var">$shell_type&nbsp;</span>=&nbsp;<span class="src-str">''&nbsp;</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a48"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a49"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(&nbsp;</span><span class="src-var">$shell_type&nbsp;</span>!=&nbsp;<span class="src-str">''&nbsp;</span><span class="src-sym">)&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">shell_type&nbsp;</span>=&nbsp;<span class="src-var">$shell_type</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a50"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">shell&nbsp;</span>=&nbsp;<a href="http://www.php.net/ssh2_shell">ssh2_shell</a><span class="src-sym">(&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">con</span><span class="src-sym">,&nbsp;&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">shell_type&nbsp;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if</span><span class="src-sym">(&nbsp;</span><span class="src-sym">!</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">shell&nbsp;</span><span class="src-sym">)&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">log&nbsp;</span>.=&nbsp;<span class="src-str">&quot;&nbsp;Shell&nbsp;connection&nbsp;failed&nbsp;!&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a52"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a55"></a>&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../phpDocumentor/ssh2.html#methodwriteShell">writeShell</a><span class="src-sym">(&nbsp;</span><span class="src-var">$command&nbsp;</span>=&nbsp;<span class="src-str">''&nbsp;</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a56"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a57"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/fwrite">fwrite</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">shell</span><span class="src-sym">,&nbsp;</span><span class="src-var">$command</span>.<span class="src-str">&quot;\n&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a58"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a59"></a>&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a60"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a61"></a>&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../phpDocumentor/ssh2.html#methodcmdExec">cmdExec</a><span class="src-sym">(&nbsp;</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a62"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a63"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$argc&nbsp;</span>=&nbsp;<a href="http://www.php.net/func_num_args">func_num_args</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a64"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$argv&nbsp;</span>=&nbsp;<a href="http://www.php.net/func_get_args">func_get_args</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a65"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a66"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$cmd&nbsp;</span>=&nbsp;<span class="src-str">''</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a67"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">for</span><span class="src-sym">(&nbsp;</span><span class="src-var">$i</span>=<span class="src-num">0</span><span class="src-sym">;&nbsp;</span><span class="src-var">$i</span>&lt;<span class="src-var">$argc&nbsp;</span><span class="src-sym">;&nbsp;</span><span class="src-var">$i</span>++<span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a68"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if</span><span class="src-sym">(&nbsp;</span><span class="src-var">$i&nbsp;</span>!=&nbsp;<span class="src-sym">(</span><span class="src-var">$argc</span>-<span class="src-num">1</span><span class="src-sym">)&nbsp;)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a69"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$cmd&nbsp;</span>.=&nbsp;<span class="src-var">$argv</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">]</span>.<span class="src-str">&quot;&nbsp;&amp;&amp;&nbsp;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a70"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span><span class="src-key">else</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a71"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$cmd&nbsp;</span>.=&nbsp;<span class="src-var">$argv</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">]</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a72"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a73"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a74"></a>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<span class="src-var">$cmd</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a75"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a76"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$stream&nbsp;</span>=&nbsp;<a href="http://www.php.net/ssh2_exec">ssh2_exec</a><span class="src-sym">(&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">con</span><span class="src-sym">,&nbsp;</span><span class="src-var">$cmd&nbsp;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a77"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/stream_set_blocking">stream_set_blocking</a><span class="src-sym">(&nbsp;</span><span class="src-var">$stream</span><span class="src-sym">,&nbsp;</span><span class="src-id">true&nbsp;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a78"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><a href="http://www.php.net/fread">fread</a><span class="src-sym">(&nbsp;</span><span class="src-var">$stream</span><span class="src-sym">,&nbsp;</span><span class="src-num">4096&nbsp;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a79"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a80"></a>&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a81"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a82"></a>&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../phpDocumentor/ssh2.html#methodgetLog">getLog</a><span class="src-sym">(</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a83"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a84"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">log</span><span class="src-sym">;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a85"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a86"></a>&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a87"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a88"></a><span class="src-sym">}</span></div></li>
+</ol></div>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed, 06 Jan 2010 16:02:34 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</body>
+</html>
