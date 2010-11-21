@@ -13,7 +13,7 @@ class BaseClass{
 protected $entityManagerInstance; //assigned by init_environment
 	
 public function __construct(){
-		$this->entityManagerInstance=\configs\InitDoctrine::createEntityManager();
+	
 	}
 
 
