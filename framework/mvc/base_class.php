@@ -1,5 +1,5 @@
 <?php
-namespace mvc;
+namespace framework\mvc;
 
 /** 
  * Base Class for White Boys' Framework

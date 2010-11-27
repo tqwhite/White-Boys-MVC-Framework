@@ -12,15 +12,17 @@ class AppConfig {
 		define('DS', DIRECTORY_SEPARATOR);
 		define('ROOT', dirname(dirname(dirname(__FILE__))).'/');
 		
-		define('FRAMEWORKROOT', ROOT.'framework/');
+		define('FRAMEWORKROOT', ROOT.'framework/');	
 		define('MVCROOT', ROOT.'framework/mvc/');
 		define('CONFIGROOT', ROOT.'framework/configs/');
 		define('LIBROOT', ROOT.'framework/library/');
 		define('HTMLROOT', ROOT.'public_html/');
 		
-		define('USE_DOCTRINE', true);
-		define('DOCTRINEROOT', FRAMEWORKROOT.'library/services/doctrine/');
+		define('FRAMEWORKVIEWS', 'framework/mvc/views/');
 		
+		define('MEDIAROOT', ROOT.'public_html/media/');
+		define('MEDIADEST', ROOT.'public_html/media/dest/');
+		define('MEDIACONTENT', ROOT.'public_html/media/content/');
 		
 		//initialize system stuff
 		

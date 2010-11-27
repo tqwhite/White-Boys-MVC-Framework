@@ -1,1 +1,0 @@
-<?php$imagePath=str_replace(HTMLROOT, '', $imagePath);echo "<img src='/$imagePath'>";echo "<div style=color:red;font-size:8pt;>$message</div>";
