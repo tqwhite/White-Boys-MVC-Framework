@@ -92,7 +92,7 @@ echo $this->_assembleOutput($this->htmlPageWrapper);
 
 ?>
 <div  style=margin-bottom:50px;margin-top:50px;>
-<div class='fancyClass'>this manually entered html but the css is inserted dynamically into this file</div>
+<div class='fancyClass'>This manually entered html but the css is inserted dynamically into this file</div>
 <div class='linkedClass'>this is also manual but the css is linked (and it's a fancy font!!)</div>
 </div>
 <?php
